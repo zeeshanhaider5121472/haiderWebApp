@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 
 import 'home_screen/home_screen_vu.dart';
@@ -10,27 +11,30 @@ class HTUScreenVU extends StackedView<HTUScreenVM> {
   @override
   Widget builder(BuildContext context, HTUScreenVM viewModel, Widget? child) =>
       Scaffold(
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Header(viewModel: viewModel),
-                HowToUseList(viewModel: viewModel),
-                SizedBox(
-                  width: 300,
-                  child: PrimaryButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreenVU()));
-                    },
-                    text: "Get Started...",
-                  ),
-                )
-              ],
+        body: Padding(
+          padding: EdgeInsets.only(top: 20, right: 25, left: 15, bottom: 25),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Header(viewModel: viewModel),
+                  HowToUseList(viewModel: viewModel),
+                  SizedBox(
+                    width: 300,
+                    child: PrimaryButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreenVU()));
+                      },
+                      text: "Get Started",
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -93,20 +97,22 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "PSA Troubleshooter",
-          style: TextStyle(
-            fontSize: 40,
-            fontFamily: 'Montserrat',
-            color: Colors.black87,
-            fontWeight: FontWeight.bold,
+        const FittedBox(
+          child: Text(
+            "PSA Troubleshooter",
+            style: TextStyle(
+              fontSize: 40,
+              fontFamily: 'Montserrat',
+              color: Colors.black87,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         const SizedBox(
-          height: 24,
+          height: 18,
         ),
         SizedBox(
-            width: MediaQuery.of(context).size.width / 1.8,
+            width: MediaQuery.of(context).size.width / 1.3,
             child: Text(
               textAlign: TextAlign.center,
               viewModel.tagLine,
@@ -115,6 +121,9 @@ class Header extends StatelessWidget {
                 fontFamily: 'Montserrat',
               ),
             )),
+        SizedBox(
+          height: 40,
+        )
       ],
     );
   }
@@ -135,7 +144,7 @@ class HtuTextContainer extends StatelessWidget {
         border: Border.all(color: Colors.amber, width: 1.2),
         // color: Color.fromARGB(255, 248, 252, 255),
       ),
-      width: MediaQuery.of(context).size.width / 2.5,
+      width: MediaQuery.of(context).size.width / 1.2,
       height: 100,
       padding: const EdgeInsets.all(12),
       margin: const EdgeInsets.only(bottom: 20),
