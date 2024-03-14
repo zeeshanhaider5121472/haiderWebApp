@@ -11,25 +11,27 @@ class HTUScreenVU extends StackedView<HTUScreenVM> {
   Widget builder(BuildContext context, HTUScreenVM viewModel, Widget? child) =>
       Scaffold(
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Header(viewModel: viewModel),
-              HowToUseList(viewModel: viewModel),
-              SizedBox(
-                width: 300,
-                child: PrimaryButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreenVU()));
-                  },
-                  text: "Get Started",
-                ),
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Header(viewModel: viewModel),
+                HowToUseList(viewModel: viewModel),
+                SizedBox(
+                  width: 300,
+                  child: PrimaryButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreenVU()));
+                    },
+                    text: "Get Started",
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       );
