@@ -13,6 +13,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.amber,
       body: SingleChildScrollView(
         child: Center(
           child: Column(

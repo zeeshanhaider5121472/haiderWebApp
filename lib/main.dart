@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
         colorScheme: ColorScheme.fromSeed(
+            // background: const Color.fromARGB(255, 248, 248, 248),
             background: const Color.fromARGB(255, 248, 248, 248),
             seedColor: Colors.deepPurple),
         useMaterial3: true,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 
+import '../home_screen/home_screen_vu.dart';
 import '../htu_vu.dart';
 import 'solution_screen_vm.dart';
 
@@ -14,6 +15,9 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
       BuildContext context, SolutionScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
+
+      backgroundColor: Colors.amber,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -102,7 +106,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                       color: const Color.fromARGB(174, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    height: screenSize.width > 600 ? 160 : 180,
+                    height: screenSize.width > 700 ? 160 : 180,
                     // width: 450,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,7 +188,15 @@ class Header extends StatelessWidget {
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const HomeScreenVU(),
+                ),
+                (route) => false,
+              );
+            },
             icon: const Icon(size: 24, Icons.logout_rounded),
             color: Colors.black,
           ),
