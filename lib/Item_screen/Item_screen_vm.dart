@@ -6,6 +6,6 @@ class ItemScreenVM extends BaseViewModel {
     "Cooling oil runs out of the intake filter.",
     "Compressor switches between LOAD and IDLE more than twice per minute.",
     "Cooling oil leaking into the machine interior.",
-    "Cooling oil consumption too high."
+    "Cooling oil consumption too high.",
   ];
 }

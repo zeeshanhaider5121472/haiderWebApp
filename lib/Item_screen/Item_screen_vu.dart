@@ -27,15 +27,10 @@ class ItemScreenVU extends StackedView<ItemScreenVM> {
                 child: Column(
                   children: [
                     const ImageContainer(),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ConstrainedBox(
-                        constraints: BoxConstraints(
-                          maxHeight: MediaQuery.of(context).size.height * 0.55,
-                        ),
-                        child: GenericAnswers(
-                            viewModel: viewModel, screenSize: screenSize))
+                    const SizedBox(height: 20),
+                    const SizedBox(height: 20),
+                    GenericAnswers(
+                        viewModel: viewModel, screenSize: screenSize),
                   ],
                 ),
               ),
@@ -58,39 +53,37 @@ class GenericAnswers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 450),
-        child: ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: viewModel.testList.length,
-          itemBuilder: (context, index) {
-            return Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: screenSize.width > 600 ? 350 : 230,
-                      child: Text(
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        viewModel.testList[index],
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 450, maxHeight: 500),
+      child: ListView.builder(
+        // physics: const NeverScrollableScrollPhysics(),
+        itemCount: viewModel.testList.length,
+        itemBuilder: (context, index) {
+          return Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: screenSize.width > 600 ? 350 : 230,
+                    child: Text(
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      viewModel.testList[index],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.keyboard_arrow_right_outlined))
-                  ],
-                ));
-          },
-        ),
+                  ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.keyboard_arrow_right_outlined))
+                ],
+              ));
+        },
       ),
     );
   }
