@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import '../item_screen/item_screen_vu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
