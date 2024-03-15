@@ -78,10 +78,11 @@ class MainImgClickablewidget extends StatelessWidget {
                             const MaterialStatePropertyAll(Colors.transparent),
                         hoverColor: Colors.transparent,
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const ItemScreenVU()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => const ItemScreenVU())
+                          //         );
                         },
                         child: const Image(
                             image: AssetImage('lib/assets/select.png')),
