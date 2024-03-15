@@ -3,9 +3,6 @@ import 'package:stacked/stacked.dart';
 import '../Item_screen/item_screen_vu.dart';
 import 'home_screen_vm.dart';
 
-// Image(
-//                     width: 200,
-//                     image: AssetImage('lib/quiz_app/assets/quiz-logo.png')),
 class HomeScreenVU extends StackedView<HomeScreenVM> {
   const HomeScreenVU({super.key});
 
