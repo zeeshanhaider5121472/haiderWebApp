@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../problem_screen/problem_screen_vu.dart';
