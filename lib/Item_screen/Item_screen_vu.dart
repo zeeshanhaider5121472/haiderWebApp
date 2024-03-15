@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 import 'Item_screen_vm.dart';
 
@@ -21,17 +23,21 @@ class ItemScreenVU extends StackedView<ItemScreenVM> {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: Column(
-                children: [
-                  const ImageContainer(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Expanded(
-                    child: GenericAnswers(
-                        viewModel: viewModel, screenSize: screenSize),
-                  )
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const ImageContainer(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: MediaQuery.of(context).size.height * 0.55,
+                        ),
+                        child: GenericAnswers(
+                            viewModel: viewModel, screenSize: screenSize))
+                  ],
+                ),
               ),
             ),
           ),
@@ -52,36 +58,39 @@ class GenericAnswers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 450),
-      child: ListView.builder(
-        itemCount: viewModel.testList.length,
-        itemBuilder: (context, index) {
-          return Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: screenSize.width > 600 ? 400 : 230,
-                    child: Text(
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                      viewModel.testList[index],
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+    return Expanded(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 450),
+        child: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: viewModel.testList.length,
+          itemBuilder: (context, index) {
+            return Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: screenSize.width > 600 ? 350 : 230,
+                      child: Text(
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        viewModel.testList[index],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.keyboard_arrow_right_outlined))
-                ],
-              ));
-        },
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.keyboard_arrow_right_outlined))
+                  ],
+                ));
+          },
+        ),
       ),
     );
   }
