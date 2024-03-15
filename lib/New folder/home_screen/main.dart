@@ -12,16 +12,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PSA',
-      theme: ThemeData(
-        fontFamily: 'Montserrat',
-        colorScheme: ColorScheme.fromSeed(
-            background: const Color.fromARGB(255, 248, 248, 248),
-            seedColor: Colors.deepPurple),
-        // useMaterial3: true,
-      ),
+      // theme: ThemeData(
+      //   // fontFamily: 'Roboto',
+      //   colorScheme: ColorScheme.fromSeed(
+      //       background: const Color.fromARGB(255, 248, 248, 248),
+      //       seedColor: Colors.deepPurple),
+      //   // useMaterial3: true,
+      // ),
       home: HomeScreenVU(),
     );
   }

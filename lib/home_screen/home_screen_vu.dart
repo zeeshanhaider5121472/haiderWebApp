@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import '../Item_screen/Item_screen_vu.dart';
 import 'home_screen_vm.dart';
 
 // Image(
@@ -13,27 +14,29 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            HeaderMain(
-              screensize: screenSize,
-            ),
-            screenSize.width < 1100
-                ? const MainImgClickablewidget()
-                : const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        "DANFOOS\nTROUBLESHOOTER\nAPP",
-                        style: TextStyle(
-                            fontSize: 52,
-                            fontWeight: FontWeight.w800,
-                            fontFamily: 'Montserrat'),
-                      ),
-                      MainImgClickablewidget(),
-                    ],
-                  )
-          ],
+        child: Center(
+          child: Column(
+            children: [
+              HeaderMain(
+                screensize: screenSize,
+              ),
+              screenSize.width < 1100
+                  ? const MainImgClickablewidget()
+                  : const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "DANFOOS\nTROUBLESHOOTER\nAPP",
+                          style: TextStyle(
+                              fontSize: 52,
+                              fontWeight: FontWeight.w800,
+                              fontFamily: 'Montserrat'),
+                        ),
+                        MainImgClickablewidget(),
+                      ],
+                    )
+            ],
+          ),
         ),
       ),
     );
@@ -50,73 +53,81 @@ class MainImgClickablewidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        height: 800,
-        child: Stack(
-          children: [
-            const Image(image: AssetImage('lib/assets/mainscreens.png')),
-            SizedBox(
-              width: 320,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 25,
-                      left: 33,
-                      bottom: 25,
-                    ),
-                    color: const Color.fromARGB(0, 255, 193, 7),
-                    width: 145,
-                    height: 100,
-                    child: InkWell(
-                      overlayColor:
-                          const MaterialStatePropertyAll(Colors.transparent),
-                      hoverColor: Colors.transparent,
-                      onTap: () {},
-                      child: const Image(
-                          image: AssetImage('lib/assets/select.png')),
-                    ),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 32, left: 38),
-                        color: const Color.fromARGB(0, 33, 149, 243),
-                        width: 100,
-                        height: 100,
-                        child: InkWell(
-                          overlayColor: const MaterialStatePropertyAll(
-                              Colors.transparent),
-                          hoverColor: Colors.transparent,
-                          onTap: () {},
-                          child: const Image(
-                              image: AssetImage('lib/assets/select.png')),
-                        ),
+    return Padding(
+      padding: EdgeInsets.only(top: 24),
+      child: SizedBox(
+          height: 800,
+          child: Stack(
+            children: [
+              const Image(image: AssetImage('lib/assets/mainscreens.png')),
+              SizedBox(
+                width: 320,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 25,
+                        left: 33,
+                        bottom: 25,
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 93, top: 0),
-                        color: const Color.fromARGB(0, 244, 67, 54),
-                        width: 80,
-                        height: 100,
-                        child: InkWell(
-                          overlayColor: const MaterialStatePropertyAll(
-                              Colors.transparent),
-                          hoverColor: Colors.transparent,
-                          onTap: () {},
-                          child: const Image(
-                              image: AssetImage('lib/assets/select.png')),
-                        ),
+                      color: const Color.fromARGB(0, 255, 193, 7),
+                      width: 145,
+                      height: 100,
+                      child: InkWell(
+                        overlayColor:
+                            const MaterialStatePropertyAll(Colors.transparent),
+                        hoverColor: Colors.transparent,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ItemScreenVU()));
+                        },
+                        child: const Image(
+                            image: AssetImage('lib/assets/select.png')),
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 32, left: 38),
+                          color: const Color.fromARGB(0, 33, 149, 243),
+                          width: 100,
+                          height: 100,
+                          child: InkWell(
+                            overlayColor: const MaterialStatePropertyAll(
+                                Colors.transparent),
+                            hoverColor: Colors.transparent,
+                            onTap: () {},
+                            child: const Image(
+                                image: AssetImage('lib/assets/select.png')),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 93, top: 0),
+                          color: const Color.fromARGB(0, 244, 67, 54),
+                          width: 80,
+                          height: 100,
+                          child: InkWell(
+                            overlayColor: const MaterialStatePropertyAll(
+                                Colors.transparent),
+                            hoverColor: Colors.transparent,
+                            onTap: () {},
+                            child: const Image(
+                                image: AssetImage('lib/assets/select.png')),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ));
+            ],
+          )),
+    );
   }
 }
 
