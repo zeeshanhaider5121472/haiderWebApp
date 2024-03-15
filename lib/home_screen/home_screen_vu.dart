@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import '../Item_screen/Item_screen_vu.dart';
+import '../Item_screen/item_screen_vu.dart';
 import 'home_screen_vm.dart';
 
 // Image(
@@ -54,7 +54,7 @@ class MainImgClickablewidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 24),
+      padding: const EdgeInsets.only(top: 24),
       child: SizedBox(
           height: 800,
           child: Stack(

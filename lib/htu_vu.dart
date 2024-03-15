@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
-
 import 'home_screen/home_screen_vu.dart';
 import 'htu_vm.dart';
 
@@ -12,7 +10,8 @@ class HTUScreenVU extends StackedView<HTUScreenVM> {
   Widget builder(BuildContext context, HTUScreenVM viewModel, Widget? child) =>
       Scaffold(
         body: Padding(
-          padding: EdgeInsets.only(top: 20, right: 25, left: 15, bottom: 25),
+          padding:
+              const EdgeInsets.only(top: 20, right: 25, left: 15, bottom: 25),
           child: Center(
             child: SingleChildScrollView(
               child: Column(
@@ -121,7 +120,7 @@ class Header extends StatelessWidget {
                 fontFamily: 'Montserrat',
               ),
             )),
-        SizedBox(
+        const SizedBox(
           height: 40,
         )
       ],
@@ -196,7 +195,7 @@ class PrimaryButton extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
           color: Colors.blue,
-          borderRadius: BorderRadius.circular(12.0),
+          borderRadius: BorderRadius.circular(5.0),
           boxShadow: const [
             BoxShadow(
               color: Color.fromRGBO(92, 163, 255, 0.42),

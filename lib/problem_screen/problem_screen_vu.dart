@@ -2,14 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import '../problem_screen/problem_screen_vu.dart';
-import 'item_screen_vm.dart';
+import '../solution_screen/solution_screen_vu.dart';
+import 'problem_screen_vm.dart';
 
-class ItemScreenVU extends StackedView<ItemScreenVM> {
-  const ItemScreenVU({super.key});
+class ProblemScreenVU extends StackedView<ProblemScreenVM> {
+  const ProblemScreenVU({super.key});
 
   @override
-  Widget builder(BuildContext context, ItemScreenVM viewModel, Widget? child) {
+  Widget builder(
+      BuildContext context, ProblemScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         body: Ink(
@@ -27,7 +28,6 @@ class ItemScreenVU extends StackedView<ItemScreenVM> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const ImageContainer(),
                     const SizedBox(height: 20),
                     GenericAnswers(
                         viewModel: viewModel, screenSize: screenSize),
@@ -42,11 +42,11 @@ class ItemScreenVU extends StackedView<ItemScreenVM> {
   }
 
   @override
-  ItemScreenVM viewModelBuilder(BuildContext context) => ItemScreenVM();
+  ProblemScreenVM viewModelBuilder(BuildContext context) => ProblemScreenVM();
 }
 
 class GenericAnswers extends StatelessWidget {
-  final ItemScreenVM viewModel;
+  final ProblemScreenVM viewModel;
   final Size screenSize;
   const GenericAnswers(
       {super.key, required this.viewModel, required this.screenSize});
@@ -80,35 +80,17 @@ class GenericAnswers extends StatelessWidget {
                   ),
                   IconButton(
                       onPressed: () {
-                         Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const ProblemScreenVU()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const SolutionScreenVU()));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right_outlined))
                 ],
               ));
         },
       ),
-    );
-  }
-}
-
-class ImageContainer extends StatelessWidget {
-  const ImageContainer({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      height: 300,
-      width: 450,
-      child: const Image(image: AssetImage('lib/assets/images/compressor.png')),
     );
   }
 }

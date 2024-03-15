@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'item_screen_vu.dart';
+import 'solution_screen_vu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.deepPurple),
         //   // useMaterial3: true,
       ),
-      home: const ItemScreenVU(),
+      home: const SolutionScreenVU(),
     );
   }
 }
