@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:troubleshooter/htu_vu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -77,11 +78,10 @@ class MainImgClickablewidget extends StatelessWidget {
                             const MaterialStatePropertyAll(Colors.transparent),
                         hoverColor: Colors.transparent,
                         onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => const ItemScreenVU())
-                          //         );
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const HTUScreenVU();
+                          }));
                         },
                         child: const Image(
                             image: AssetImage('lib/assets/select.png')),
