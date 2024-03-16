@@ -8,27 +8,27 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   @override
   Widget builder(
       BuildContext context, QuestionScreenVM viewModel, Widget? child) {
-    // final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         body: Ink(
       color: const Color.fromARGB(255, 238, 238, 238),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Header(),
-          SizedBox(
+          const Header(),
+          const SizedBox(
             height: 50,
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    ImageContainer(),
-                    // const SizedBox(height: 20),
-                    // GenericAnswers(
-                    //     viewModel: viewModel, screenSize: screenSize),
+                    const ImageContainer(),
+                    const SizedBox(height: 20),
+                    GenericAnswers(
+                        viewModel: viewModel, screenSize: screenSize),
                   ],
                 ),
               ),
