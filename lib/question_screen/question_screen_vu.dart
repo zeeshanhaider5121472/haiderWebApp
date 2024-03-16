@@ -21,9 +21,9 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
             height: 50,
           ),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: SingleChildScrollView(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   children: [
                     const ImageContainer(),
@@ -56,7 +56,7 @@ class GenericAnswers extends StatelessWidget {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 450, maxHeight: 500),
       child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: ClampingScrollPhysics(),
         itemCount: viewModel.testList.length,
         itemBuilder: (context, index) {
           return Container(

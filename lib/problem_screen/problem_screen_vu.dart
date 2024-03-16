@@ -23,14 +23,17 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
             height: 50,
           ),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: SingleChildScrollView(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
                     GenericAnswers(
                         viewModel: viewModel, screenSize: screenSize),
+                    const SizedBox(
+                      height: 40,
+                    )
                   ],
                 ),
               ),

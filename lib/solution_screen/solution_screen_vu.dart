@@ -107,24 +107,24 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                     ),
                     height: screenSize.width > 700 ? 160 : 180,
                     // width: 450,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                            "Share this Solution"),
-                        const Text(
-                            textAlign: TextAlign.center,
-                            "Simply click the share button below to share this solution via your preffered channel."),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Expanded(
-                          child: SizedBox(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                              "Share this Solution"),
+                          const Text(
+                              textAlign: TextAlign.center,
+                              "Simply click the share button below to share this solution via your preffered channel."),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          SizedBox(
                             // width: 200,
-                            // height: 300,
+                            height: 40,
                             child: PrimaryButton(
                               onPressed: () {
                                 // Navigator.push(
@@ -136,8 +136,8 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                               text: "Share",
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],
