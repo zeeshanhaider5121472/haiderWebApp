@@ -122,7 +122,7 @@ class Header extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: const Icon(size: 50, Icons.keyboard_arrow_left)),
+              icon: const Icon(size: 32, Icons.keyboard_arrow_left)),
           const Text(
             "Problem",
             textAlign: TextAlign.left,

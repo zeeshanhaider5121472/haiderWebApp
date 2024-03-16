@@ -72,12 +72,13 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                                   const SizedBox(
                                     width: 10,
                                   ),
-                                  SizedBox(
-                                    width: 380,
+                                  Expanded(
+                                    // width: 380,
                                     child: Text(
+                                      softWrap: true,
                                       textAlign: TextAlign.start,
-                                      // maxLines: 3,
-                                      // overflow: TextOverflow.ellipsis,
+                                      maxLines: 4,
+                                      overflow: TextOverflow.ellipsis,
                                       viewModel.solutionsteps[index],
                                       style: const TextStyle(
                                         color: Colors.black,
@@ -97,7 +98,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                   ),
                   Container(
                     constraints:
-                        const BoxConstraints(maxWidth: 700, maxHeight: 200),
+                        const BoxConstraints(maxWidth: 700, maxHeight: 400),
                     padding: const EdgeInsets.symmetric(
                         vertical: 24, horizontal: 18),
                     decoration: BoxDecoration(

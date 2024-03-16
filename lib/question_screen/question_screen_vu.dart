@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:troubleshooter/problem_screen/problem_screen_vu.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
@@ -29,6 +30,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                     const SizedBox(height: 20),
                     GenericAnswers(
                         viewModel: viewModel, screenSize: screenSize),
+                    const SizedBox(height: 40),
                   ],
                 ),
               ),
@@ -78,11 +80,10 @@ class GenericAnswers extends StatelessWidget {
                   ),
                   IconButton(
                       onPressed: () {
-                        //  Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //           builder: (context) => const ProblemScreenVU())
-                        //           );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ProblemScreenVU()));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right_outlined))
                 ],
@@ -139,7 +140,7 @@ class Header extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: const Icon(size: 50, Icons.keyboard_arrow_left)),
+              icon: const Icon(size: 32, Icons.keyboard_arrow_left)),
           const Text(
             "Problem",
             textAlign: TextAlign.left,

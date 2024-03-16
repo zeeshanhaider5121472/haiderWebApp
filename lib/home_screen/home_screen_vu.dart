@@ -32,7 +32,10 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                         ),
                         MainImgClickablewidget(),
                       ],
-                    )
+                    ),
+              const SizedBox(
+                height: 40,
+              ),
             ],
           ),
         ),
