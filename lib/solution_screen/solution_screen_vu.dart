@@ -105,7 +105,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                       color: const Color.fromARGB(174, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    height: screenSize.width > 700 ? 160 : 180,
+                    height: screenSize.width > 700 ? 160 : 193,
                     // width: 450,
                     child: SingleChildScrollView(
                       child: Column(

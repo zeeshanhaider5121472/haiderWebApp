@@ -60,7 +60,7 @@ class HowToUseList extends StatelessWidget {
         const Text(
           "How to Use",
           style: TextStyle(
-              fontFamily: 'Montserrat',
+              // fontFamily: 'Montserrat',
               fontSize: 22,
               color: Colors.black87,
               fontWeight: FontWeight.bold),
@@ -169,7 +169,7 @@ class HtuTextContainer extends StatelessWidget {
               softWrap: true,
               style: const TextStyle(
                 fontSize: 16,
-                fontFamily: 'Montserrat',
+                // fontFamily: 'Montserrat',
               ),
             ),
           ),

@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 import '../solution_screen/solution_screen_vu.dart';
 import 'problem_screen_vm.dart';
@@ -72,13 +73,17 @@ class GenericAnswers extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: screenSize.width > 600 ? 350 : 230,
-                    child: Text(
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                      viewModel.testList[index],
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                  Expanded(
+                    child: SizedBox(
+                      // width: screenSize.width > 600 ? 350 : 230,
+                      child: Text(
+                        softWrap: true,
+                        textAlign: TextAlign.start,
+                        maxLines: 4,
+                        overflow: TextOverflow.ellipsis,
+                        viewModel.testList[index],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                   IconButton(
