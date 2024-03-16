@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'PSA Troubleshooter',
       theme: ThemeData(
-        fontFamily: 'Montserrat',
+        fontFamily: 'Madimi',
         colorScheme: ColorScheme.fromSeed(
             // background: const Color.fromARGB(255, 248, 248, 248),
             background: const Color.fromARGB(255, 248, 248, 248),
