@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:troubleshooter/item_screen/item_screen_vu.dart';
+import 'package:troubleshooter/question_screen/question_screen_vu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -80,7 +80,7 @@ class MainImgClickablewidget extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const ItemScreenVU();
+                            return const QuestionScreenVU();
                           }));
                         },
                         child: const Image(

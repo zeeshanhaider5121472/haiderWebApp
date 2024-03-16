@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'item_screen_vm.dart';
+import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
-class ItemScreenVU extends StackedView<ItemScreenVM> {
-  const ItemScreenVU({super.key});
+class QuestionScreenVU extends StackedView<QuestionScreenVM> {
+  const QuestionScreenVU({super.key});
 
   @override
-  Widget builder(BuildContext context, ItemScreenVM viewModel, Widget? child) {
-    final screenSize = MediaQuery.of(context).size;
+  Widget builder(
+      BuildContext context, QuestionScreenVM viewModel, Widget? child) {
+    // final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         body: Ink(
       color: const Color.fromARGB(255, 238, 238, 238),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Header(),
-          const SizedBox(
+          Header(),
+          SizedBox(
             height: 50,
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(horizontal: 40),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const ImageContainer(),
-                    const SizedBox(height: 20),
-                    GenericAnswers(
-                        viewModel: viewModel, screenSize: screenSize),
+                    ImageContainer(),
+                    // const SizedBox(height: 20),
+                    // GenericAnswers(
+                    //     viewModel: viewModel, screenSize: screenSize),
                   ],
                 ),
               ),
@@ -39,11 +40,11 @@ class ItemScreenVU extends StackedView<ItemScreenVM> {
   }
 
   @override
-  ItemScreenVM viewModelBuilder(BuildContext context) => ItemScreenVM();
+  QuestionScreenVM viewModelBuilder(BuildContext context) => QuestionScreenVM();
 }
 
 class GenericAnswers extends StatelessWidget {
-  final ItemScreenVM viewModel;
+  final QuestionScreenVM viewModel;
   final Size screenSize;
   const GenericAnswers(
       {super.key, required this.viewModel, required this.screenSize});

@@ -1,7 +1,7 @@
 
 import 'package:stacked/stacked.dart';
 
-class ItemScreenVM extends BaseViewModel {
+class QuestionScreenVM extends BaseViewModel {
   final testList = [
     "Compressor runs but produces no compressed air.",
     "Cooling oil runs out of the intake filter.",
