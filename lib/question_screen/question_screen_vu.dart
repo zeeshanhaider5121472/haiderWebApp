@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/problem_screen/problem_screen_vu.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
-  const QuestionScreenVU({super.key});
+  final int index1;
+  const QuestionScreenVU({required this.index1, super.key});
 
   @override
   Widget builder(
@@ -30,7 +30,9 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                     const ImageContainer(),
                     const SizedBox(height: 20),
                     GenericAnswers(
-                        viewModel: viewModel, screenSize: screenSize),
+                        viewModel: viewModel,
+                        screenSize: screenSize,
+                        index1: index1),
                     const SizedBox(height: 40),
                   ],
                 ),
@@ -49,17 +51,22 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
 class GenericAnswers extends StatelessWidget {
   final QuestionScreenVM viewModel;
   final Size screenSize;
+  final int index1;
   const GenericAnswers(
-      {super.key, required this.viewModel, required this.screenSize});
+      {super.key,
+      required this.viewModel,
+      required this.screenSize,
+      required this.index1});
 
   @override
   Widget build(BuildContext context) {
+    // debugPrint(viewModel.record.first.questions.first.title);
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 450, maxHeight: 500),
       child: ListView.builder(
         // physics: ClampingScrollPhysics(),
-        itemCount: viewModel.testList.length,
-        itemBuilder: (context, index) {
+        itemCount: viewModel.record[0].questions.length,
+        itemBuilder: (context, index2) {
           return Container(
               margin: const EdgeInsets.only(bottom: 10),
               padding: const EdgeInsets.all(24),
@@ -79,7 +86,9 @@ class GenericAnswers extends StatelessWidget {
                         textAlign: TextAlign.start,
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
-                        viewModel.testList[index],
+                        // viewModel.questions[ind][index].title,
+                        viewModel.record[index1].questions[index2].title ?? " ",
+                        // viewModel.testList[index],
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -89,7 +98,8 @@ class GenericAnswers extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ProblemScreenVU()));
+                                builder: (context) => ProblemScreenVU(
+                                    index1: index1, index2: index2)));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right_outlined))
                 ],

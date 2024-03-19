@@ -83,7 +83,7 @@ class MainImgClickablewidget extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const QuestionScreenVU();
+                            return const QuestionScreenVU(index1: 0,);
                           }));
                         },
                         child: const Image(

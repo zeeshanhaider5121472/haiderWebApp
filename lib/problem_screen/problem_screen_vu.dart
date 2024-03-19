@@ -1,13 +1,13 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 import '../solution_screen/solution_screen_vu.dart';
 import 'problem_screen_vm.dart';
 
 class ProblemScreenVU extends StackedView<ProblemScreenVM> {
-  const ProblemScreenVU({super.key});
+  final int index1;
+  final int index2;
+  const ProblemScreenVU(
+      {super.key, required this.index1, required this.index2});
 
   @override
   Widget builder(
@@ -31,7 +31,10 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                   children: [
                     const SizedBox(height: 20),
                     GenericAnswers(
-                        viewModel: viewModel, screenSize: screenSize),
+                        viewModel: viewModel,
+                        screenSize: screenSize,
+                        index1: index1,
+                        index2: index2),
                     const SizedBox(
                       height: 40,
                     )
@@ -52,8 +55,14 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
 class GenericAnswers extends StatelessWidget {
   final ProblemScreenVM viewModel;
   final Size screenSize;
+  final int index1;
+  final int index2;
   const GenericAnswers(
-      {super.key, required this.viewModel, required this.screenSize});
+      {super.key,
+      required this.viewModel,
+      required this.screenSize,
+      required this.index1,
+      required this.index2});
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +70,8 @@ class GenericAnswers extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 450, maxHeight: 500),
       child: ListView.builder(
         // physics: const NeverScrollableScrollPhysics(),
-        itemCount: viewModel.testList.length,
-        itemBuilder: (context, index) {
+        itemCount: viewModel.record[index1].questions[index2].options.length,
+        itemBuilder: (context, index3) {
           return Container(
               margin: const EdgeInsets.only(bottom: 10),
               padding: const EdgeInsets.all(24),
@@ -81,7 +90,9 @@ class GenericAnswers extends StatelessWidget {
                         textAlign: TextAlign.start,
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
-                        viewModel.testList[index],
+                        viewModel.record[index1].questions[index2]
+                                .options[index3].title ??
+                            " ",
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),

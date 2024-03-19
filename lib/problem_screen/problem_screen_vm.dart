@@ -1,13 +1,11 @@
-// ignore_for_file: file_names
-
 import 'package:stacked/stacked.dart';
+import '../assets/model and data/question_screen_data.dart';
+import '../assets/model and data/question_screen_model.dart';
 
 class ProblemScreenVM extends BaseViewModel {
-  final testList = [
-    "Compressor runs but produces no compressed air.",
-    "Cooling oil runs out of the intake filter.",
-    "Compressor switches between LOAD and IDLE more than twice per minute.",
-    "Cooling oil leaking into the machine interior.",
-    "Cooling oil consumption too high.",
-  ];
+  // Assuming you have parsed the JSON into a `QuestionsModel` instance
+  QuestionsModel questionsModel = QuestionsModel.fromJson(questionsJson);
+
+// Access the first record
+  List<Record> get record => questionsModel.records;
 }

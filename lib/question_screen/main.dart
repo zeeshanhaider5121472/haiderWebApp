@@ -6,6 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  final int index = 0;
   const MyApp({super.key});
 
   @override
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.deepPurple),
         //   // useMaterial3: true,
       ),
-      home: const QuestionScreenVU(),
+      home: QuestionScreenVU(index1: index),
     );
   }
 }
