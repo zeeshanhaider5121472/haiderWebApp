@@ -1,7 +1,7 @@
 import 'package:stacked/stacked.dart';
 
-import '../assets/model and data/question_screen_data.dart';
-import '../assets/model and data/question_screen_model.dart';
+import '../model and data/question_screen_data.dart';
+import '../model and data/question_screen_model.dart';
 
 class QuestionScreenVM extends BaseViewModel {
 

@@ -6,7 +6,14 @@ import '../htu_vu.dart';
 import 'solution_screen_vm.dart';
 
 class SolutionScreenVU extends StackedView<SolutionScreenVM> {
-  const SolutionScreenVU({super.key});
+  final int index1;
+  final int index2;
+  final int index3;
+  const SolutionScreenVU(
+      {required this.index1,
+      required this.index2,
+      required this.index3,
+      super.key});
 
   @override
   Widget builder(
@@ -52,8 +59,14 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                           ),
                           ListView.builder(
                             shrinkWrap: true,
-                            itemCount: viewModel.solutionsteps.length,
-                            itemBuilder: (context, index) {
+                            itemCount: viewModel
+                                .questionsModel
+                                .records[index1]
+                                .questions[index2]
+                                .options[index3]
+                                .solutions
+                                .length,
+                            itemBuilder: (context, index4) {
                               return Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -79,7 +92,14 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                                       textAlign: TextAlign.start,
                                       maxLines: 4,
                                       overflow: TextOverflow.ellipsis,
-                                      viewModel.solutionsteps[index],
+                                      viewModel
+                                              .questionsModel
+                                              .records[index1]
+                                              .questions[index2]
+                                              .options[index3]
+                                              .solutions[index4]
+                                              .title ??
+                                          "helo",
                                       style: const TextStyle(
                                         color: Colors.black,
                                       ),

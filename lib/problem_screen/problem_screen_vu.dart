@@ -102,8 +102,10 @@ class GenericAnswers extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const SolutionScreenVU()));
+                                builder: (context) => SolutionScreenVU(
+                                    index1: index1,
+                                    index2: index2,
+                                    index3: index3)));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right_outlined))
                 ],
