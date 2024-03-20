@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -22,7 +23,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
     return Scaffold(
       // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
 
-      backgroundColor: Colors.amber,
+      // backgroundColor: Colors.amber,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -40,7 +41,18 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 12, horizontal: 18),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      border: Border.all(
+                        color: Color.fromARGB(255, 110, 202, 113),
+                        width: 2,
+                      ),
+                      // boxShadow: [
+                      //   const BoxShadow(
+                      //     color: Color.fromARGB(255, 163, 163, 163),
+                      //     blurRadius: 5,
+                      //     offset: Offset(0, 0), // Shadow position
+                      //   ),
+                      // ],
+                      color: const Color.fromARGB(255, 254, 254, 254),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     // height: 150,
@@ -99,7 +111,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                                               .options[index3]
                                               .solutions[index4]
                                               .title ??
-                                          "helo",
+                                          "",
                                       style: const TextStyle(
                                         color: Colors.black,
                                       ),

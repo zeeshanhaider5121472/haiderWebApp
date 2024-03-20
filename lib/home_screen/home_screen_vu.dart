@@ -83,7 +83,9 @@ class MainImgClickablewidget extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const QuestionScreenVU(index1: 0,);
+                            return const QuestionScreenVU(
+                              index1: 0,
+                            );
                           }));
                         },
                         child: const Image(
@@ -98,6 +100,60 @@ class MainImgClickablewidget extends StatelessWidget {
                           color: const Color.fromARGB(0, 33, 149, 243),
                           width: 100,
                           height: 100,
+                          // child: InkWell(
+                          //   overlayColor: const MaterialStatePropertyAll(
+                          //       Colors.transparent),
+                          //   hoverColor: Colors.transparent,
+                          //   onTap: () {},
+                          //   child: const Image(
+                          //       image: AssetImage('lib/assets/select.png')),
+                          // ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 93, top: 0),
+                          color: const Color.fromARGB(0, 244, 67, 54),
+                          width: 80,
+                          height: 100,
+                          child: InkWell(
+                            overlayColor: const MaterialStatePropertyAll(
+                                Colors.transparent),
+                            hoverColor: Colors.transparent,
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const QuestionScreenVU(
+                                  index1: 1,
+                                );
+                              }));
+                            },
+                            child: const Image(
+                                image: AssetImage('lib/assets/select.png')),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 58, left: 38),
+                          color: Color.fromARGB(0, 129, 198, 255),
+                          width: 80,
+                          height: 130,
+                          // child: InkWell(
+                          //   overlayColor: const MaterialStatePropertyAll(
+                          //       Colors.transparent),
+                          //   hoverColor: Colors.transparent,
+                          //   onTap: () {},
+                          //   child: const Image(
+                          //       image: AssetImage('lib/assets/select.png')),
+                          // ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 110, top: 20),
+                          color: Color.fromARGB(0, 255, 188, 184),
+                          width: 80,
+                          height: 180,
                           child: InkWell(
                             overlayColor: const MaterialStatePropertyAll(
                                 Colors.transparent),
@@ -107,10 +163,48 @@ class MainImgClickablewidget extends StatelessWidget {
                                 image: AssetImage('lib/assets/select.png')),
                           ),
                         ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Container(
-                          margin: const EdgeInsets.only(left: 93, top: 0),
-                          color: const Color.fromARGB(0, 244, 67, 54),
-                          width: 80,
+                          margin: const EdgeInsets.only(top: 58, left: 45),
+                          color: Color.fromARGB(0, 129, 198, 255),
+                          width: 70,
+                          height: 130,
+                          // child: InkWell(
+                          //   overlayColor: const MaterialStatePropertyAll(
+                          //       Colors.transparent),
+                          //   hoverColor: Colors.transparent,
+                          //   onTap: () {},
+                          //   child: const Image(
+                          //       image: AssetImage('lib/assets/select.png')),
+                          // ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 150, top: 40),
+                          color: Color.fromARGB(0, 255, 188, 184),
+                          width: 40,
+                          height: 90,
+                          // child: InkWell(
+                          //   overlayColor: const MaterialStatePropertyAll(
+                          //       Colors.transparent),
+                          //   hoverColor: Colors.transparent,
+                          //   onTap: () {},
+                          //   child: const Image(
+                          //       image: AssetImage('lib/assets/select.png')),
+                          // ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 160, top: 0),
+                          color: Color.fromARGB(0, 255, 188, 184),
+                          width: 160,
                           height: 100,
                           child: InkWell(
                             overlayColor: const MaterialStatePropertyAll(

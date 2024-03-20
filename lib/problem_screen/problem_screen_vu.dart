@@ -67,9 +67,9 @@ class GenericAnswers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 450, maxHeight: 500),
+      constraints: const BoxConstraints(maxWidth: 650, maxHeight: 500),
       child: ListView.builder(
-        // physics: const NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: viewModel.record[index1].questions[index2].options.length,
         itemBuilder: (context, index3) {
           return Container(

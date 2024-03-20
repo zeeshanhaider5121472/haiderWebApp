@@ -27,7 +27,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   children: [
-                    const ImageContainer(),
+                    ImageContainer(index1: index1),
                     const SizedBox(height: 20),
                     GenericAnswers(
                         viewModel: viewModel,
@@ -62,10 +62,10 @@ class GenericAnswers extends StatelessWidget {
   Widget build(BuildContext context) {
     // debugPrint(viewModel.record.first.questions.first.title);
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 450, maxHeight: 500),
+      constraints: const BoxConstraints(maxWidth: 650, maxHeight: 500),
       child: ListView.builder(
-        // physics: ClampingScrollPhysics(),
-        itemCount: viewModel.record[0].questions.length,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: viewModel.record[index1].questions.length,
         itemBuilder: (context, index2) {
           return Container(
               margin: const EdgeInsets.only(bottom: 10),
@@ -111,9 +111,8 @@ class GenericAnswers extends StatelessWidget {
 }
 
 class ImageContainer extends StatelessWidget {
-  const ImageContainer({
-    super.key,
-  });
+  final int index1;
+  const ImageContainer({super.key, required this.index1});
 
   @override
   Widget build(BuildContext context) {
@@ -123,8 +122,11 @@ class ImageContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       height: 300,
-      width: 450,
-      child: const Image(image: AssetImage('lib/assets/images/compressor.png')),
+      width: 650,
+      child: Center(
+          child: Image(
+              alignment: Alignment.topCenter,
+              image: AssetImage('lib/assets/images/index$index1.png'))),
     );
   }
 }

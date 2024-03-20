@@ -57,7 +57,8 @@ flutter:
     - lib/assets/headericon.png
     - lib/assets/mainscreen.png
     - lib/assets/mainscreens.png
-    - lib/assets/images/compressor.png
+    - lib/assets/images/index0.png
+    - lib/assets/images/index1.png
     - lib/assets/select.png
 
   # The following line ensures that the Material Icons font is
