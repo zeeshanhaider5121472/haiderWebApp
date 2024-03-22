@@ -203,37 +203,149 @@ final questionsJson = {
       "Questions": [
         {
           "id": 0,
-          "title":
-              "Compressor switches between LOAD and IDLE more than twice per minute.",
+          "title": "Water in the compressed pressure system.",
           "options": [
             {
               "id": 0,
-              "title": "123",
+              "title": "Compressed air inlet and outlet reversed",
               "solutions": [
-                {"id": 0, "title": "Inlet"},
-                {"id": 1, "title": "Inlet"},
-                {"id": 2, "title": "Inlet"},
+                {"id": 0, "title": "Check the compressed air connections."},
+              ]
+            },
+            {
+              "id": 1,
+              "title": "The condensate is not draining out of the system.",
+              "solutions": [
+                {"id": 0, "title": "Check and clean the condensate drainage"},
+                {
+                  "id": 1,
+                  "title": "Exchange the condensate drain service module."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "The safety pressure limiter has shut down the machine.",
+              "solutions": [
+                {"id": 0, "title": "Check operating conditions."},
+                {"id": 1, "title": "Check the machine."},
+                {"id": 2, "title": "RESET the machine."},
+              ]
+            },
+          ]
+        },
+        {
+          "id": 1,
+          "title": "High pressure drop.",
+          "options": [
+            {
+              "id": 0,
+              "title": "Dryer iced up on the air side.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Switch off the machine and increase the ambient temperature."
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Continuous air loss from the condensate drain.",
+              "solutions": [
+                {"id": 0, "title": "Maintain the condensate drain."},
               ]
             }
           ]
         },
         {
-          "id": 1,
-          "title": "Cooling oil leaking into the machine interior.",
+          "id": 2,
+          "title": "Pressure dew point too high.",
           "options": [
             {
               "id": 0,
-              "title": "123",
+              "title": "Ambient or compressed air inlet temperature too high.",
               "solutions": [
-                {"id": 0, "title": "Inlet"},
-                {"id": 1, "title": "Inlet"},
-                {"id": 2, "title": "Inlet"},
+                {"id": 0, "title": "Check if installation conditions are OK."},
+              ]
+            },
+            {
+              "id": 0,
+              "title": "Low refrigerant level.",
+              "solutions": [
+                {"id": 0, "title": "Identify and repair leaks in the system."},
+                {"id": 1, "title": "Recharge the refrigerant."},
+              ]
+            },
+            {
+              "id": 0,
+              "title": "Dirt collecting in the compressed air system.",
+              "solutions": [
+                {"id": 0, "title": "Check and clean the filters."},
+                {"id": 1, "title": "Upgrade the filtration system."},
+                {
+                  "id": 2,
+                  "title":
+                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components."
+                },
+                {
+                  "id": 3,
+                  "title":
+                      "Identify and repair the compressed air system leaks."
+                },
+                {
+                  "id": 4,
+                  "title":
+                      "Monitor and adjust operating conditions such as temperature and pressure settings."
+                },
               ]
             }
           ]
-        }
+        },
+        {
+          "id": 3,
+          "title": "The safety pressure limiter shuts down the machine.",
+          "options": [
+            {
+              "id": 0,
+              "title": "Ambient or compressed air inlet temperature too high.",
+              "solutions": [
+                {"id": 0, "title": "Check if installation conditions are OK."},
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Low refrigerant level.",
+              "solutions": [
+                {"id": 0, "title": "Identify and repair leaks in the system"},
+                {"id": 1, "title": "Recharge the refrigerant"},
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Dirt collecting in the compressed air system.",
+              "solutions": [
+                {"id": 0, "title": "Check and clean the filters"},
+                {"id": 1, "title": "Upgrade the filtration system"},
+                {
+                  "id": 2,
+                  "title":
+                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+                },
+                {
+                  "id": 3,
+                  "title": "Identify and repair the compressed air system leaks"
+                },
+                {
+                  "id": 4,
+                  "title":
+                      "Monitor and adjust operating conditions such as temperature and pressure settings"
+                },
+              ]
+            }
+          ]
+        },
       ],
     }
   ]
 };
-
