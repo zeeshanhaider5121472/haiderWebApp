@@ -217,7 +217,14 @@ class MainImgClickablewidget extends StatelessWidget {
                             overlayColor: const MaterialStatePropertyAll(
                                 Colors.transparent),
                             hoverColor: Colors.transparent,
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const QuestionScreenVU(
+                                  index1: 7,
+                                );
+                              }));
+                            },
                             child: const Image(
                                 image: AssetImage('lib/assets/select.png')),
                           ),
