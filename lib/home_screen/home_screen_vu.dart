@@ -24,7 +24,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          "DANFOOS\nTROUBLESHOOTER\nAPP",
+                          "PSA\nTROUBLESHOOTER\nAPP",
                           style: TextStyle(
                               fontSize: 52,
                               fontWeight: FontWeight.w800,
@@ -158,7 +158,14 @@ class MainImgClickablewidget extends StatelessWidget {
                             overlayColor: const MaterialStatePropertyAll(
                                 Colors.transparent),
                             hoverColor: Colors.transparent,
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const QuestionScreenVU(
+                                  index1: 4,
+                                );
+                              }));
+                            },
                             child: const Image(
                                 image: AssetImage('lib/assets/select.png')),
                           ),

@@ -70,6 +70,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                             height: 5,
                           ),
                           ListView.builder(
+                            scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount: viewModel
                                 .questionsModel
