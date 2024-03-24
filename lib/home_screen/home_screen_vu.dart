@@ -85,7 +85,7 @@ class MainImgClickablewidget extends StatelessWidget {
                               MaterialPageRoute(builder: (context) {
                             return const QuestionScreenVU(
                               index1: 0,
-                              title: "Air Compressor",
+                              area: "Air Compressor",
                             );
                           }));
                         },
@@ -123,7 +123,7 @@ class MainImgClickablewidget extends StatelessWidget {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                 return const QuestionScreenVU(
-                                    index1: 1, title: "Refrigerated Dryer");
+                                    index1: 1, area: "Refrigerated Dryer");
                               }));
                             },
                             child: const Image(
@@ -163,7 +163,7 @@ class MainImgClickablewidget extends StatelessWidget {
                                   MaterialPageRoute(builder: (context) {
                                 return const QuestionScreenVU(
                                   index1: 4,
-                                  title: "Oxygen Generator",
+                                  area: "Oxygen Generator",
                                 );
                               }));
                             },
@@ -223,7 +223,7 @@ class MainImgClickablewidget extends StatelessWidget {
                                   MaterialPageRoute(builder: (context) {
                                 return const QuestionScreenVU(
                                   index1: 7,
-                                  title: "Booster Compressor",
+                                  area: "Booster Compressor",
                                 );
                               }));
                             },

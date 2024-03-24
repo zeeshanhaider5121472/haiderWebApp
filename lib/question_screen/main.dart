@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       home: QuestionScreenVU(
         index1: index,
-        title: title,
+        area: title,
       ),
     );
   }

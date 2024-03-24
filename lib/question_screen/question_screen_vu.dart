@@ -4,10 +4,9 @@ import 'package:troubleshooter/problem_screen/problem_screen_vu.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
-  final String title;
+  final String area;
   final int index1;
-  const QuestionScreenVU(
-      {required this.index1, required this.title, super.key});
+  const QuestionScreenVU({required this.index1, required this.area, super.key});
 
   @override
   Widget builder(
@@ -23,7 +22,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Header(title: title),
+                    Header(title: area),
                     // const SizedBox(
                     //   height: 16,
                     // ),
@@ -36,7 +35,8 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                           GenericAnswers(
                               viewModel: viewModel,
                               screenSize: screenSize,
-                              index1: index1),
+                              index1: index1,
+                              area: area),
                           const SizedBox(height: 40),
                         ],
                       ),
@@ -101,11 +101,13 @@ class GenericAnswers extends StatelessWidget {
   final QuestionScreenVM viewModel;
   final Size screenSize;
   final int index1;
+  final String area;
   const GenericAnswers(
       {super.key,
       required this.viewModel,
       required this.screenSize,
-      required this.index1});
+      required this.index1,
+      required this.area});
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +153,9 @@ class GenericAnswers extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ProblemScreenVU(
-                                      index1: index1, index2: index2)));
+                                      area: area,
+                                      index1: index1,
+                                      index2: index2)));
                         },
                         icon: const Icon(Icons.keyboard_arrow_right_outlined))
                   ],
