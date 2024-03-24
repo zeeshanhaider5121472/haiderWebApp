@@ -53,7 +53,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                 children: [
                   Container(
                       margin: const EdgeInsets.fromLTRB(12, 12, 0, 0),
-                      padding: const EdgeInsets.all(5),
+                      // padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
@@ -74,7 +74,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                           icon: const Icon(Icons.arrow_back))),
                   Container(
                       margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
-                      padding: const EdgeInsets.all(5),
+                      // padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.red,
@@ -195,7 +195,7 @@ class Header extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.left,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ],
       ),
