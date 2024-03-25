@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+// import '../solution_screen/solution_screen_vu.dart';
+import '../reusable_widgets/header_vu.dart';
 import '../solution_screen/solution_screen_vu.dart';
 import 'problem_screen_vm.dart';
 
@@ -7,9 +9,11 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
   final String area;
   final int index1;
   final int index2;
+  final String problem;
   const ProblemScreenVU(
       {super.key,
       required this.area,
+      required this.problem,
       required this.index1,
       required this.index2});
 
@@ -28,7 +32,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Header(title: area),
+                    GenericHeader(title: area),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 14),
                       child: Column(
@@ -37,6 +41,8 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                           GenericAnswers(
                               viewModel: viewModel,
                               screenSize: screenSize,
+                              area: area,
+                              problem: problem,
                               index1: index1,
                               index2: index2),
                           const SizedBox(
@@ -77,19 +83,23 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                       // padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.red,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5), // Shadow color
-                            spreadRadius: 2, // Spread radius
-                            blurRadius: 5, // Blur radius
-                            offset: const Offset(
-                                0, 3), // Offset in the x,y direction
-                          ),
-                        ],
+                        color: Colors.red[900],
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     color: Colors.grey.withOpacity(0.5), // Shadow color
+                        //     spreadRadius: 2, // Spread radius
+                        //     blurRadius: 5, // Blur radius
+                        //     offset: const Offset(
+                        //         0, 3), // Offset in the x,y direction
+                        //   ),
+                        // ],
                       ),
                       child: IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.tune))),
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.tune,
+                            color: Colors.white,
+                          ))),
                 ],
               )
             ],
@@ -106,12 +116,16 @@ class GenericAnswers extends StatelessWidget {
   final Size screenSize;
   final int index1;
   final int index2;
+  final String area;
+  final String problem;
   const GenericAnswers(
       {super.key,
       required this.viewModel,
       required this.screenSize,
       required this.index1,
-      required this.index2});
+      required this.index2,
+      required this.area,
+      required this.problem});
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +158,7 @@ class GenericAnswers extends StatelessWidget {
                         viewModel.record[index1].questions[index2]
                                 .options[index3].title ??
                             " ",
-                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
@@ -156,7 +170,15 @@ class GenericAnswers extends StatelessWidget {
                                 builder: (context) => SolutionScreenVU(
                                     index1: index1,
                                     index2: index2,
-                                    index3: index3)));
+                                    index3: index3,
+                                    area: area,
+                                    problem: problem,
+                                    problemCause: viewModel
+                                            .record[index1]
+                                            .questions[index2]
+                                            .options[index3]
+                                            .title ??
+                                        "")));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right_outlined))
                 ],
@@ -167,38 +189,38 @@ class GenericAnswers extends StatelessWidget {
   }
 }
 
-class Header extends StatelessWidget {
-  final String title;
-  const Header({
-    super.key,
-    required this.title,
-  });
+// class Header extends StatelessWidget {
+//   final String title;
+//   const Header({
+//     super.key,
+//     required this.title,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.grey.withOpacity(0.5),
-        //     spreadRadius: 0,
-        //     blurRadius: 7,
-        //     offset: const Offset(0, 3), // changes position of shadow
-        //   ),
-        // ],
-        color: Color.fromARGB(255, 238, 238, 238),
-      ),
-      height: 80,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            textAlign: TextAlign.left,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: const BoxDecoration(
+//         // boxShadow: [
+//         //   BoxShadow(
+//         //     color: Colors.grey.withOpacity(0.5),
+//         //     spreadRadius: 0,
+//         //     blurRadius: 7,
+//         //     offset: const Offset(0, 3), // changes position of shadow
+//         //   ),
+//         // ],
+//         color: Color.fromARGB(255, 238, 238, 238),
+//       ),
+//       height: 80,
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Text(
+//             title,
+//             textAlign: TextAlign.left,
+//             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

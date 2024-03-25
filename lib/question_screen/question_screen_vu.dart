@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:troubleshooter/problem_screen/problem_screen_vu.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
+
+import '../problem_screen/problem_screen_vu.dart';
+import '../reusable_widgets/header_vu.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   final String area;
@@ -22,7 +24,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Header(title: area),
+                    GenericHeader(title: area),
                     // const SizedBox(
                     //   height: 16,
                     // ),
@@ -73,19 +75,23 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                       // padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.red,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5), // Shadow color
-                            spreadRadius: 2, // Spread radius
-                            blurRadius: 5, // Blur radius
-                            offset: const Offset(
-                                0, 3), // Offset in the x,y direction
-                          ),
-                        ],
+                        color: Colors.red[900],
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     color: Colors.grey.withOpacity(0.5), // Shadow color
+                        //     spreadRadius: 2, // Spread radius
+                        //     blurRadius: 5, // Blur radius
+                        //     offset: const Offset(
+                        //         0, 3), // Offset in the x,y direction
+                        //   ),
+                        // ],
                       ),
                       child: IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.tune))),
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.tune,
+                            color: Colors.white,
+                          ))),
                 ],
               )
             ],
@@ -154,6 +160,9 @@ class GenericAnswers extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => ProblemScreenVU(
                                       area: area,
+                                      problem: viewModel.record[index1]
+                                              .questions[index2].title ??
+                                          "",
                                       index1: index1,
                                       index2: index2)));
                         },
@@ -183,42 +192,6 @@ class ImageContainer extends StatelessWidget {
           child: Image(
               alignment: Alignment.topCenter,
               image: AssetImage('lib/assets/images/index$index1.png'))),
-    );
-  }
-}
-
-class Header extends StatelessWidget {
-  final String title;
-  const Header({
-    super.key,
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.grey.withOpacity(0.5),
-        //     spreadRadius: 0,
-        //     blurRadius: 7,
-        //     offset: const Offset(0, 3), // changes position of shadow
-        //   ),
-        // ],
-        color: Color.fromARGB(255, 238, 238, 238),
-      ),
-      height: 80,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            textAlign: TextAlign.left,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
     );
   }
 }

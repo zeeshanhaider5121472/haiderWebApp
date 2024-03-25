@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:troubleshooter/home_screen/home_screen_vu.dart';
 
-import 'htu_vu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HTUScreenVU(),
+      home: const HomeScreenVU(),
     );
   }
 }

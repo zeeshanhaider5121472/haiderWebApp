@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vu.dart';
+import 'package:troubleshooter/reusable_widgets/header_vu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -10,37 +11,68 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.amber,
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              HeaderMain(
-                screensize: screenSize,
-              ),
-              screenSize.width < 1100
-                  ? const MainImgClickablewidget()
-                  : const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          "PSA\nTROUBLESHOOTER\nAPP",
-                          style: TextStyle(
-                              fontSize: 52,
-                              fontWeight: FontWeight.w800,
-                              fontFamily: 'Montserrat'),
-                        ),
-                        MainImgClickablewidget(),
-                      ],
+        backgroundColor: Colors.white,
+        body: Stack(
+          alignment: Alignment.topRight,
+          children: [
+            SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  children: [
+                    // HeaderMain(
+                    //   screensize: screenSize,
+                    // ),
+                    GenericHeader(
+                      title: 'System Areas',
+                      color: Colors.white,
                     ),
-              const SizedBox(
-                height: 40,
+                    screenSize.width < 1100
+                        ? const MainImgClickablewidget()
+                        : const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                "PSA\nTROUBLESHOOTER\nAPP",
+                                style: TextStyle(
+                                    fontSize: 52,
+                                    fontWeight: FontWeight.w800,
+                                    fontFamily: 'Montserrat'),
+                              ),
+                              MainImgClickablewidget(),
+                            ],
+                          ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+            Container(
+                margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
+                // padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.red[900],
+
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: Colors.grey.withOpacity(0.5), // Shadow color
+                  //     spreadRadius: 2, // Spread radius
+                  //     blurRadius: 5, // Blur radius
+                  //     offset: const Offset(
+                  //         0, 3), // Offset in the x,y direction
+                  //   ),
+                  // ],
+                ),
+                child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.tune,
+                      color: Colors.white,
+                    ))),
+          ],
+        ));
   }
 
   @override
