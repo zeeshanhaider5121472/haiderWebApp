@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vu.dart';
 import 'package:troubleshooter/reusable_widgets/header_vu.dart';
+import '../reusable_widgets/side_menu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
-  const HomeScreenVU({super.key});
+  HomeScreenVU({super.key});
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.background,
+        key: _scaffoldKey,
+        endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
         body: Stack(
           alignment: Alignment.topRight,
           children: [
@@ -19,12 +24,9 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
               child: Center(
                 child: Column(
                   children: [
-                    // HeaderMain(
-                    //   screensize: screenSize,
-                    // ),
-                    GenericHeader(
+                    const GenericHeader(
                       title: 'System Areas',
-                      color: Colors.white,
+                      // color: Colors.white,
                     ),
                     screenSize.width < 1100
                         ? const MainImgClickablewidget()
@@ -50,23 +52,12 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
             ),
             Container(
                 margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
-                // padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.red[900],
-
-                  // boxShadow: [
-                  //   BoxShadow(
-                  //     color: Colors.grey.withOpacity(0.5), // Shadow color
-                  //     spreadRadius: 2, // Spread radius
-                  //     blurRadius: 5, // Blur radius
-                  //     offset: const Offset(
-                  //         0, 3), // Offset in the x,y direction
-                  //   ),
-                  // ],
                 ),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
                     icon: const Icon(
                       Icons.tune,
                       color: Colors.white,
@@ -169,7 +160,7 @@ class MainImgClickablewidget extends StatelessWidget {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(top: 58, left: 38),
-                          color: Color.fromARGB(0, 129, 198, 255),
+                          color: const Color.fromARGB(0, 129, 198, 255),
                           width: 80,
                           height: 130,
                           // child: InkWell(
@@ -183,7 +174,7 @@ class MainImgClickablewidget extends StatelessWidget {
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 110, top: 20),
-                          color: Color.fromARGB(0, 255, 188, 184),
+                          color: const Color.fromARGB(0, 255, 188, 184),
                           width: 80,
                           height: 180,
                           child: InkWell(
@@ -210,7 +201,7 @@ class MainImgClickablewidget extends StatelessWidget {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(top: 58, left: 45),
-                          color: Color.fromARGB(0, 129, 198, 255),
+                          color: const Color.fromARGB(0, 129, 198, 255),
                           width: 70,
                           height: 130,
                           // child: InkWell(
@@ -224,7 +215,7 @@ class MainImgClickablewidget extends StatelessWidget {
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 150, top: 40),
-                          color: Color.fromARGB(0, 255, 188, 184),
+                          color: const Color.fromARGB(0, 255, 188, 184),
                           width: 40,
                           height: 90,
                           // child: InkWell(
@@ -243,7 +234,7 @@ class MainImgClickablewidget extends StatelessWidget {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(left: 160, top: 0),
-                          color: Color.fromARGB(0, 255, 188, 184),
+                          color: const Color.fromARGB(0, 255, 188, 184),
                           width: 160,
                           height: 100,
                           child: InkWell(

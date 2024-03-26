@@ -27,7 +27,7 @@ class HTUScreenVU extends StackedView<HTUScreenVM> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomeScreenVU()));
+                                builder: (context) =>  HomeScreenVU()));
                       },
                       text: "Get Started",
                     ),

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:troubleshooter/theme/theme.dart';
+import 'package:troubleshooter/theme/themeprovider.dart';
 
 import 'home_screen_vu.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvidor(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,14 +21,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PSA',
-      theme: ThemeData(
-        fontFamily: 'Montserrat',
-        colorScheme: ColorScheme.fromSeed(
-            background: const Color.fromARGB(255, 248, 248, 248),
-            seedColor: Colors.deepPurple),
-        // useMaterial3: true,
-      ),
-      home: const HomeScreenVU(),
+      theme: Provider.of<ThemeProvidor>(context).themeData,
+      darkTheme: darkMode,
+      // theme:
+      // ThemeData(
+      //   fontFamily: 'Montserrat',
+      //   colorScheme: ColorScheme.fromSeed(
+      //       background: const Color.fromARGB(255, 248, 248, 248),
+      //       seedColor: Colors.deepPurple),
+      //   // useMaterial3: true,
+      // ),
+      home: HomeScreenVU(),
     );
   }
 }
