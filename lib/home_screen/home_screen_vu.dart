@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
 // import '../reusable_widgets/side_menu.dart';
+import '../reusable_widgets/side_menu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -15,7 +16,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         key: _scaffoldKey,
-        // endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
+        endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
         body: Stack(
           alignment: Alignment.topRight,
           children: [
