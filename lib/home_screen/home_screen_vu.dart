@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:troubleshooter/reusable_widgets/side_menu.dart';
 import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
+// import '../reusable_widgets/side_menu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
   HomeScreenVU({super.key});
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        key: scaffoldKey,
-        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
+        key: _scaffoldKey,
+        // endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
         body: Stack(
           alignment: Alignment.topRight,
           children: [
