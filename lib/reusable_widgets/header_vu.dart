@@ -11,8 +11,8 @@ class GenericHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return  SizedBox(
+      // decoration: BoxDecoration(
           // boxShadow: [
           //   BoxShadow(
           //     color: Colors.grey.withOpacity(0.5),
@@ -22,7 +22,7 @@ class GenericHeader extends StatelessWidget {
           //   ),
           // ],
           // color: color ?? Color.fromARGB(255, 238, 238, 238),
-          ),
+          // ),
       height: 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
