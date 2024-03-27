@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+
 import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
 // import '../reusable_widgets/side_menu.dart';
@@ -20,7 +21,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
         body: Stack(
           alignment: Alignment.topRight,
           children: [
-            SingleChildScrollView(
+            const SingleChildScrollView(
               child: Center(
                 child: Column(
                   children: [
@@ -28,21 +29,22 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                       title: 'System Areas',
                       // color: Colors.white,
                     ),
-                    screenSize.width < 1100
-                        ? const MainImgClickablewidget()
-                        : const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Text(
-                                "PSA\nTROUBLESHOOTER\nAPP",
-                                style: TextStyle(
-                                    fontSize: 52,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'Montserrat'),
-                              ),
-                              MainImgClickablewidget(),
-                            ],
-                          ),
+                    // screenSize.width < 1100
+                    //     ?
+                    const MainImgClickablewidget(),
+                    // : const Row(
+                    //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //     children: [
+                    //       Text(
+                    //         "PSA\nTROUBLESHOOTER\nAPP",
+                    //         style: TextStyle(
+                    //             fontSize: 52,
+                    //             fontWeight: FontWeight.w800,
+                    //             fontFamily: 'Montserrat'),
+                    //       ),
+                    //       MainImgClickablewidget(),
+                    //     ],
+                    //   ),
                     const SizedBox(
                       height: 40,
                     ),

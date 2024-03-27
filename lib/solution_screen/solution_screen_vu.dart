@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-// import '../home_screen/home_screen_vu.dart';
-// import '../htu_vu.dart';
 import '../htu_vu.dart';
 import '../reusable_widgets/header_vu.dart';
 import 'solution_screen_vm.dart';
@@ -40,229 +38,242 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                 const GenericHeader(
                   title: 'Solution',
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                // const SizedBox(
+                //   height: 20,
+                // ),
                 Padding(
                   padding: const EdgeInsets.all(24),
-                  child: Column(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        constraints:
-                            const BoxConstraints(maxWidth: 700, maxHeight: 250),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 254, 254, 254),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        // height: 150,
-                        // width: 450,
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                  "Area"),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
+                      Column(
+                        children: [
+                          Container(
+                            constraints: const BoxConstraints(
+                                maxWidth: 700, maxHeight: 250),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 12),
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 254, 254, 254),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            // height: 150,
+                            // width: 450,
+                            child: SingleChildScrollView(
+                              child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Expanded(
-                                    // width: 380,
-                                    child: Text(
-                                      softWrap: true,
-                                      textAlign: TextAlign.start,
-                                      maxLines: 4,
-                                      overflow: TextOverflow.ellipsis,
-                                      area,
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
+                                  const Text(
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                      "Area"),
+                                  const SizedBox(
+                                    height: 5,
                                   ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      Container(
-                        constraints:
-                            const BoxConstraints(maxWidth: 700, maxHeight: 250),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 254, 254, 254),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        // height: 150,
-                        // width: 450,
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                  "Problem"),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                    // width: 380,
-                                    child: Text(
-                                      softWrap: true,
-                                      textAlign: TextAlign.start,
-                                      maxLines: 4,
-                                      overflow: TextOverflow.ellipsis,
-                                      problem,
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      Container(
-                        constraints:
-                            const BoxConstraints(maxWidth: 700, maxHeight: 250),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 254, 254, 254),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        // height: 150,
-                        // width: 450,
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                  "Problem Cause"),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                    // width: 380,
-                                    child: Text(
-                                      softWrap: true,
-                                      textAlign: TextAlign.start,
-                                      maxLines: 4,
-                                      overflow: TextOverflow.ellipsis,
-                                      problemCause,
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      Container(
-                        constraints:
-                            const BoxConstraints(maxWidth: 700, maxHeight: 250),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 254, 254, 254),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        // height: 150,
-                        // width: 450,
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                  "Solution"),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              ListView.builder(
-                                scrollDirection: Axis.vertical,
-                                shrinkWrap: true,
-                                itemCount: viewModel
-                                    .questionsModel
-                                    .records[index1]
-                                    .questions[index2]
-                                    .options[index3]
-                                    .solutions
-                                    .length,
-                                itemBuilder: (context, index4) {
-                                  return Row(
+                                  Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Expanded(
                                         // width: 380,
                                         child: Text(
-                                          softWrap: true,
-                                          textAlign: TextAlign.start,
-                                          maxLines: 4,
-                                          overflow: TextOverflow.ellipsis,
-                                          viewModel
-                                                  .questionsModel
-                                                  .records[index1]
-                                                  .questions[index2]
-                                                  .options[index3]
-                                                  .solutions[index4]
-                                                  .title ??
-                                              "",
-                                          style: const TextStyle(
-                                            color: Colors.black,
-                                          ),
-                                        ),
+                                            softWrap: true,
+                                            textAlign: TextAlign.start,
+                                            maxLines: 4,
+                                            overflow: TextOverflow.ellipsis,
+                                            area,
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.black)),
                                       ),
                                     ],
-                                  );
-                                },
-                              )
-                            ],
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Container(
+                            constraints: const BoxConstraints(
+                                maxWidth: 700, maxHeight: 250),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 12),
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 254, 254, 254),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            // height: 150,
+                            // width: 450,
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                      "Problem"),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        // width: 380,
+                                        child: Text(
+                                            softWrap: true,
+                                            textAlign: TextAlign.start,
+                                            maxLines: 4,
+                                            overflow: TextOverflow.ellipsis,
+                                            problem,
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.black)),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Container(
+                            constraints: const BoxConstraints(
+                                maxWidth: 700, maxHeight: 250),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 12),
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 254, 254, 254),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            // height: 150,
+                            // width: 450,
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                      "Problem Cause"),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        // width: 380,
+                                        child: Text(
+                                            softWrap: true,
+                                            textAlign: TextAlign.start,
+                                            maxLines: 4,
+                                            overflow: TextOverflow.ellipsis,
+                                            problemCause,
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.black)),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Container(
+                            constraints: const BoxConstraints(
+                                maxWidth: 700, maxHeight: 250),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 12),
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 254, 254, 254),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            // height: 150,
+                            // width: 450,
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                      "Solution"),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  ListView.builder(
+                                    scrollDirection: Axis.vertical,
+                                    shrinkWrap: true,
+                                    itemCount: viewModel
+                                        .questionsModel
+                                        .records[index1]
+                                        .questions[index2]
+                                        .options[index3]
+                                        .solutions
+                                        .length,
+                                    itemBuilder: (context, index4) {
+                                      return Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Expanded(
+                                            // width: 380,
+                                            child: Text(
+                                                softWrap: true,
+                                                textAlign: TextAlign.start,
+                                                maxLines: 4,
+                                                overflow: TextOverflow.ellipsis,
+                                                viewModel
+                                                        .questionsModel
+                                                        .records[index1]
+                                                        .questions[index2]
+                                                        .options[index3]
+                                                        .solutions[index4]
+                                                        .title ??
+                                                    "",
+                                                style: const TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Colors.black)),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                        ],
                       ),
                       const SizedBox(
-                        height: 24,
+                        width: 24,
                       ),
                       Container(
                         constraints:
@@ -271,21 +282,26 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                             vertical: 24, horizontal: 18),
                         decoration: BoxDecoration(
                           color: const Color.fromARGB(174, 231, 231, 231),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(16),
                         ),
-                        height: screenSize.width > 700 ? 160 : 193,
+                        height: screenSize.width > 700 ? 170 : 193,
                         // width: 450,
                         child: SingleChildScrollView(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text(
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                   "Share this Solution"),
+                              const SizedBox(
+                                height: 5,
+                              ),
                               const Text(
+                                  style: TextStyle(fontSize: 14),
                                   textAlign: TextAlign.center,
                                   "Simply click the share button below to share this solution via your preffered channel."),
                               const SizedBox(
@@ -293,7 +309,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                               ),
                               SizedBox(
                                 // width: 200,
-                                height: 40,
+                                height: 45,
                                 child: PrimaryButton(
                                   onPressed: () {
                                     // Navigator.push(

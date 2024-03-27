@@ -82,17 +82,28 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Montserrat
+    - family: Roboto
       fonts:
-        - asset: fonts/mont/Montserrat-Black.ttf
-        - asset: fonts/mont/Montserrat-Bold.ttf
-        - asset: fonts/mont/Montserrat-ExtraBold.ttf
-        - asset: fonts/mont/Montserrat-SemiBold.ttf
-        - asset: fonts/mont/Montserrat-Regular.ttf
-        - asset: fonts/mont/Montserrat-Medium.ttf
-        - asset: fonts/mont/Montserrat-Light.ttf
-        - asset: fonts/mont/Montserrat-Thin.ttf
-        - asset: fonts/mont/Montserrat-ExtraLight.ttf
+        - asset: fonts/Roboto/Roboto-Black.ttf
+        - asset: fonts/Roboto/Roboto-Bold.ttf
+        # - asset: fonts/Roboto/Roboto-ExtraBold.ttf
+        # - asset: fonts/Roboto/Roboto-SemiBold.ttf
+        - asset: fonts/Roboto/Roboto-Regular.ttf
+        - asset: fonts/Roboto/Roboto-Medium.ttf
+        - asset: fonts/Roboto/Roboto-Light.ttf
+        - asset: fonts/Roboto/Roboto-Thin.ttf
+        # - asset: fonts/mont/Roboto-ExtraLight.ttf
+    # - family: Montserrat
+    #   fonts:
+    #     - asset: fonts/mont/Montserrat-Black.ttf
+    #     - asset: fonts/mont/Montserrat-Bold.ttf
+    #     - asset: fonts/mont/Montserrat-ExtraBold.ttf
+    #     - asset: fonts/mont/Montserrat-SemiBold.ttf
+    #     - asset: fonts/mont/Montserrat-Regular.ttf
+    #     - asset: fonts/mont/Montserrat-Medium.ttf
+    #     - asset: fonts/mont/Montserrat-Light.ttf
+    #     - asset: fonts/mont/Montserrat-Thin.ttf
+    #     - asset: fonts/mont/Montserrat-ExtraLight.ttf
     - family: Madimi
       fonts:
         - asset: fonts/Madimi/Madimi-Regular.ttf

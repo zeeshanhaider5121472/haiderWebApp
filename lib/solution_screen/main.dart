@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         //   // fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(
-            background: const Color.fromARGB(255, 255, 93, 93),
-            seedColor: Colors.deepPurple),
+            background: const Color(0XFFf1f3f5), seedColor: Colors.deepPurple),
         //   // useMaterial3: true,
       ),
       home: const SolutionScreenVU(

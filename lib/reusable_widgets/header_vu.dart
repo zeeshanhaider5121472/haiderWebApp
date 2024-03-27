@@ -11,18 +11,18 @@ class GenericHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       // decoration: BoxDecoration(
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.grey.withOpacity(0.5),
-          //     spreadRadius: 0,
-          //     blurRadius: 7,
-          //     offset: const Offset(0, 3), // changes position of shadow
-          //   ),
-          // ],
-          // color: color ?? Color.fromARGB(255, 238, 238, 238),
-          // ),
+      // boxShadow: [
+      //   BoxShadow(
+      //     color: Colors.grey.withOpacity(0.5),
+      //     spreadRadius: 0,
+      //     blurRadius: 7,
+      //     offset: const Offset(0, 3), // changes position of shadow
+      //   ),
+      // ],
+      // color: color ?? Color.fromARGB(255, 238, 238, 238),
+      // ),
       height: 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -30,7 +30,7 @@ class GenericHeader extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.left,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
           ),
         ],
       ),

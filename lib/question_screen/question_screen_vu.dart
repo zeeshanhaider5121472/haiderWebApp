@@ -66,10 +66,14 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                         ],
                       ),
                       child: IconButton(
+                          color: Colors.white,
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: const Icon(Icons.arrow_back))),
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: Colors.black,
+                          ))),
                   Container(
                       margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
                       // padding: const EdgeInsets.all(5),
@@ -118,60 +122,132 @@ class GenericAnswers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // debugPrint(viewModel.record.first.questions.first.title);
-    return ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 650),
-        child: ListView.builder(
-          shrinkWrap: true, // Add this line
-          physics: const NeverScrollableScrollPhysics(), // Add this line
-          scrollDirection: Axis.vertical,
-          itemCount: viewModel.record[index1].questions.length,
-          itemBuilder: (context, index2) {
-            return Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        // width: screenSize.width > 600 ? 350 : 230,
-                        // width: 350,
-                        child: Text(
-                          softWrap: true,
-                          textAlign: TextAlign.start,
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          viewModel.record[index1].questions[index2].title ??
-                              " ",
-                          // "ali",
-                          style: const TextStyle(fontWeight: FontWeight.w500),
-                        ),
+    return screenSize.width < 600
+        ? ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 594,
+            ),
+            child: ListView.builder(
+              shrinkWrap: true, // Add this line
+              physics: const NeverScrollableScrollPhysics(), // Add this line
+              scrollDirection: Axis.vertical,
+              itemCount: viewModel.record[index1].questions.length,
+              itemBuilder: (context, index2) {
+                return InkWell(
+                  hoverColor: const Color.fromARGB(0, 255, 193, 7),
+                  child: Container(
+                      height: 62,
+                      margin: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
                       ),
-                    ),
-                    IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ProblemScreenVU(
-                                      area: area,
-                                      problem: viewModel.record[index1]
-                                              .questions[index2].title ??
-                                          "",
-                                      index1: index1,
-                                      index2: index2)));
-                        },
-                        icon: const Icon(Icons.keyboard_arrow_right_outlined))
-                  ],
-                ));
-          },
-          // ),
-        ));
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: SizedBox(
+                              // width: screenSize.width > 600 ? 350 : 230,
+                              // width: 350,
+                              child: Text(
+                                softWrap: true,
+                                textAlign: TextAlign.start,
+                                maxLines: 4,
+                                overflow: TextOverflow.ellipsis,
+                                viewModel.record[index1].questions[index2]
+                                        .title ??
+                                    " ",
+                                // "ali",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.keyboard_arrow_right_outlined)
+                        ],
+                      )),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProblemScreenVU(
+                                area: area,
+                                problem: viewModel.record[index1]
+                                        .questions[index2].title ??
+                                    "",
+                                index1: index1,
+                                index2: index2)));
+                  },
+                );
+              },
+              // ),
+            ))
+        : ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 1156),
+            child: GridView.builder(
+              shrinkWrap: true,
+
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 10,
+                  // mainAxisSpacing: 15,
+                  crossAxisCount: 2, // Number of columns
+                  mainAxisExtent: 72),
+              itemCount: viewModel
+                  .record[index1].questions.length, // Total number of items
+              itemBuilder: (BuildContext context, int index2) {
+                return InkWell(
+                  hoverColor: const Color.fromARGB(0, 255, 193, 7),
+                  child: Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: SizedBox(
+                              // width: screenSize.width > 600 ? 350 : 230,
+                              // width: 350,
+                              child: Text(
+                                softWrap: true,
+                                textAlign: TextAlign.start,
+                                maxLines: 4,
+                                overflow: TextOverflow.ellipsis,
+                                viewModel.record[index1].questions[index2]
+                                        .title ??
+                                    " ",
+                                // "ali",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.keyboard_arrow_right_outlined)
+                        ],
+                      )),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProblemScreenVU(
+                                area: area,
+                                problem: viewModel.record[index1]
+                                        .questions[index2].title ??
+                                    "",
+                                index1: index1,
+                                index2: index2)));
+                  },
+                );
+              },
+              // )
+            ),
+          );
   }
 }
 
@@ -187,9 +263,10 @@ class ImageContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       height: 200,
-      width: 650,
+      width: 1152,
       child: Center(
           child: Image(
+              height: 172,
               alignment: Alignment.topCenter,
               image: AssetImage('lib/assets/images/index$index1.png'))),
     );

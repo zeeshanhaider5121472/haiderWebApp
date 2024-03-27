@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+
 // import '../solution_screen/solution_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../solution_screen/solution_screen_vu.dart';
@@ -111,6 +112,84 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
   ProblemScreenVM viewModelBuilder(BuildContext context) => ProblemScreenVM();
 }
 
+// class GenericAnswers extends StatelessWidget {
+//   final ProblemScreenVM viewModel;
+//   final Size screenSize;
+//   final int index1;
+//   final int index2;
+//   final String area;
+//   final String problem;
+//   const GenericAnswers(
+//       {super.key,
+//       required this.viewModel,
+//       required this.screenSize,
+//       required this.index1,
+//       required this.index2,
+//       required this.area,
+//       required this.problem});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ConstrainedBox(
+//       constraints: const BoxConstraints(maxWidth: 650),
+//       child: ListView.builder(
+//         shrinkWrap: true, // Add this line
+//         physics: const NeverScrollableScrollPhysics(), // Add this line
+//         scrollDirection: Axis.vertical,
+//         itemCount: viewModel.record[index1].questions[index2].options.length,
+//         itemBuilder: (context, index3) {
+//           return Container(
+//               margin: const EdgeInsets.only(bottom: 10),
+//               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+//               decoration: BoxDecoration(
+//                 color: Colors.white,
+//                 borderRadius: BorderRadius.circular(10),
+//               ),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   Expanded(
+//                     child: SizedBox(
+//                       // width: screenSize.width > 600 ? 350 : 230,
+//                       child: Text(
+//                         softWrap: true,
+//                         textAlign: TextAlign.start,
+//                         maxLines: 4,
+//                         overflow: TextOverflow.ellipsis,
+//                         viewModel.record[index1].questions[index2]
+//                                 .options[index3].title ??
+//                             " ",
+//                         style: const TextStyle(fontWeight: FontWeight.w500),
+//                       ),
+//                     ),
+//                   ),
+//                   IconButton(
+//                       onPressed: () {
+//                         Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) => SolutionScreenVU(
+//                                     index1: index1,
+//                                     index2: index2,
+//                                     index3: index3,
+//                                     area: area,
+//                                     problem: problem,
+//                                     problemCause: viewModel
+//                                             .record[index1]
+//                                             .questions[index2]
+//                                             .options[index3]
+//                                             .title ??
+//                                         "")));
+//                       },
+//                       icon: const Icon(Icons.keyboard_arrow_right_outlined))
+//                 ],
+//               ));
+//         },
+//       ),
+//     );
+//   }
+// }
+
 class GenericAnswers extends StatelessWidget {
   final ProblemScreenVM viewModel;
   final Size screenSize;
@@ -129,65 +208,150 @@ class GenericAnswers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 650),
-      child: ListView.builder(
-        shrinkWrap: true, // Add this line
-        physics: const NeverScrollableScrollPhysics(), // Add this line
-        scrollDirection: Axis.vertical,
-        itemCount: viewModel.record[index1].questions[index2].options.length,
-        itemBuilder: (context, index3) {
-          return Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      // width: screenSize.width > 600 ? 350 : 230,
-                      child: Text(
-                        softWrap: true,
-                        textAlign: TextAlign.start,
-                        maxLines: 4,
-                        overflow: TextOverflow.ellipsis,
-                        viewModel.record[index1].questions[index2]
-                                .options[index3].title ??
-                            " ",
-                        style: const TextStyle(fontWeight: FontWeight.w500),
+    // debugPrint(viewModel.record.first.questions.first.title);
+    return screenSize.width < 600
+        ? ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 594,
+            ),
+            child: ListView.builder(
+              shrinkWrap: true, // Add this line
+              physics: const NeverScrollableScrollPhysics(), // Add this line
+              scrollDirection: Axis.vertical,
+              itemCount:
+                  viewModel.record[index1].questions[index2].options.length,
+              itemBuilder: (context, index3) {
+                return InkWell(
+                  hoverColor: const Color.fromARGB(0, 255, 193, 7),
+                  child: Container(
+                      height: 62,
+                      margin: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
                       ),
-                    ),
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SolutionScreenVU(
-                                    index1: index1,
-                                    index2: index2,
-                                    index3: index3,
-                                    area: area,
-                                    problem: problem,
-                                    problemCause: viewModel
-                                            .record[index1]
-                                            .questions[index2]
-                                            .options[index3]
-                                            .title ??
-                                        "")));
-                      },
-                      icon: const Icon(Icons.keyboard_arrow_right_outlined))
-                ],
-              ));
-        },
-      ),
-    );
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: SizedBox(
+                              // width: screenSize.width > 600 ? 350 : 230,
+                              // width: 350,
+                              child: Text(
+                                softWrap: true,
+                                textAlign: TextAlign.start,
+                                maxLines: 4,
+                                overflow: TextOverflow.ellipsis,
+                                viewModel.record[index1].questions[index2]
+                                        .options[index3].title ??
+                                    " ",
+                                // "ali",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.keyboard_arrow_right_outlined)
+                        ],
+                      )),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SolutionScreenVU(
+                                index1: index1,
+                                index2: index2,
+                                index3: index3,
+                                area: area,
+                                problem: problem,
+                                problemCause: viewModel
+                                        .record[index1]
+                                        .questions[index2]
+                                        .options[index3]
+                                        .title ??
+                                    "")));
+                  },
+                );
+              },
+              // ),
+            ))
+        : ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 1156),
+            child: GridView.builder(
+              shrinkWrap: true,
+
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 10,
+                  // mainAxisSpacing: 15,
+                  crossAxisCount: 2, // Number of columns
+                  mainAxisExtent: 72),
+              itemCount: viewModel.record[index1].questions[index2].options
+                  .length, // Total number of items
+              itemBuilder: (BuildContext context, int index3) {
+                return InkWell(
+                  hoverColor: const Color.fromARGB(0, 255, 193, 7),
+                  child: Container(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: SizedBox(
+                              // width: screenSize.width > 600 ? 350 : 230,
+                              // width: 350,
+                              child: Text(
+                                softWrap: true,
+                                textAlign: TextAlign.start,
+                                maxLines: 4,
+                                overflow: TextOverflow.ellipsis,
+                                viewModel.record[index1].questions[index2]
+                                        .options[index3].title ??
+                                    " ",
+                                // "ali",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.keyboard_arrow_right_outlined)
+                        ],
+                      )),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SolutionScreenVU(
+                                index1: index1,
+                                index2: index2,
+                                index3: index3,
+                                area: area,
+                                problem: problem,
+                                problemCause: viewModel
+                                        .record[index1]
+                                        .questions[index2]
+                                        .options[index3]
+                                        .title ??
+                                    "")));
+                  },
+                );
+              },
+              // )
+            ),
+          );
   }
 }
+
+
+
+
 
 // class Header extends StatelessWidget {
 //   final String title;
