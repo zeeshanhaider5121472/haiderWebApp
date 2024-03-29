@@ -3,7 +3,6 @@ import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
 import '../problem_screen/problem_screen_vu.dart';
-import '../reusable_widgets/header_buttons.dart';
 import '../reusable_widgets/header_vu.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
@@ -135,7 +134,7 @@ class GenericAnswers extends StatelessWidget {
               // ),
             ))
         : ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 1200),
+            constraints: const BoxConstraints(maxWidth: 1200),
             child: GridView.builder(
               shrinkWrap: true,
 

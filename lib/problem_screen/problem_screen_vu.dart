@@ -230,7 +230,7 @@ class GenericAnswers extends StatelessWidget {
               // ),
             ))
         : ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 1200),
+            constraints: const BoxConstraints(maxWidth: 1200),
             child: GridView.builder(
               shrinkWrap: true,
 

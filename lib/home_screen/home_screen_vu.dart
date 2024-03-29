@@ -11,7 +11,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
 
   @override
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
-    final screenSize = MediaQuery.of(context).size;
+    // final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         key: _scaffoldKey,
