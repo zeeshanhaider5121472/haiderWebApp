@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class HeaderButtons extends StatelessWidget {
   final bool onBack;
+  final GlobalKey<ScaffoldState> scaffoldKey;
   const HeaderButtons({
     super.key,
     this.onBack = true,
+    required this.scaffoldKey,
   });
 
   @override
@@ -33,7 +35,7 @@ class HeaderButtons extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     icon: const Icon(Icons.arrow_back)))
-            : Text(""),
+            : const Text(""),
         Container(
             margin: const EdgeInsets.fromLTRB(0, 24, 24, 0),
             padding: const EdgeInsets.all(3),
@@ -51,7 +53,9 @@ class HeaderButtons extends StatelessWidget {
               // ],
             ),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  scaffoldKey.currentState?.openEndDrawer();
+                },
                 icon: const Icon(
                   Icons.tune,
                   color: Colors.white,

@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/side_menu.dart';
 import '../solution_screen/solution_screen_vu.dart';
 import 'problem_screen_vm.dart';
 
@@ -11,18 +12,21 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
   final int index1;
   final int index2;
   final String problem;
-  const ProblemScreenVU(
+  ProblemScreenVU(
       {super.key,
       required this.area,
       required this.problem,
       required this.index1,
       required this.index2});
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(
       BuildContext context, ProblemScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        key: scaffoldKey,
+        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
         backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),
@@ -55,7 +59,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                   ],
                 ),
               ),
-              const HeaderButtons(),
+              HeaderButtons(scaffoldKey: scaffoldKey),
             ],
           ),
         ));

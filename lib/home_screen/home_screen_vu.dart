@@ -4,23 +4,24 @@ import 'package:stacked/stacked.dart';
 import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/side_menu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
   HomeScreenVU({super.key});
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
     // final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        key: _scaffoldKey,
-        // endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
-        body: const Stack(
+        key: scaffoldKey,
+        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
+        body: Stack(
           alignment: Alignment.topRight,
           children: [
-            SingleChildScrollView(
+            const SingleChildScrollView(
               child: Center(
                 child: Column(
                   children: [
@@ -51,7 +52,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                 ),
               ),
             ),
-            HeaderButtons(onBack: false)
+            HeaderButtons(onBack: false, scaffoldKey: scaffoldKey)
             // Container(
             //     margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
             //     decoration: BoxDecoration(
@@ -108,7 +109,7 @@ class MainImgClickablewidget extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const QuestionScreenVU(
+                            return QuestionScreenVU(
                               index1: 0,
                               area: "Air Compressor",
                             );
@@ -147,7 +148,7 @@ class MainImgClickablewidget extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const QuestionScreenVU(
+                                return QuestionScreenVU(
                                     index1: 1, area: "Refrigerated Dryer");
                               }));
                             },
@@ -186,7 +187,7 @@ class MainImgClickablewidget extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const QuestionScreenVU(
+                                return QuestionScreenVU(
                                   index1: 4,
                                   area: "Oxygen Generator",
                                 );
@@ -246,7 +247,7 @@ class MainImgClickablewidget extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const QuestionScreenVU(
+                                return QuestionScreenVU(
                                   index1: 7,
                                   area: "Booster Compressor",
                                 );

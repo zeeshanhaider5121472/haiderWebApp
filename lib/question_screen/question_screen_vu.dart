@@ -5,17 +5,21 @@ import 'package:troubleshooter/reusable_widgets/header_button.dart';
 
 import '../problem_screen/problem_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/side_menu.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   final String area;
   final int index1;
-  const QuestionScreenVU({required this.index1, required this.area, super.key});
+  QuestionScreenVU({required this.index1, required this.area, super.key});
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(
       BuildContext context, QuestionScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        key: scaffoldKey,
+        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
         backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           child: Stack(
@@ -47,7 +51,9 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                   ],
                 ),
               ),
-              const HeaderButtons()
+              HeaderButtons(
+                scaffoldKey: scaffoldKey,
+              )
             ],
           ),
         ));

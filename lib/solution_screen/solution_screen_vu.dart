@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/side_menu.dart';
 import 'solution_screen_vm.dart';
 
 class SolutionScreenVU extends StackedView<SolutionScreenVM> {
@@ -13,7 +14,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
   final String area;
   final String problem;
   final String problemCause;
-  const SolutionScreenVU(
+  SolutionScreenVU(
       {required this.index1,
       required this.index2,
       required this.index3,
@@ -21,12 +22,15 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
       required this.area,
       required this.problem,
       required this.problemCause});
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(
       BuildContext context, SolutionScreenVM viewModel, Widget? child) {
     // final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      key: scaffoldKey,
+      endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
       // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
 
       // backgroundColor: Colors.amber,
@@ -476,7 +480,9 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
               ],
             ),
           ),
-          const HeaderButtons()
+          HeaderButtons(
+            scaffoldKey: scaffoldKey,
+          )
         ],
       ),
     );
@@ -485,7 +491,6 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
   @override
   SolutionScreenVM viewModelBuilder(BuildContext context) => SolutionScreenVM();
 }
-
 
 // class HeaderButtons extends StatelessWidget {
 //   const HeaderButtons({
