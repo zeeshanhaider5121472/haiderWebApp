@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../question_screen/question_screen_vu.dart';
-import '../reusable_widgets/header_buttons.dart';
 import '../reusable_widgets/header_vu.dart';
-// import '../reusable_widgets/side_menu.dart';
-import '../reusable_widgets/side_menu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -18,7 +15,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         key: _scaffoldKey,
-        endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
+        // endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
         body: const Stack(
           alignment: Alignment.topRight,
           children: [
@@ -53,7 +50,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                 ),
               ),
             ),
-            HeaderButtons(onBack: false)
+            // HeaderButtons(onBack: false)
             // Container(
             //     margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
             //     decoration: BoxDecoration(

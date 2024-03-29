@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-// import '../solution_screen/solution_screen_vu.dart';
-import '../reusable_widgets/header_buttons.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../solution_screen/solution_screen_vu.dart';
 import 'problem_screen_vm.dart';
@@ -56,7 +54,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                   ],
                 ),
               ),
-              const HeaderButtons(),
+              // const HeaderButtons(),
             ],
           ),
         ));

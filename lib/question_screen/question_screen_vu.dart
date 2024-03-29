@@ -47,7 +47,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                   ],
                 ),
               ),
-              const HeaderButtons()
+              // const HeaderButtons()
             ],
           ),
         ));

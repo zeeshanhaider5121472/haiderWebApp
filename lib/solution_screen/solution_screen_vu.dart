@@ -476,7 +476,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
               ],
             ),
           ),
-          const HeaderButtons(onBack:false)
+          // const HeaderButtons(onBack:false)
         ],
       ),
     );
