@@ -3,8 +3,8 @@ import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
 import '../problem_screen/problem_screen_vu.dart';
+import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../solution_screen/solution_screen_vu.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   final String area;
