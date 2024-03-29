@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../question_screen/question_screen_vu.dart';
+import '../reusable_widgets/header_buttons.dart';
 import '../reusable_widgets/header_vu.dart';
 // import '../reusable_widgets/side_menu.dart';
 import '../reusable_widgets/side_menu.dart';
@@ -18,20 +19,20 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
         backgroundColor: Theme.of(context).colorScheme.background,
         key: _scaffoldKey,
         endDrawer: GenericDrawer(scaffoldKey: _scaffoldKey),
-        body: Stack(
+        body: const Stack(
           alignment: Alignment.topRight,
           children: [
-            const SingleChildScrollView(
+            SingleChildScrollView(
               child: Center(
                 child: Column(
                   children: [
-                    const GenericHeader(
+                    GenericHeader(
                       title: 'System Areas',
                       // color: Colors.white,
                     ),
                     // screenSize.width < 1100
                     //     ?
-                    const MainImgClickablewidget(),
+                    MainImgClickablewidget(),
                     // : const Row(
                     //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     //     children: [
@@ -45,25 +46,26 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                     //       MainImgClickablewidget(),
                     //     ],
                     //   ),
-                    const SizedBox(
+                    SizedBox(
                       height: 40,
                     ),
                   ],
                 ),
               ),
             ),
-            Container(
-                margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.red[900],
-                ),
-                child: IconButton(
-                    onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
-                    icon: const Icon(
-                      Icons.tune,
-                      color: Colors.white,
-                    ))),
+            HeaderButtons(onBack: false)
+            // Container(
+            //     margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
+            //     decoration: BoxDecoration(
+            //       shape: BoxShape.circle,
+            //       color: Colors.red[900],
+            //     ),
+            //     child: IconButton(
+            //         onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
+            //         icon: const Icon(
+            //           Icons.tune,
+            //           color: Colors.white,
+            //         ))),
           ],
         ));
   }

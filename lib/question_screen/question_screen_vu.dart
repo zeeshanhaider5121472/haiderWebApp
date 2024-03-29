@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 
 import '../problem_screen/problem_screen_vu.dart';
+import '../reusable_widgets/header_buttons.dart';
 import '../reusable_widgets/header_vu.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
@@ -46,58 +47,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
                   ],
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                      margin: const EdgeInsets.fromLTRB(12, 12, 0, 0),
-                      // padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5), // Shadow color
-                            spreadRadius: 2, // Spread radius
-                            blurRadius: 5, // Blur radius
-                            offset: const Offset(
-                                0, 3), // Offset in the x,y direction
-                          ),
-                        ],
-                      ),
-                      child: IconButton(
-                          color: Colors.white,
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            color: Colors.black,
-                          ))),
-                  Container(
-                      margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
-                      // padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.red[900],
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //     color: Colors.grey.withOpacity(0.5), // Shadow color
-                        //     spreadRadius: 2, // Spread radius
-                        //     blurRadius: 5, // Blur radius
-                        //     offset: const Offset(
-                        //         0, 3), // Offset in the x,y direction
-                        //   ),
-                        // ],
-                      ),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.tune,
-                            color: Colors.white,
-                          ))),
-                ],
-              )
+              const HeaderButtons()
             ],
           ),
         ));
@@ -185,7 +135,7 @@ class GenericAnswers extends StatelessWidget {
               // ),
             ))
         : ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 1156),
+            constraints: BoxConstraints(maxWidth: 1200),
             child: GridView.builder(
               shrinkWrap: true,
 
@@ -262,8 +212,8 @@ class ImageContainer extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
       ),
-      height: 200,
-      width: 1152,
+      height: 220,
+      width: 1200,
       child: Center(
           child: Image(
               height: 172,
