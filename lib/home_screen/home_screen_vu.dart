@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../question_screen/question_screen_vu.dart';
+import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import 'home_screen_vm.dart';
 
@@ -50,7 +51,7 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                 ),
               ),
             ),
-            // HeaderButtons(onBack: false)
+            HeaderButtons(onBack: false)
             // Container(
             //     margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
             //     decoration: BoxDecoration(
@@ -307,67 +308,6 @@ class HeaderMain extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class HeaderButtons extends StatelessWidget {
-  final bool onBack;
-  const HeaderButtons({
-    super.key,
-    this.onBack = true,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        onBack
-            ? Container(
-                margin: const EdgeInsets.fromLTRB(24, 24, 0, 0),
-                padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5), // Shadow color
-                      spreadRadius: 2, // Spread radius
-                      blurRadius: 5, // Blur radius
-                      offset: const Offset(0, 3), // Offset in the x,y direction
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back)))
-            : Text(""),
-        Container(
-            margin: const EdgeInsets.fromLTRB(0, 24, 24, 0),
-            padding: const EdgeInsets.all(3),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.red[900],
-              // boxShadow: [
-              //   BoxShadow(
-              //     color: Colors.grey.withOpacity(0.5), // Shadow color
-              //     spreadRadius: 2, // Spread radius
-              //     blurRadius: 5, // Blur radius
-              //     offset: const Offset(
-              //         0, 3), // Offset in the x,y direction
-              //   ),
-              // ],
-            ),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.tune,
-                  color: Colors.white,
-                ))),
-      ],
     );
   }
 }
