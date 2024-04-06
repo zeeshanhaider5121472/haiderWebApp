@@ -13,25 +13,28 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
 
   @override
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
-    // final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         key: scaffoldKey,
         endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
         body: Stack(
-          alignment: Alignment.topRight,
+          // alignment: Alignment.topRight,
           children: [
-            const SingleChildScrollView(
+            SingleChildScrollView(
               child: Center(
                 child: Column(
+                  // mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    GenericHeader(
+                    const GenericHeader(
                       title: 'System Areas',
                       // color: Colors.white,
                     ),
                     // screenSize.width < 1100
                     //     ?
-                    MainImgClickablewidget(),
+                    MainImgClickablewidget(screenSize: screenSize),
                     // : const Row(
                     //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     //     children: [
@@ -74,112 +77,37 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
 }
 
 class MainImgClickablewidget extends StatelessWidget {
+  final Size screenSize;
   const MainImgClickablewidget({
     super.key,
+    required this.screenSize,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 24),
-      child: SizedBox(
-          height: 800,
-          child: Stack(
-            children: [
-              const Image(image: AssetImage('lib/assets/mainscreens.png')),
-              SizedBox(
-                width: 320,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(
-                        top: 25,
-                        left: 33,
-                        bottom: 25,
-                      ),
-                      color: const Color.fromARGB(0, 255, 193, 7),
-                      width: 145,
-                      height: 100,
-                      child: InkWell(
-                        overlayColor:
-                            const MaterialStatePropertyAll(Colors.transparent),
-                        hoverColor: Colors.transparent,
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return QuestionScreenVU(
-                              index1: 0,
-                              area: "Air Compressor",
-                            );
-                          }));
-                        },
-                        child: const Image(
-                            image: AssetImage('lib/assets/select.png')),
-                      ),
-                    ),
-                    Row(
+      padding: const EdgeInsets.only(top: 10),
+      child: screenSize.width > 600
+          ? SizedBox(
+              height: 800,
+              child: Stack(
+                children: [
+                  const Image(image: AssetImage('lib/assets/mainscreens.png')),
+                  SizedBox(
+                    width: 320,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: const EdgeInsets.only(top: 32, left: 38),
-                          color: const Color.fromARGB(0, 33, 149, 243),
-                          width: 100,
-                          height: 100,
-                          // child: InkWell(
-                          //   overlayColor: const MaterialStatePropertyAll(
-                          //       Colors.transparent),
-                          //   hoverColor: Colors.transparent,
-                          //   onTap: () {},
-                          //   child: const Image(
-                          //       image: AssetImage('lib/assets/select.png')),
-                          // ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 93, top: 0),
-                          color: const Color.fromARGB(0, 244, 67, 54),
-                          width: 80,
-                          height: 100,
-                          child: InkWell(
-                            overlayColor: const MaterialStatePropertyAll(
-                                Colors.transparent),
-                            hoverColor: Colors.transparent,
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return QuestionScreenVU(
-                                    index1: 1, area: "Refrigerated Dryer");
-                              }));
-                            },
-                            child: const Image(
-                                image: AssetImage('lib/assets/select.png')),
+                          margin: const EdgeInsets.only(
+                            top: 25,
+                            left: 15,
+                            // bottom: 25,
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(top: 58, left: 38),
-                          color: const Color.fromARGB(0, 129, 198, 255),
-                          width: 80,
-                          height: 130,
-                          // child: InkWell(
-                          //   overlayColor: const MaterialStatePropertyAll(
-                          //       Colors.transparent),
-                          //   hoverColor: Colors.transparent,
-                          //   onTap: () {},
-                          //   child: const Image(
-                          //       image: AssetImage('lib/assets/select.png')),
-                          // ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 110, top: 20),
-                          color: const Color.fromARGB(0, 255, 188, 184),
-                          width: 80,
-                          height: 180,
+                          color: const Color.fromARGB(0, 255, 193, 7),
+                          width: 145,
+                          height: 100,
                           child: InkWell(
                             overlayColor: const MaterialStatePropertyAll(
                                 Colors.transparent),
@@ -188,8 +116,8 @@ class MainImgClickablewidget extends StatelessWidget {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                 return QuestionScreenVU(
-                                  index1: 4,
-                                  area: "Oxygen Generator",
+                                  index1: 0,
+                                  area: "Air Compressor",
                                 );
                               }));
                             },
@@ -197,48 +125,171 @@ class MainImgClickablewidget extends StatelessWidget {
                                 image: AssetImage('lib/assets/select.png')),
                           ),
                         ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 60, left: 48),
+                              color: const Color.fromARGB(0, 33, 149, 243),
+                              width: 100,
+                              height: 100,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 85, top: 14),
+                              color: const Color.fromARGB(0, 244, 67, 54),
+                              width: 80,
+                              height: 100,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return QuestionScreenVU(
+                                        index1: 1, area: "Refrigerated Dryer");
+                                  }));
+                                },
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 49, left: 40),
+                              color: const Color.fromARGB(0, 129, 198, 255),
+                              width: 80,
+                              height: 130,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 115, top: 12),
+                              color: const Color.fromARGB(0, 255, 188, 184),
+                              width: 80,
+                              height: 180,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return QuestionScreenVU(
+                                      index1: 4,
+                                      area: "Oxygen Generator",
+                                    );
+                                  }));
+                                },
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 50, left: 45),
+                              color: const Color.fromARGB(0, 129, 198, 255),
+                              width: 70,
+                              height: 130,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 150, top: 40),
+                              color: const Color.fromARGB(0, 255, 188, 184),
+                              width: 40,
+                              height: 90,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 150, top: 0),
+                              color: const Color.fromARGB(0, 255, 188, 184),
+                              width: 160,
+                              height: 100,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return QuestionScreenVU(
+                                      index1: 7,
+                                      area: "Booster Compressor",
+                                    );
+                                  }));
+                                },
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
-                    Row(
+                  ),
+                ],
+              ))
+          : SizedBox(
+              width: 280,
+              height: 600,
+              child: Stack(
+                children: [
+                  const Image(image: AssetImage('lib/assets/mainscreens.png')),
+                  SizedBox(
+                    width: 320,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: const EdgeInsets.only(top: 58, left: 45),
-                          color: const Color.fromARGB(0, 129, 198, 255),
-                          width: 70,
-                          height: 130,
-                          // child: InkWell(
-                          //   overlayColor: const MaterialStatePropertyAll(
-                          //       Colors.transparent),
-                          //   hoverColor: Colors.transparent,
-                          //   onTap: () {},
-                          //   child: const Image(
-                          //       image: AssetImage('lib/assets/select.png')),
-                          // ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 150, top: 40),
-                          color: const Color.fromARGB(0, 255, 188, 184),
-                          width: 40,
-                          height: 90,
-                          // child: InkWell(
-                          //   overlayColor: const MaterialStatePropertyAll(
-                          //       Colors.transparent),
-                          //   hoverColor: Colors.transparent,
-                          //   onTap: () {},
-                          //   child: const Image(
-                          //       image: AssetImage('lib/assets/select.png')),
-                          // ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(left: 160, top: 0),
-                          color: const Color.fromARGB(0, 255, 188, 184),
-                          width: 160,
+                          margin: const EdgeInsets.only(
+                            top: 10,
+                            // left: 8,
+                            // bottom: 25,
+                          ),
+                          color: const Color.fromARGB(0, 255, 193, 7),
+                          width: 145,
                           height: 100,
                           child: InkWell(
                             overlayColor: const MaterialStatePropertyAll(
@@ -248,8 +299,8 @@ class MainImgClickablewidget extends StatelessWidget {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                 return QuestionScreenVU(
-                                  index1: 7,
-                                  area: "Booster Compressor",
+                                  index1: 0,
+                                  area: "Air Compressor",
                                 );
                               }));
                             },
@@ -257,13 +308,151 @@ class MainImgClickablewidget extends StatelessWidget {
                                 image: AssetImage('lib/assets/select.png')),
                           ),
                         ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 25, left: 30),
+                              color: const Color.fromARGB(0, 33, 149, 243),
+                              width: 100,
+                              height: 100,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 40, top: 0),
+                              color: Colors.transparent,
+                              width: 70,
+                              height: 80,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return QuestionScreenVU(
+                                        index1: 1, area: "Refrigerated Dryer");
+                                  }));
+                                },
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 18, left: 35),
+                              color: Colors.transparent,
+                              width: 50,
+                              height: 120,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 89, top: 0),
+                              color: Color.fromARGB(0, 255, 24, 12),
+                              width: 60,
+                              height: 120,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return QuestionScreenVU(
+                                      index1: 4,
+                                      area: "Oxygen Generator",
+                                    );
+                                  }));
+                                },
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 18, left: 42),
+                              color: Color.fromARGB(0, 16, 138, 238),
+                              width: 40,
+                              height: 120,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {},
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 115, top: 8),
+                              color: Color.fromARGB(0, 214, 19, 9),
+                              width: 35,
+                              height: 80,
+                              // child: InkWell(
+                              //   overlayColor: const MaterialStatePropertyAll(
+                              //       Colors.transparent),
+                              //   hoverColor: Colors.transparent,
+                              //   onTap: () {},
+                              //   child: const Image(
+                              //       image: AssetImage('lib/assets/select.png')),
+                              // ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 120, top: 0),
+                              color: Color.fromARGB(0, 189, 31, 23),
+                              width: 130,
+                              height: 80,
+                              child: InkWell(
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.transparent),
+                                hoverColor: Colors.transparent,
+                                onTap: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return QuestionScreenVU(
+                                      index1: 7,
+                                      area: "Booster Compressor",
+                                    );
+                                  }));
+                                },
+                                child: const Image(
+                                    image: AssetImage('lib/assets/select.png')),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
-                  ],
-                ),
-              ),
-            ],
-          )),
+                  ),
+                ],
+              )),
     );
   }
 }

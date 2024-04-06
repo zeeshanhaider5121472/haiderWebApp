@@ -23,7 +23,7 @@ class GenericHeader extends StatelessWidget {
       // ],
       // color: color ?? Color.fromARGB(255, 238, 238, 238),
       // ),
-      height: 100,
+      height: 130,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -93,7 +93,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
 //         shrinkWrap: true, // Add this line
 //         physics: const NeverScrollableScrollPhysics(), // Add this line
 //         scrollDirection: Axis.vertical,
-//         itemCount: viewModel.record[index1].questions[index2].options.length,
+//         itemCount: viewModel.record[index1].problems[index2].problemCause.length,
 //         itemBuilder: (context, index3) {
 //           return Container(
 //               margin: const EdgeInsets.only(bottom: 10),
@@ -113,8 +113,8 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
 //                         textAlign: TextAlign.start,
 //                         maxLines: 4,
 //                         overflow: TextOverflow.ellipsis,
-//                         viewModel.record[index1].questions[index2]
-//                                 .options[index3].title ??
+//                         viewModel.record[index1].problems[index2]
+//                                 .problemCause[index3].title ??
 //                             " ",
 //                         style: const TextStyle(fontWeight: FontWeight.w500),
 //                       ),
@@ -133,8 +133,8 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
 //                                     problem: problem,
 //                                     problemCause: viewModel
 //                                             .record[index1]
-//                                             .questions[index2]
-//                                             .options[index3]
+//                                             .problems[index2]
+//                                             .problemCause[index3]
 //                                             .title ??
 //                                         "")));
 //                       },
@@ -165,7 +165,7 @@ class GenericAnswers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // debugPrint(viewModel.record.first.questions.first.title);
+    // debugPrint(viewModel.record.first.problems.first.title);
     return screenSize.width < 600
         ? ConstrainedBox(
             constraints: const BoxConstraints(

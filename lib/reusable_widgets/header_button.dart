@@ -16,7 +16,7 @@ class HeaderButtons extends StatelessWidget {
       children: [
         onBack
             ? Container(
-                margin: const EdgeInsets.fromLTRB(24, 24, 0, 0),
+                margin: const EdgeInsets.fromLTRB(24, 40, 0, 0),
                 padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -37,7 +37,7 @@ class HeaderButtons extends StatelessWidget {
                     icon: const Icon(Icons.arrow_back)))
             : const Text(""),
         Container(
-            margin: const EdgeInsets.fromLTRB(0, 24, 24, 0),
+            margin: const EdgeInsets.fromLTRB(0, 40, 24, 0),
             padding: const EdgeInsets.all(3),
             decoration: BoxDecoration(
               shape: BoxShape.circle,

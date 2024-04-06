@@ -27,7 +27,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
   @override
   Widget builder(
       BuildContext context, SolutionScreenVM viewModel, Widget? child) {
-    // final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
       endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
@@ -73,6 +73,10 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                                   index1: index1,
                                   index2: index2,
                                   index3: index3),
+
+                              screenSize.width < 600
+                                  ? const ShareButton()
+                                  : const SizedBox()
 
                               // Container(
                               //   constraints: const BoxConstraints(
@@ -254,8 +258,8 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                               //           itemCount: viewModel
                               //               .questionsModel
                               //               .records[index1]
-                              //               .questions[index2]
-                              //               .options[index3]
+                              //               .problems[index2]
+                              //               .problemCause[index3]
                               //               .solutions
                               //               .length,
                               //           itemBuilder: (context, index4) {
@@ -273,8 +277,8 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                               //                       viewModel
                               //                               .questionsModel
                               //                               .records[index1]
-                              //                               .questions[index2]
-                              //                               .options[index3]
+                              //                               .problems[index2]
+                              //                               .problemCause[index3]
                               //                               .solutions[index4]
                               //                               .title ??
                               //                           "",
@@ -300,57 +304,10 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                         const SizedBox(
                           width: 20,
                         ),
-                        Expanded(
-                          // flex: 2,
-                          child: Container(
-                            width: 594,
-                            margin: const EdgeInsets.only(bottom: 10),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 18, vertical: 14),
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 229, 232, 235),
-                              borderRadius: BorderRadius.circular(18),
-                            ),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      "Share this Solution"),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  const Text(
-                                      style: TextStyle(fontSize: 14),
-                                      "Simply click the share button below to share this solution via your preffered channel."),
-                                  const SizedBox(
-                                    height: 24,
-                                  ),
-                                  SizedBox(
-                                    // width: 200,
-                                    height: 45,
-                                    child: PrimaryButton(
-                                      onPressed: () {
-                                        // Navigator.push(
-                                        //     context,
-                                        //     MaterialPageRoute(
-                                        //         builder: (context) => const HomeScreenVU()
-                                        //         ));
-                                      },
-                                      text: "Share",
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+
+                        screenSize.width > 600
+                            ? const Expanded(child: ShareButton())
+                            : const SizedBox()
 
                         // Expanded(
                         //   flex: 2,
@@ -381,8 +338,8 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                         //           itemCount: viewModel
                         //               .questionsModel
                         //               .records[index1]
-                        //               .questions[index2]
-                        //               .options[index3]
+                        //               .problems[index2]
+                        //               .problemCause[index3]
                         //               .solutions
                         //               .length,
                         //           itemBuilder: (context, index4) {
@@ -400,8 +357,8 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                         //                       viewModel
                         //                               .questionsModel
                         //                               .records[index1]
-                        //                               .questions[index2]
-                        //                               .options[index3]
+                        //                               .problems[index2]
+                        //                               .problemCause[index3]
                         //                               .solutions[index4]
                         //                               .title ??
                         //                           "",
@@ -490,6 +447,60 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
 
   @override
   SolutionScreenVM viewModelBuilder(BuildContext context) => SolutionScreenVM();
+}
+
+class ShareButton extends StatelessWidget {
+  const ShareButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 594,
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 229, 232, 235),
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                "Share this Solution"),
+            const SizedBox(
+              height: 5,
+            ),
+            const Text(
+                style: TextStyle(fontSize: 14),
+                "Simply click the share button below to share this solution via your preffered channel."),
+            const SizedBox(
+              height: 24,
+            ),
+            SizedBox(
+              // width: 200,
+              height: 45,
+              child: PrimaryButton(
+                onPressed: () {
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) => const HomeScreenVU()
+                  //         ));
+                },
+                text: "Share",
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 // class HeaderButtons extends StatelessWidget {
@@ -600,7 +611,7 @@ class _GenericLVBContainer extends StatelessWidget {
                     child: Text(
                         softWrap: true,
                         textAlign: TextAlign.start,
-                        maxLines: 4,
+                        maxLines: 20,
                         overflow: TextOverflow.ellipsis,
                         viewModel
                                 .questionsModel
