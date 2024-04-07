@@ -1059,7 +1059,7 @@ final questionsJson = {
           "options": [
             {
               "id": 0,
-              "title": "Compressed air inlet and outlet reversed",
+              "title": "Compressed air inlet and outlet reversed.",
               "solutions": [
                 {"id": 0, "title": "Check the compressed air connections."},
               ]
@@ -1068,7 +1068,7 @@ final questionsJson = {
               "id": 1,
               "title": "The condensate is not draining out of the system.",
               "solutions": [
-                {"id": 0, "title": "Check and clean the condensate drainage"},
+                {"id": 0, "title": "Check and clean the condensate drainage."},
                 {
                   "id": 1,
                   "title": "Exchange the condensate drain service module."
@@ -1082,6 +1082,69 @@ final questionsJson = {
                 {"id": 0, "title": "Check operating conditions."},
                 {"id": 1, "title": "Check the machine."},
                 {"id": 2, "title": "RESET the machine."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Excessive air flow",
+              "solutions": [
+                {"id": 0, "title": "Check actual flow through the dryer."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Excessive moisture in compressed air ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Check the drain system and after cooler of the air compressor"
+                },
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Excessive compressed air inlet temperature. ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions "
+                },
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clean the condenser fins."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Fix the leak and add a charge of refrigerant."
+                },
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Refrigeration system is not functioning ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Check if the refrigerant compressor is running"
+                },
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Excessive pressure dew point",
+              "solutions": [
+                {"id": 0, "title": "Readjust refrigerant evaporating pressure"},
               ]
             },
           ]
@@ -1103,60 +1166,66 @@ final questionsJson = {
             },
             {
               "id": 1,
+              "title":
+                  "Excessive compressed air flow or too low air inlet pressure.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Check actual pressure and flow through the dryer. Install larger dryer, if needed "
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged heat exchanger",
+              "solutions": [
+                {"id": 0, "title": "Heat exchanger needs cleaned and flushed"},
+              ]
+            },
+            {
+              "id": 3,
+              "title":
+                  "Pipeline diameter is too small\n- Pipeline is too long\n- Too many elbows in the pipeline",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Check piping and make adjustments as necessary "
+                },
+              ]
+            },
+            {
+              "id": 4,
+              "title": "Inlet/Outlet valve not opened completely",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Make sure valve is opened completely ",
+                },
+              ]
+            },
+            {
+              "id": 5,
+              "title": "Pipeline leak",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Do a leak test and repair leak",
+                },
+              ]
+            },
+            {
+              "id": 6,
               "title": "Continuous air loss from the condensate drain.",
               "solutions": [
                 {"id": 0, "title": "Maintain the condensate drain."},
               ]
-            }
+            },
           ]
         },
         {
           "id": 2,
           "title": "Pressure dew point too high.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 0,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system."},
-                {"id": 1, "title": "Recharge the refrigerant."},
-              ]
-            },
-            {
-              "id": 0,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters."},
-                {"id": 1, "title": "Upgrade the filtration system."},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components."
-                },
-                {
-                  "id": 3,
-                  "title":
-                      "Identify and repair the compressed air system leaks."
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings."
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "title": "The safety pressure limiter shuts down the machine.",
           "options": [
             {
               "id": 0,
@@ -1194,7 +1263,387 @@ final questionsJson = {
                       "Monitor and adjust operating conditions such as temperature and pressure settings"
                 },
               ]
-            }
+            },
+          ]
+        },
+        {
+          "id": 4,
+          "title":
+              "The unit stops running during operation or cycles off and on.",
+          "options": [
+            {
+              "id": 0,
+              "title": "Excessive compressed air inlet temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working in ambient temperatures below design conditions."
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "High ambient temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clear fins of all obstructions."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Fix the leak, if necessary and add a charge of refrigerant."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 5,
+          "title": "The safety pressure limiter shuts down the machine.",
+          "options": [
+            {
+              "id": 0,
+              "title": "Ambient or compressed air inlet temperature too high.",
+              "solutions": [
+                {"id": 0, "title": "Check installation conditions are OK."},
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Refrigerant condenser dirty.",
+              "solutions": [
+                {"id": 0, "title": "Clean the refrigerant condenser."},
+              ]
+            },
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Compressor does not start.",
+          "options": [
+            {
+              "id": 0,
+              "title": "No voltage at power terminals of motor starter",
+              "solutions": [
+                {"id": 0, "title": "Check the fuses and wiring"},
+              ]
+            },
+            {
+              "id": 1,
+              "title": "High ambient temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clear fins of all obstructions."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Fix the leak, if necessary and add a charge of refrigerant."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Compressor not running",
+          "options": [
+            {
+              "id": 0,
+              "title":
+                  "Internal mechanical parts defective or compressor ceased",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Compressor must be replaced. Call customer service.",
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "High ambient temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clear fins of all obstructions."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Fix the leak, if necessary and add a charge of refrigerant."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Compressor noise-too loud/compressor knocking or banging",
+          "options": [
+            {
+              "id": 0,
+              "title": "Internal parts of compressor broken",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Compressor must be replaced Call customer service",
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "High ambient temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clear fins of all obstructions."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Fix the leak, if necessary and add a charge of refrigerant."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 9,
+          "title": "Compressor knocking and intake line exceptionally cold",
+          "options": [
+            {
+              "id": 0,
+              "title": "Expansion valve not closing",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Check the expansion valve Call customer service"
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "High ambient temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clear fins of all obstructions."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Fix the leak, if necessary and add a charge of refrigerant."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Compressor loosing oil",
+          "options": [
+            {
+              "id": 0,
+              "title": "Oil level too low",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Oil must be topped up",
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Clogged filter dryer",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Change the filter dryer",
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "High ambient temperature.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Be sure that dryer is working lower than design conditions."
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Clogged condenser fins ",
+              "solutions": [
+                {"id": 0, "title": "Clear fins of all obstructions."},
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Shortage of refrigerant ",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Fix the leak, if necessary and add a charge of refrigerant."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Condensing pressure too high",
+          "options": [
+            {
+              "id": 0,
+              "title": "Too much refrigerant in system",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Check the refrigerant level and correct the level as needed"
+                },
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Insufficient cooling air to condenser(s)",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Clean the condenser coil. Check the operating mode of the motor and fans"
+                },
+              ]
+            },
+            {
+              "id": 2,
+              "title":
+                  "Fans not delivering enough air. Check fan rotation. Check if fan motor has failed.",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title":
+                      "Change phase order on main power cord or change fan motor."
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Condensing pressure too low",
+          "options": [
+            {
+              "id": 0,
+              "title": "High pressure valves broken or leaky",
+              "solutions": [
+                {"id": 0, "title": "Check the cylinder heads and valves."},
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Low on refrigerant",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Possible leak or insufficient refrigerant",
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Dryer fan vibrating",
+          "options": [
+            {
+              "id": 0,
+              "title": "Fan out of balance",
+              "solutions": [
+                {
+                  "id": 0,
+                  "title": "Inspect the bearings and visually check for damage"
+                },
+              ]
+            },
           ]
         },
       ],
@@ -1505,38 +1954,38 @@ final questionsJson = {
               "id": 0,
               "title": "No electrical power to control cabinet.",
               "solutions": [
-                {"id": 0, "title": "Make sure the unit is plugged into wall "},
                 {
-                  "id": 1,
-                  "title": "outlet and that wall outlet receives power. "
-                },
+                  "id": 0,
+                  "title":
+                      "Make sure the unit is plugged into wall outlet and that wall outlet receives power."
+                }
               ]
             },
             {
               "id": 1,
-              "title": "Circuit breaker tripped..",
+              "title": "Circuit breaker tripped.",
               "solutions": [
-                {"id": 0, "title": "Reset the breaker."},
+                {"id": 0, "title": "Reset the breaker."}
               ]
             },
             {
               "id": 2,
               "title": "Generator is not switched on",
               "solutions": [
-                {"id": 0, "title": "Switch on the oxygen generator"},
+                {"id": 0, "title": "Switch on the oxygen generator"}
               ]
             },
             {
               "id": 3,
-              "title": "Oxygen Generator is in Standby mode",
+              "title": "Oxygen Generator is in Standby mode.",
               "solutions": [
                 {
                   "id": 0,
                   "title":
                       "The oxygen generator will start running once the pressure in the oxygen receiver goes below the low setpoint for standby mode."
-                },
+                }
               ]
-            },
+            }
           ]
         },
         {
@@ -1552,14 +2001,14 @@ final questionsJson = {
                   "id": 0,
                   "title":
                       "Make sure feed air valves remain fully opened and lines are not obstructed."
-                },
+                }
               ]
             },
             {
               "id": 1,
               "title": "Inadequate cycle pressure.",
               "solutions": [
-                {"id": 0, "title": "Adjust or replace feed air regulator."},
+                {"id": 0, "title": "Adjust or replace feed air regulator."}
               ]
             },
             {
@@ -1570,7 +2019,7 @@ final questionsJson = {
                   "id": 0,
                   "title":
                       "Check oxygen usage or check unit and oxygen hoses and piping for leaks."
-                },
+                }
               ]
             }
           ]
@@ -1592,14 +2041,14 @@ final questionsJson = {
                   "id": 1,
                   "title":
                       "Ensure that the oxygen regulator is set at the recommended pressure setting"
-                },
+                }
               ]
             },
             {
               "id": 1,
               "title": "Low purity oxygen during initial start-up.",
               "solutions": [
-                {"id": 0, "title": "Follow the initial start-up procedure"},
+                {"id": 0, "title": "Follow the initial start-up procedure"}
               ]
             },
             {
@@ -1611,14 +2060,14 @@ final questionsJson = {
                   "id": 0,
                   "title":
                       "Purge the oxygen receiver and follow the initial start-up procedure"
-                },
+                }
               ]
             },
             {
               "id": 3,
               "title": "Momentary power loss.",
               "solutions": [
-                {"id": 0, "title": "Vent low purity oxygen from system"},
+                {"id": 0, "title": "Vent low purity oxygen from system"}
               ]
             },
             {
@@ -1629,7 +2078,7 @@ final questionsJson = {
                   "id": 0,
                   "title":
                       "Check air lines for obstructions or adjust or replace feed air regulator."
-                },
+                }
               ]
             },
             {
@@ -1639,26 +2088,23 @@ final questionsJson = {
                 {
                   "id": 0,
                   "title": "Replace or rebuild the valves as necessary."
-                },
+                }
               ]
             },
             {
               "id": 6,
               "title": "Oxygen purity monitoring board defective",
               "solutions": [
-                {
-                  "id": 0,
-                  "title": "Replace the oxygen purity monitoring board"
-                },
+                {"id": 0, "title": "Replace the oxygen purity monitoring board"}
               ]
             },
             {
               "id": 7,
               "title": "Improperly wired PLC.",
               "solutions": [
-                {"id": 0, "title": "Check the wiring or replace PLC."},
+                {"id": 0, "title": "Check the wiring or replace PLC."}
               ]
-            },
+            }
           ]
         },
         {
@@ -1669,85 +2115,89 @@ final questionsJson = {
               "id": 0,
               "title": "Defective coil.",
               "solutions": [
-                {"id": 0, "title": "Replace coil."},
+                {"id": 0, "title": "Replace coil."}
               ]
             },
             {
               "id": 1,
               "title": "Loose or defective wire to valve.",
               "solutions": [
-                {"id": 0, "title": "Repair or replace wire."},
+                {"id": 0, "title": "Repair or replace wire."}
               ]
             },
             {
               "id": 2,
               "title": "Defective PLC. (No power output to valve.)",
               "solutions": [
-                {"id": 0, "title": "Replace PLC."},
+                {"id": 0, "title": "Replace PLC."}
               ]
             },
             {
               "id": 3,
               "title": "Valve remains energized and open.",
               "solutions": [
-                {"id": 0, "title": "Check the valve or the PLC output LED."},
+                {"id": 0, "title": "Check the valve or the PLC output LED."}
               ]
             },
             {
               "id": 4,
               "title": "Defective valve.",
               "solutions": [
-                {"id": 0, "title": "Rebuild or replace valve."},
+                {"id": 0, "title": "Rebuild or replace valve."}
               ]
             },
             {
-              "id": 5,
-              "title": "Worn internal parts on valve.",
+              "id": 4,
+              "title": "DWorn internal parts on valve.",
               "solutions": [
-                {"id": 0, "title": "Rebuild  or replace valve."},
+                {"id": 0, "title": "Rebuild or replace valve."}
               ]
-            },
+            }
           ]
         },
         {
           "id": 4,
-          "title": "Valve makes loud “chattering” noise.",
+          "title": "Valve makes loud “chattering” or knocking sound.",
           "options": [
             {
               "id": 0,
-              "title": "Low voltage.",
+              "title": " power supply: \n• Low voltage at power supply.",
               "solutions": [
-                {"id": 0, "title": "Check power supply."},
+                {
+                  "id": 0,
+                  "title":
+                      "Prompt action: \n• Check for low voltage at power supply to confirm."
+                }
               ]
             },
             {
               "id": 1,
-              "title": "Low voltage PLC output.",
+              "title": "Likely problem with PLC:\n• Low voltage at PLC output.",
               "solutions": [
-                {"id": 0, "title": "Replace PLC."},
+                {"id": 0, "title": "Solution:\n• Replace PLC if required."}
               ]
             },
             {
               "id": 2,
               "title": "Dirty valve.",
               "solutions": [
-                {"id": 0, "title": "Clean or rebuild valve."},
+                {"id": 0, "title": "Clean or rebuild valve."}
               ]
             },
             {
               "id": 2,
               "title": "Worn valve core.",
               "solutions": [
-                {"id": 0, "title": "Rebuild valve."},
+                {"id": 0, "title": "Rebuild valve."}
               ]
             },
             {
               "id": 2,
-              "title": "Deffective EMI filter",
+              "title": "Defective EMI filter.",
               "solutions": [
-                {"id": 0, "title": "Replace EMI filter."},
+                {"id": 0, "title": "Replace EMI filter."}
               ]
-            },
+            }
           ]
         },
         {
@@ -1756,39 +2206,60 @@ final questionsJson = {
           "options": [
             {
               "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
+              "title": "Oxygen Sample flow line obstructed",
               "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
+                {
+                  "id": 0,
+                  "title":
+                      "Ensure that all the valves on the oxygen sample line to the purity monitoring board are open."
+                },
+                {
+                  "id": 0,
+                  "title":
+                      "Ensure that the oxygen regulator on the oxygen sample line is set at the recommended pressure setting"
+                }
               ]
             },
             {
               "id": 1,
-              "title": "Low refrigerant level.",
+              "title": "Leaking check valves.",
               "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
+                {"id": 0, "title": "Clean or replace check valves."}
               ]
             },
             {
               "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
+              "title": "Plugged muffler.",
               "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
+                {"id": 0, "title": "Replace muffler."}
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Oxygen purity monitoring board may be defective",
+              "solutions": [
                 {
-                  "id": 2,
+                  "id": 0,
                   "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+                      "Immediate Action: \n•Verify the oxygen purity using an external oxygen analyzer."
                 },
                 {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
+                  "id": 0,
                   "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
+                      "IDiagnosis:\n• Check the oxygen purity monitoring board for any faults in case of any difference in oxygen purity readings.\n• Verify the continuity of the oxygen purity monitoring board.\n• Check the oxygen sensor for its functionality."
                 },
+                {
+                  "id": 0,
+                  "title":
+                      "Rectification:\n• Replace the oxygen sensor if faulty.\n• Replace the oxygen purity monitoring board if required."
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "title": "Contaminated zeolite sieves",
+              "solutions": [
+                {"id": 0, "title": "Whole system repair/overhaul is required"}
               ]
             }
           ]
@@ -1799,39 +2270,27 @@ final questionsJson = {
           "options": [
             {
               "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
+              "title": "Feed air regulator set improperly",
               "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
+                {"id": 0, "title": "Adjust feed air regulator."}
               ]
             },
             {
               "id": 1,
-              "title": "Low refrigerant level.",
+              "title": "Contaminated molecular sieve in adsorbers.",
               "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
+                {"id": 0, "title": "Replace dust filters"}
               ]
             },
             {
               "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
+              "title": "System not cycling properly.",
               "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
                 {
-                  "id": 2,
+                  "id": 0,
                   "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
+                      "Check and repair or replace faulty wiring and/or PLC."
+                }
               ]
             }
           ]
@@ -1842,39 +2301,19 @@ final questionsJson = {
           "options": [
             {
               "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
+              "title": "Stuck feed air regulator main valve assembly.",
               "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
+                {
+                  "id": 0,
+                  "title": "Clean and lubricate main regulator valve assembly."
+                }
               ]
             },
             {
               "id": 1,
-              "title": "Low refrigerant level.",
+              "title": "Defective main valve assembly seat.",
               "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
+                {"id": 0, "title": "Rebuild or replace regulator."}
               ]
             }
           ]
@@ -1885,39 +2324,23 @@ final questionsJson = {
           "options": [
             {
               "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
+              "title": "Cycle pressure exceeds the maximum pressure specified.",
               "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
+                {"id": 0, "title": "Adjust feed air regulator."}
               ]
             },
             {
               "id": 1,
-              "title": "Low refrigerant level.",
+              "title": "Stuck feed air regulator main valve assembly.",
               "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
+                {"id": 0, "title": "Rebuild or replace regulator."}
               ]
             },
             {
               "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
+              "title": "Defective relief valve.",
               "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
+                {"id": 0, "title": "Replace relief valve."}
               ]
             }
           ]
@@ -1928,131 +2351,69 @@ final questionsJson = {
           "options": [
             {
               "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
+              "title": "Valve obstructed.",
               "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "title": "Filter drain valve does not energize.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
+                {"id": 0, "title": "Clean or replace valve."}
               ]
             }
           ]
         },
         {
           "id": 11,
+          "title": "Filter drain valve does not energize.",
+          "options": [
+            {
+              "id": 0,
+              "title": "Loose or defective wire to valve.",
+              "solutions": [
+                {"id": 0, "title": "Repair or replace wire."}
+              ]
+            },
+            {
+              "id": 1,
+              "title": "Defective valve coil.",
+              "solutions": [
+                {"id": 0, "title": "Replace valve."}
+              ]
+            },
+            {
+              "id": 2,
+              "title": "Valve core stuck in closed position.",
+              "solutions": [
+                {"id": 0, "title": "Replace valve."}
+              ]
+            },
+            {
+              "id": 3,
+              "title": "Defective PLC. (No power output to valve.)",
+              "solutions": [
+                {"id": 0, "title": "Replace PLC."}
+              ]
+            }
+          ]
+        },
+        {
+          "id": 12,
           "title":
               "Filter drain valve energizes with unit pressurized, but no air exhausts.",
           "options": [
             {
               "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
+              "title": "Drain valve obstructed or stuck in closed position.",
               "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
+                {"id": 0, "title": "Clean or replace valve."}
               ]
             },
             {
               "id": 1,
-              "title": "Low refrigerant level.",
+              "title": "Drain tubing obstructed or pinched.",
               "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
+                {"id": 0, "title": "Clean or replace tubing."}
               ]
             }
           ]
         }
-      ],
+      ]
     },
     {
       "Questions": [
@@ -2612,1124 +2973,1788 @@ final questionsJson = {
           ]
         }
       ],
-    },
-    {
-      "Questions": [
-        {
-          "id": 0,
-          "title": "Oxygen generator does not cycle.",
-          "options": [
-            {
-              "id": 0,
-              "title": "No electrical power to control cabinet.",
-              "solutions": [
-                {"id": 0, "title": "Make sure the unit is plugged into wall "},
-                {
-                  "id": 1,
-                  "title": "outlet and that wall outlet receives power. "
-                },
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Circuit breaker tripped..",
-              "solutions": [
-                {"id": 0, "title": "Reset the breaker."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Generator is not switched on",
-              "solutions": [
-                {"id": 0, "title": "Switch on the oxygen generator"},
-              ]
-            },
-            {
-              "id": 3,
-              "title": "Oxygen Generator is in Standby mode",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "The oxygen generator will start running once the pressure in the oxygen receiver goes below the low setpoint for standby mode."
-                },
-              ]
-            },
-          ]
-        },
-        {
-          "id": 1,
-          "title":
-              "Oxygen generator operates continuously. Pressure of oxygen at specified purity is lower than the specified pressure.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Inadequate feed air pressure.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Make sure feed air valves remain fully opened and lines are not obstructed."
-                },
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Inadequate cycle pressure.",
-              "solutions": [
-                {"id": 0, "title": "Adjust or replace feed air regulator."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Oxygen demand exceeds oxygen generator capacity.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Check oxygen usage or check unit and oxygen hoses and piping for leaks."
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "title": "Oxygen purity below specified purity (50–70%).",
-          "options": [
-            {
-              "id": 0,
-              "title": "Oxygen Sample flow line obstructed",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Ensure that all the valves on the oxygen sample line to the purity monitoring board are open."
-                },
-                {
-                  "id": 1,
-                  "title":
-                      "Ensure that the oxygen regulator is set at the recommended pressure setting"
-                },
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low purity oxygen during initial start-up.",
-              "solutions": [
-                {"id": 0, "title": "Follow the initial start-up procedure"},
-              ]
-            },
-            {
-              "id": 2,
-              "title":
-                  "Unit shut down for extended period—no pressure in oxygen system.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Purge the oxygen receiver and follow the initial start-up procedure"
-                },
-              ]
-            },
-            {
-              "id": 3,
-              "title": "Momentary power loss.",
-              "solutions": [
-                {"id": 0, "title": "Vent low purity oxygen from system"},
-              ]
-            },
-            {
-              "id": 4,
-              "title": "Inadequate feed air.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Check air lines for obstructions or adjust or replace feed air regulator."
-                },
-              ]
-            },
-            {
-              "id": 5,
-              "title": "Valves not cycling properly.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title": "Replace or rebuild the valves as necessary."
-                },
-              ]
-            },
-            {
-              "id": 6,
-              "title": "Oxygen purity monitoring board defective",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title": "Replace the oxygen purity monitoring board"
-                },
-              ]
-            },
-            {
-              "id": 7,
-              "title": "Improperly wired PLC.",
-              "solutions": [
-                {"id": 0, "title": "Check the wiring or replace PLC."},
-              ]
-            },
-          ]
-        },
-        {
-          "id": 3,
-          "title": "Solenoid valve not functioning properly",
-          "options": [
-            {
-              "id": 0,
-              "title": "Defective coil.",
-              "solutions": [
-                {"id": 0, "title": "Replace coil."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Loose or defective wire to valve.",
-              "solutions": [
-                {"id": 0, "title": "Repair or replace wire."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Defective PLC. (No power output to valve.)",
-              "solutions": [
-                {"id": 0, "title": "Replace PLC."},
-              ]
-            },
-            {
-              "id": 3,
-              "title": "Valve remains energized and open.",
-              "solutions": [
-                {"id": 0, "title": "Check the valve or the PLC output LED."},
-              ]
-            },
-            {
-              "id": 4,
-              "title": "Defective valve.",
-              "solutions": [
-                {"id": 0, "title": "Rebuild or replace valve."},
-              ]
-            },
-            {
-              "id": 5,
-              "title": "Worn internal parts on valve.",
-              "solutions": [
-                {"id": 0, "title": "Rebuild  or replace valve."},
-              ]
-            },
-          ]
-        },
-        {
-          "id": 4,
-          "title": "Valve makes loud “chattering” noise.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Low voltage.",
-              "solutions": [
-                {"id": 0, "title": "Check power supply."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low voltage PLC output.",
-              "solutions": [
-                {"id": 0, "title": "Replace PLC."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirty valve.",
-              "solutions": [
-                {"id": 0, "title": "Clean or rebuild valve."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Worn valve core.",
-              "solutions": [
-                {"id": 0, "title": "Rebuild valve."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Deffective EMI filter",
-              "solutions": [
-                {"id": 0, "title": "Replace EMI filter."},
-              ]
-            },
-          ]
-        },
-        {
-          "id": 5,
-          "title": "Very low purity oxygen output (21–50%).",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "title": "Oxygen generator outputs particulates (dusting).",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "title": "Feed air regulator leaks out bleed orifice.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 8,
-          "title": "Oxygen generator relief valves open.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 9,
-          "title": "Filter drain valve remains open. (Valve not energized.)",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "title": "Filter drain valve does not energize.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 11,
-          "title":
-              "Filter drain valve energizes with unit pressurized, but no air exhausts.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        }
-      ],
-    },
-    {
-      "Questions": [
-        {
-          "id": 0,
-          "title": "Oxygen generator does not cycle.",
-          "options": [
-            {
-              "id": 0,
-              "title": "No electrical power to control cabinet.",
-              "solutions": [
-                {"id": 0, "title": "Make sure the unit is plugged into wall "},
-                {
-                  "id": 1,
-                  "title": "outlet and that wall outlet receives power. "
-                },
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Circuit breaker tripped..",
-              "solutions": [
-                {"id": 0, "title": "Reset the breaker."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Generator is not switched on",
-              "solutions": [
-                {"id": 0, "title": "Switch on the oxygen generator"},
-              ]
-            },
-            {
-              "id": 3,
-              "title": "Oxygen Generator is in Standby mode",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "The oxygen generator will start running once the pressure in the oxygen receiver goes below the low setpoint for standby mode."
-                },
-              ]
-            },
-          ]
-        },
-        {
-          "id": 1,
-          "title":
-              "Oxygen generator operates continuously. Pressure of oxygen at specified purity is lower than the specified pressure.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Inadequate feed air pressure.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Make sure feed air valves remain fully opened and lines are not obstructed."
-                },
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Inadequate cycle pressure.",
-              "solutions": [
-                {"id": 0, "title": "Adjust or replace feed air regulator."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Oxygen demand exceeds oxygen generator capacity.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Check oxygen usage or check unit and oxygen hoses and piping for leaks."
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "title": "Oxygen purity below specified purity (50–70%).",
-          "options": [
-            {
-              "id": 0,
-              "title": "Oxygen Sample flow line obstructed",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Ensure that all the valves on the oxygen sample line to the purity monitoring board are open."
-                },
-                {
-                  "id": 1,
-                  "title":
-                      "Ensure that the oxygen regulator is set at the recommended pressure setting"
-                },
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low purity oxygen during initial start-up.",
-              "solutions": [
-                {"id": 0, "title": "Follow the initial start-up procedure"},
-              ]
-            },
-            {
-              "id": 2,
-              "title":
-                  "Unit shut down for extended period—no pressure in oxygen system.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Purge the oxygen receiver and follow the initial start-up procedure"
-                },
-              ]
-            },
-            {
-              "id": 3,
-              "title": "Momentary power loss.",
-              "solutions": [
-                {"id": 0, "title": "Vent low purity oxygen from system"},
-              ]
-            },
-            {
-              "id": 4,
-              "title": "Inadequate feed air.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title":
-                      "Check air lines for obstructions or adjust or replace feed air regulator."
-                },
-              ]
-            },
-            {
-              "id": 5,
-              "title": "Valves not cycling properly.",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title": "Replace or rebuild the valves as necessary."
-                },
-              ]
-            },
-            {
-              "id": 6,
-              "title": "Oxygen purity monitoring board defective",
-              "solutions": [
-                {
-                  "id": 0,
-                  "title": "Replace the oxygen purity monitoring board"
-                },
-              ]
-            },
-            {
-              "id": 7,
-              "title": "Improperly wired PLC.",
-              "solutions": [
-                {"id": 0, "title": "Check the wiring or replace PLC."},
-              ]
-            },
-          ]
-        },
-        {
-          "id": 3,
-          "title": "Solenoid valve not functioning properly",
-          "options": [
-            {
-              "id": 0,
-              "title": "Defective coil.",
-              "solutions": [
-                {"id": 0, "title": "Replace coil."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Loose or defective wire to valve.",
-              "solutions": [
-                {"id": 0, "title": "Repair or replace wire."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Defective PLC. (No power output to valve.)",
-              "solutions": [
-                {"id": 0, "title": "Replace PLC."},
-              ]
-            },
-            {
-              "id": 3,
-              "title": "Valve remains energized and open.",
-              "solutions": [
-                {"id": 0, "title": "Check the valve or the PLC output LED."},
-              ]
-            },
-            {
-              "id": 4,
-              "title": "Defective valve.",
-              "solutions": [
-                {"id": 0, "title": "Rebuild or replace valve."},
-              ]
-            },
-            {
-              "id": 5,
-              "title": "Worn internal parts on valve.",
-              "solutions": [
-                {"id": 0, "title": "Rebuild  or replace valve."},
-              ]
-            },
-          ]
-        },
-        {
-          "id": 4,
-          "title": "Valve makes loud “chattering” noise.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Low voltage.",
-              "solutions": [
-                {"id": 0, "title": "Check power supply."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low voltage PLC output.",
-              "solutions": [
-                {"id": 0, "title": "Replace PLC."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirty valve.",
-              "solutions": [
-                {"id": 0, "title": "Clean or rebuild valve."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Worn valve core.",
-              "solutions": [
-                {"id": 0, "title": "Rebuild valve."},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Deffective EMI filter",
-              "solutions": [
-                {"id": 0, "title": "Replace EMI filter."},
-              ]
-            },
-          ]
-        },
-        {
-          "id": 5,
-          "title": "Very low purity oxygen output (21–50%).",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "title": "Oxygen generator outputs particulates (dusting).",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "title": "Feed air regulator leaks out bleed orifice.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 8,
-          "title": "Oxygen generator relief valves open.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 9,
-          "title": "Filter drain valve remains open. (Valve not energized.)",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "title": "Filter drain valve does not energize.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        },
-        {
-          "id": 11,
-          "title":
-              "Filter drain valve energizes with unit pressurized, but no air exhausts.",
-          "options": [
-            {
-              "id": 0,
-              "title": "Ambient or compressed air inlet temperature too high.",
-              "solutions": [
-                {"id": 0, "title": "Check if installation conditions are OK."},
-              ]
-            },
-            {
-              "id": 1,
-              "title": "Low refrigerant level.",
-              "solutions": [
-                {"id": 0, "title": "Identify and repair leaks in the system"},
-                {"id": 1, "title": "Recharge the refrigerant"},
-              ]
-            },
-            {
-              "id": 2,
-              "title": "Dirt collecting in the compressed air system.",
-              "solutions": [
-                {"id": 0, "title": "Check and clean the filters"},
-                {"id": 1, "title": "Upgrade the filtration system"},
-                {
-                  "id": 2,
-                  "title":
-                      "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
-                },
-                {
-                  "id": 3,
-                  "title": "Identify and repair the compressed air system leaks"
-                },
-                {
-                  "id": 4,
-                  "title":
-                      "Monitor and adjust operating conditions such as temperature and pressure settings"
-                },
-              ]
-            }
-          ]
-        }
-      ],
-    },
+    }
+    // {
+    //   "Questions": [
+    //     {
+    //       "id": 0,
+    //       "title": "HIGH PRESSURE TROUBLES",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "High Interstage Pressure",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Continue running and monitor pressure.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Leaking suction or discharge valve in the next higher stage",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace the defective valve"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Worn piston rings on next stage",
+    //                   "solution": [
+    //                     {"id": 0, "title": "replace piston rings"}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Interstage relief valve is “popping”",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Shutdown  the compressor",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Defective relief valve",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title": "Reset or replace the defective relief valve"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title":
+    //                       "Leaking suction or discharge valve in the next higher stage",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace the defective valve "}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 2,
+    //                   "title":
+    //                       "Worn piston rings (only on steeple cylinder such as RIX 2V3 2nd & 3rd stage)",
+    //                   "solution": [
+    //                     {"id": 0, "title": "replace piston rings"}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "High Pressure on final stage”",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Shutdown the compressor",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Pressure switch improperly set or inoperative",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Reset or replace switch"}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Final stage relief valve is “popping”",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Shutdown the compressor",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Discharge lines, back pressure valve, or filter is restricted",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Clean back pressure valve, filter, and/or lines"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Defective relief valve",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Reset or replace the relief valve "}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "LOW PRESSURE TROUBLES",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "Low interstage pressure",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Continue running and monitor pressures until a convenient time to shut the compressor down.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Worn 1st stage or interstage rings.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Replace piston rings and inspect cylinder for wear"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "leaking 1st stage valves",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace the defective valve"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Leaks in piping or o-rings.",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Repair leak"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Low suction pressure to compressor",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Compressor may be overdrawing PSA and causing suction pressure to drop or there may be an issue with the PSA"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Restricted inlet filter or suction piping",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Clean inlet filter and/or remove restriction from suction piping"
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Compressor will not produce final discharge pressure",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Continue running and monitor pressures until a convenient time to shut the compressor down.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Worn piston rings",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace piston rings"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Leak to atmosphere from the  cylinder head",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Inspect cylinder head for wear and/or cylinder head o-ring for damage"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 2,
+    //                   "title": "Leak to atmosphere from the piping",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Locate and repair."}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 2,
+    //                   "title":
+    //                       "Leak in downstream piping or lack of back pressure ",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Locate and repair."}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "HIGH TEMPERATURE TROUBLES",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "Compressor over heats",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Shutdown the compressor",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Fans inoperative or spinning the wrong direction (if equipped) and/or inter-cooler air or water flow restricted; insufficient cooling",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Repair or replace fan  and/or clear out restriction for inter-cooler"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title":
+    //                       "Restriction in piping caused by damage or blockage (clogged filter etc.).",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Inspect piping for kinks and other physical damage and repair."
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Faulty compressor valves.",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Repair or replace the valves"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "High ambient temperature.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Ventilate area or shutdown until area cools down."
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "REDUCED CAPACITY TROUBLES",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title":
+    //               "Output of compressor is reduced / Longer than normal time required to fill receiver.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Continue running, monitor pressures. Service unit at first opportunity.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Low inlet pressure",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Restore to normal pressure."}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "Worn compression rings.",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace rings. "}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "First stage valves leaking.",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace the defective valve"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title":
+    //                       "Leaks in piping, heads, heat exchangers or seals.",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Locate and repair."}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "UNUSUAL NOISE TROUBLES",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "Loud metallic knock.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Try to isolate location of noise.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Worn connecting rod  bearing.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title": "Replace connecting rod needle bearing."
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Clacking noises from the cylinder head.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Check pressure gauge. Shut compressor down if pressure varies from normal.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Worn or broken valves.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Remove suspect valves and repair or replace them."
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Flat,slapping sound when compressor starts and stops.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Try to isolate location of noise.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Worn piston and/or cylinder liner. Worn rider rings.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Remove suspect pistons and cylinder liners and check for wear. Repair as necessary. Replace rider rings."
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Entire compressor vibrates.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Stop compressor and correct trouble before restarting.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Compressor not properly secured.",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Tighten mounting bolts."}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Piston clearances not properly adjusted",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Readjust piston clearance"}
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "INABILITY TO START COMPRESSOR",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "Compressor fails to start.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "No immediate action.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "High pressure switch senses high pressure in receiver.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Readjust pressure switch if setting is too high.Otherwise wait until there is a drop in receiver pressure that signals a restart."
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Low pressure switch senses low suction pressure",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Check to see if system has lost pressure. Increase suction pressure or re-adjust pressure switch if setting is too low."
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title": "Overload tripped.",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Clear fault, press reset button on the motor controller, then attempt restart ",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Voltage too low.",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Restore power and check voltage to the compressor. Reset circuit breakers. Replace fuses as necessary."
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "INABILITY TO RESTART COMPRESSOR",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "Compressor fails to start after recent shutdown",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "No immediate action",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Shutdown was initiated by high pressure switch",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Allow pressures at switch to drop, compressor will automatically restart"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Shutdown was initiated by low pressure switch",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Allow inlet pressure to increase and clear fault (if applicable) then restart the compressor"
+    //                     }
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Shutdown was initiated by high temperature sensor",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Correct the problem and then clear the fault"
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 0,
+    //       "title": "INABILITY TO STOP COMPRESSOR",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title":
+    //               "Compressor does not stop when high pressure set point is reached",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Push STOP  push button on controller",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title": "Inoperative pressure switch  or set improperly",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title": "Readjust or repair the switch as necessary"
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": 0,
+    //           "title":
+    //               "Compressor does not stop when selector switch is turned to OFF",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Cut power to compressor at main disconnect",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "Improperly wired or faulty  selector  switch  on controller",
+    //                   "solution": [
+    //                     {
+    //                       "id": 0,
+    //                       "title":
+    //                           "Trace circuit wiring in motor controller against wiring diagram"
+    //                     },
+    //                     {
+    //                       "id": 1,
+    //                       "title": "Repair or replace faulty selector switch"
+    //                     }
+    //                   ]
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // }
   ]
 };
+    // {
+    //   "Questions": [
+    //     {
+    //       "id": 0,
+    //       "title": "Oxygen generator does not cycle.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "No electrical power to control cabinet.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Make sure the unit is plugged into wall "},
+    //             {
+    //               "id": 1,
+    //               "title": "outlet and that wall outlet receives power. "
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Circuit breaker tripped..",
+    //           "solutions": [
+    //             {"id": 0, "title": "Reset the breaker."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Generator is not switched on",
+    //           "solutions": [
+    //             {"id": 0, "title": "Switch on the oxygen generator"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 3,
+    //           "title": "Oxygen Generator is in Standby mode",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "The oxygen generator will start running once the pressure in the oxygen receiver goes below the low setpoint for standby mode."
+    //             },
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 1,
+    //       "title":
+    //           "Oxygen generator operates continuously. Pressure of oxygen at specified purity is lower than the specified pressure.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Inadequate feed air pressure.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Make sure feed air valves remain fully opened and lines are not obstructed."
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Inadequate cycle pressure.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Adjust or replace feed air regulator."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Oxygen demand exceeds oxygen generator capacity.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Check oxygen usage or check unit and oxygen hoses and piping for leaks."
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 2,
+    //       "title": "Oxygen purity below specified purity (50–70%).",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Oxygen Sample flow line obstructed",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Ensure that all the valves on the oxygen sample line to the purity monitoring board are open."
+    //             },
+    //             {
+    //               "id": 1,
+    //               "title":
+    //                   "Ensure that the oxygen regulator is set at the recommended pressure setting"
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low purity oxygen during initial start-up.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Follow the initial start-up procedure"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title":
+    //               "Unit shut down for extended period—no pressure in oxygen system.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Purge the oxygen receiver and follow the initial start-up procedure"
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 3,
+    //           "title": "Momentary power loss.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Vent low purity oxygen from system"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 4,
+    //           "title": "Inadequate feed air.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Check air lines for obstructions or adjust or replace feed air regulator."
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 5,
+    //           "title": "Valves not cycling properly.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title": "Replace or rebuild the valves as necessary."
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 6,
+    //           "title": "Oxygen purity monitoring board defective",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title": "Replace the oxygen purity monitoring board"
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 7,
+    //           "title": "Improperly wired PLC.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check the wiring or replace PLC."},
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 3,
+    //       "title": "Solenoid valve not functioning properly",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Defective coil.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace coil."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Loose or defective wire to valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Repair or replace wire."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Defective PLC. (No power output to valve.)",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace PLC."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 3,
+    //           "title": "Valve remains energized and open.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check the valve or the PLC output LED."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 4,
+    //           "title": "Defective valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Rebuild or replace valve."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 5,
+    //           "title": "Worn internal parts on valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Rebuild  or replace valve."},
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 4,
+    //       "title": "Valve makes loud “chattering” noise.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Low voltage.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check power supply."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low voltage PLC output.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace PLC."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirty valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Clean or rebuild valve."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Worn valve core.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Rebuild valve."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Deffective EMI filter",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace EMI filter."},
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 5,
+    //       "title": "Very low purity oxygen output (21–50%).",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 6,
+    //       "title": "Oxygen generator outputs particulates (dusting).",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 7,
+    //       "title": "Feed air regulator leaks out bleed orifice.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 8,
+    //       "title": "Oxygen generator relief valves open.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 9,
+    //       "title": "Filter drain valve remains open. (Valve not energized.)",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 10,
+    //       "title": "Filter drain valve does not energize.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 11,
+    //       "title":
+    //           "Filter drain valve energizes with unit pressurized, but no air exhausts.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   ],
+    // },
+    // {
+    //   "Questions": [
+    //     {
+    //       "id": 0,
+    //       "title": "Oxygen generator does not cycle.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "No electrical power to control cabinet.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Make sure the unit is plugged into wall "},
+    //             {
+    //               "id": 1,
+    //               "title": "outlet and that wall outlet receives power. "
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Circuit breaker tripped..",
+    //           "solutions": [
+    //             {"id": 0, "title": "Reset the breaker."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Generator is not switched on",
+    //           "solutions": [
+    //             {"id": 0, "title": "Switch on the oxygen generator"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 3,
+    //           "title": "Oxygen Generator is in Standby mode",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "The oxygen generator will start running once the pressure in the oxygen receiver goes below the low setpoint for standby mode."
+    //             },
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 1,
+    //       "title":
+    //           "Oxygen generator operates continuously. Pressure of oxygen at specified purity is lower than the specified pressure.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Inadequate feed air pressure.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Make sure feed air valves remain fully opened and lines are not obstructed."
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Inadequate cycle pressure.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Adjust or replace feed air regulator."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Oxygen demand exceeds oxygen generator capacity.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Check oxygen usage or check unit and oxygen hoses and piping for leaks."
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 2,
+    //       "title": "Oxygen purity below specified purity (50–70%).",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Oxygen Sample flow line obstructed",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Ensure that all the valves on the oxygen sample line to the purity monitoring board are open."
+    //             },
+    //             {
+    //               "id": 1,
+    //               "title":
+    //                   "Ensure that the oxygen regulator is set at the recommended pressure setting"
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low purity oxygen during initial start-up.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Follow the initial start-up procedure"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title":
+    //               "Unit shut down for extended period—no pressure in oxygen system.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Purge the oxygen receiver and follow the initial start-up procedure"
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 3,
+    //           "title": "Momentary power loss.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Vent low purity oxygen from system"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 4,
+    //           "title": "Inadequate feed air.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title":
+    //                   "Check air lines for obstructions or adjust or replace feed air regulator."
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 5,
+    //           "title": "Valves not cycling properly.",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title": "Replace or rebuild the valves as necessary."
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 6,
+    //           "title": "Oxygen purity monitoring board defective",
+    //           "solutions": [
+    //             {
+    //               "id": 0,
+    //               "title": "Replace the oxygen purity monitoring board"
+    //             },
+    //           ]
+    //         },
+    //         {
+    //           "id": 7,
+    //           "title": "Improperly wired PLC.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check the wiring or replace PLC."},
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 3,
+    //       "title": "Solenoid valve not functioning properly",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Defective coil.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace coil."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Loose or defective wire to valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Repair or replace wire."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Defective PLC. (No power output to valve.)",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace PLC."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 3,
+    //           "title": "Valve remains energized and open.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check the valve or the PLC output LED."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 4,
+    //           "title": "Defective valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Rebuild or replace valve."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 5,
+    //           "title": "Worn internal parts on valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Rebuild  or replace valve."},
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 4,
+    //       "title": "Valve makes loud “chattering” noise.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Low voltage.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check power supply."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low voltage PLC output.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace PLC."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirty valve.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Clean or rebuild valve."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Worn valve core.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Rebuild valve."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Deffective EMI filter",
+    //           "solutions": [
+    //             {"id": 0, "title": "Replace EMI filter."},
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       "id": 5,
+    //       "title": "Very low purity oxygen output (21–50%).",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 6,
+    //       "title": "Oxygen generator outputs particulates (dusting).",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 7,
+    //       "title": "Feed air regulator leaks out bleed orifice.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 8,
+    //       "title": "Oxygen generator relief valves open.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 9,
+    //       "title": "Filter drain valve remains open. (Valve not energized.)",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 10,
+    //       "title": "Filter drain valve does not energize.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     },
+    //     {
+    //       "id": 11,
+    //       "title":
+    //           "Filter drain valve energizes with unit pressurized, but no air exhausts.",
+    //       "options": [
+    //         {
+    //           "id": 0,
+    //           "title": "Ambient or compressed air inlet temperature too high.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check if installation conditions are OK."},
+    //           ]
+    //         },
+    //         {
+    //           "id": 1,
+    //           "title": "Low refrigerant level.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Identify and repair leaks in the system"},
+    //             {"id": 1, "title": "Recharge the refrigerant"},
+    //           ]
+    //         },
+    //         {
+    //           "id": 2,
+    //           "title": "Dirt collecting in the compressed air system.",
+    //           "solutions": [
+    //             {"id": 0, "title": "Check and clean the filters"},
+    //             {"id": 1, "title": "Upgrade the filtration system"},
+    //             {
+    //               "id": 2,
+    //               "title":
+    //                   "Inspect the dryer for any signs of damage, leaks, or malfunctioning components"
+    //             },
+    //             {
+    //               "id": 3,
+    //               "title": "Identify and repair the compressed air system leaks"
+    //             },
+    //             {
+    //               "id": 4,
+    //               "title":
+    //                   "Monitor and adjust operating conditions such as temperature and pressure settings"
+    //             },
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   ],
+    // },
+    // {
+    //   "Questions": [
+    //     {
+    //       "id": 0,
+    //       "title": "HIGH PRESSURE TROUBLES",
+    //       "Problem": [
+    //         {
+    //           "id": 0,
+    //           "title": "High Interstage Pressure",
+    //           "immediateAction": [
+    //             {
+    //               "id": 0,
+    //               "title": "Continue running and monitor pressure.",
+    //               "problemCause": [
+    //                 {
+    //                   "id": 0,
+    //                   "title":
+    //                       "1. Leaking suction or discharge valve in the next higher stage",
+    //                   "solution": [
+    //                     {"id": 0, "title": "Replace the defective valve"}
+    //                   ]
+    //                 },
+    //                 {
+    //                   "id": 1,
+    //                   "title": "2. Worn piston rings on next stage",
+    //                   "solution": [
+    //                     {"id": 0, "title": ""}
+    //                   ]
+    //                 },
+    //               ]
+    //             },
+    //           ]
+    //         },
+    //       ]
+    //     },
+    //   ],
+    // },
+//   ]
+// };

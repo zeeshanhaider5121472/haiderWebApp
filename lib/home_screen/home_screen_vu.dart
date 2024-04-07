@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:troubleshooter/booster_compressor_screens/question_booster_compressor_vu.dart';
 
 import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_button.dart';
@@ -253,8 +254,8 @@ class MainImgClickablewidget extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return QuestionScreenVU(
-                                      index1: 7,
+                                    return QuestionBoosterCompressorScreenVU(
+                                      index1: 0,
                                       area: "Booster Compressor",
                                     );
                                   }));
@@ -436,8 +437,8 @@ class MainImgClickablewidget extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return QuestionScreenVU(
-                                      index1: 7,
+                                    return QuestionBoosterCompressorScreenVU(
+                                      index1: 0,
                                       area: "Booster Compressor",
                                     );
                                   }));

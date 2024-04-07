@@ -9,4 +9,5 @@ class QuestionScreenVM extends BaseViewModel {
 
 // Access the first record
   List<Record> get record => questionsModel.records;
+
 }
