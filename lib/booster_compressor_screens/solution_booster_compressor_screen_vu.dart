@@ -56,9 +56,11 @@ class BoosterCompressorSolutionScreenVU
                 //   height: 20,
                 // ),
                 Padding(
-                  padding: const EdgeInsets.all(24),
+                  padding: screenSize.width < 600
+                      ? const EdgeInsets.fromLTRB(24, 24, 12, 24)
+                      : const EdgeInsets.all(24),
                   child: SizedBox(
-                    width: 1200,
+                    // width: 1000,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -612,7 +614,7 @@ class _GenericLVBContainer extends StatelessWidget {
         children: [
           Text(
               textAlign: TextAlign.left,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               title),
           const SizedBox(
             height: 2,
@@ -640,17 +642,16 @@ class _GenericLVBContainer extends StatelessWidget {
                         maxLines: 20,
                         overflow: TextOverflow.ellipsis,
                         viewModel
-                                .questionsModel
-                                .questions[index2]
-                                .problem[index3]
-                                .immediateAction[index4]
-                                .problemCause[index5]
-                                .solution[index6]
-                                .title ??
-                            "",
+                            .questionsModel
+                            .questions[index2]
+                            .problem[index3]
+                            .immediateAction[index4]
+                            .problemCause[index5]
+                            .solution[index6]
+                            .title!,
                         style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black)),
                   ),
                 ],
@@ -688,7 +689,7 @@ class _GenericSolutionContainer extends StatelessWidget {
         children: [
           Text(
               textAlign: TextAlign.left,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               title),
           const SizedBox(
             height: 2,
@@ -700,7 +701,7 @@ class _GenericSolutionContainer extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               data,
               style: const TextStyle(
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: Colors.black))
         ],
