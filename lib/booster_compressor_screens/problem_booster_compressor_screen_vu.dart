@@ -4,8 +4,8 @@ import 'package:stacked/stacked.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/side_menu.dart';
-import 'immediateaction_booster_compressor_screen_vu.dart';
 import 'booster_compressor_screen_vm.dart';
+import 'problemcause_booster_compressor_screen_vu.dart';
 
 class ProblemBoosterCompressorScreenVU
     extends StackedView<BoosterCompressorScreenVM> {
@@ -220,12 +220,21 @@ class GenericAnswers extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                ImmediateActionCompressorScreenVU(
+                                ProblemCauseCompressorScreenVU(
                                   index1: index1,
                                   index2: index2,
                                   index3: index3,
+                                  index4: 0,
                                   area: area,
                                   question: question,
+                                  immediateaction: viewModel
+                                          .questionsModel
+                                          .questions[index2]
+                                          .problem[index3]
+                                          .immediateAction
+                                          .firstOrNull!
+                                          .title ??
+                                      "",
                                   problem: viewModel
                                           .questionsModel
                                           .questions[index2]
@@ -233,6 +242,19 @@ class GenericAnswers extends StatelessWidget {
                                           .title ??
                                       "",
                                 )));
+                    // ImmediateActionCompressorScreenVU(
+                    //   index1: index1,
+                    //   index2: index2,
+                    //   index3: index3,
+                    //   area: area,
+                    //   question: question,
+                    //   problem: viewModel
+                    //           .questionsModel
+                    //           .questions[index2]
+                    //           .problem[index3]
+                    //           .title ??
+                    //       "",
+                    // )));
                     // problem: problem,
                     // problemCause: viewModel
                     //         .record[index1]
@@ -297,12 +319,19 @@ class GenericAnswers extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                ImmediateActionCompressorScreenVU(
+                                ProblemCauseCompressorScreenVU(
                                   index1: index1,
                                   index2: index2,
                                   index3: index3,
+                                  index4: 0,
                                   area: area,
                                   question: question,
+                                  immediateaction: viewModel
+                                      .questionsModel
+                                      .questions[index2]
+                                      .problem[index3]
+                                      .immediateAction
+                                      .join("\n"),
                                   problem: viewModel
                                           .questionsModel
                                           .questions[index2]
@@ -310,6 +339,19 @@ class GenericAnswers extends StatelessWidget {
                                           .title ??
                                       "",
                                 )));
+                    // ImmediateActionCompressorScreenVU(
+                    //   index1: index1,
+                    //   index2: index2,
+                    //   index3: index3,
+                    //   area: area,
+                    //   question: question,
+                    //   problem: viewModel
+                    //           .questionsModel
+                    //           .questions[index2]
+                    //           .problem[index3]
+                    //           .title ??
+                    //       "",
+                    // )));
                   },
                 );
               },

@@ -76,9 +76,7 @@ class BoosterCompressorSolutionScreenVU
                                   title: "Question", data: question),
                               _GenericSolutionContainer(
                                   title: "Problem", data: problem),
-                              _GenericSolutionContainer(
-                                  title: "Immediate Action",
-                                  data: immediateaction),
+
                               _GenericSolutionContainer(
                                   title: "Problem Cause", data: problemCause),
                               _GenericLVBContainer(
@@ -90,6 +88,9 @@ class BoosterCompressorSolutionScreenVU
                                 index4: index4,
                                 index5: index5,
                               ),
+                              _GenericSolutionContainer(
+                                  title: "Immediate Action",
+                                  data: immediateaction),
 
                               screenSize.width < 600
                                   ? const ShareButton()
