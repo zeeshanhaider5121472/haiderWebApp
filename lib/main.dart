@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:troubleshooter/home_screen/home_screen_vu.dart';
 
+import 'reusable_widgets/theme/theme_provider.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (_) => ThemeProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,18 +15,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PSA Troubleshooter',
-      theme: ThemeData(
-        fontFamily: 'Roboto',
-        colorScheme: ColorScheme.fromSeed(
-            // background: const Color.fromARGB(255, 248, 248, 248),
-            // background: Color.fromARGB(255, 255, 87, 87),
-            background: const Color(0XFFf1f3f5),
-            seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: themeProvider.themeData,
+      darkTheme: themeProvider.themeData, // Add a dark theme
+      themeMode: themeProvider.themeMode,
       home: HomeScreenVU(),
     );
   }

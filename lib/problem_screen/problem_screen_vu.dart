@@ -3,7 +3,7 @@ import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/side_menu.dart';
+import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
 import '../solution_screen/solution_screen_vu.dart';
 import 'problem_screen_vm.dart';
 
@@ -26,8 +26,8 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: scaffoldKey,
-        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
-        backgroundColor: const Color.fromARGB(255, 238, 238, 238),
+        endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),
           child: Stack(

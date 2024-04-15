@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 import 'package:troubleshooter/reusable_widgets/header_button.dart';
 
 import '../problem_screen/problem_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/side_menu.dart';
+import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
+import '../reusable_widgets/theme/theme_provider.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   final String area;
@@ -16,11 +18,13 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   @override
   Widget builder(
       BuildContext context, QuestionScreenVM viewModel, Widget? child) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: scaffoldKey,
-        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
-        backgroundColor: const Color.fromARGB(255, 238, 238, 238),
+        endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Ink(
           child: Stack(
             alignment: Alignment.topLeft,
@@ -68,12 +72,13 @@ class GenericAnswers extends StatelessWidget {
   final Size screenSize;
   final int index1;
   final String area;
-  const GenericAnswers(
-      {super.key,
-      required this.viewModel,
-      required this.screenSize,
-      required this.index1,
-      required this.area});
+  const GenericAnswers({
+    super.key,
+    required this.viewModel,
+    required this.screenSize,
+    required this.index1,
+    required this.area,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +102,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
@@ -160,7 +165,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
@@ -215,7 +220,10 @@ class ImageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).dialogBackgroundColor,
+        // color: themeProvider.themeMode == ThemeMode.light
+        //     ? Colors.white
+        //     : Color.fromARGB(255, 31, 32, 33),
         borderRadius: BorderRadius.circular(10),
       ),
       height: 220,

@@ -5,7 +5,8 @@ import 'package:troubleshooter/booster_compressor_screens/question_booster_compr
 import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/side_menu.dart';
+// import '../reusable_widgets/side_menu.dart';
+import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -16,9 +17,9 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
   Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         key: scaffoldKey,
-        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
+        endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
         body: Stack(
           // alignment: Alignment.topRight,
           children: [

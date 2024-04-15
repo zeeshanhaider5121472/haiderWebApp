@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
 import '../reusable_widgets/side_menu.dart';
 import 'booster_compressor_screen_vm.dart';
 import 'problem_booster_compressor_screen_vu.dart';
@@ -21,8 +22,8 @@ class QuestionBoosterCompressorScreenVU
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: scaffoldKey,
-        endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
-        backgroundColor: const Color.fromARGB(255, 238, 238, 238),
+        endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           child: Stack(
             alignment: Alignment.topLeft,

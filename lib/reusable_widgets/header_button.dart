@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'theme/theme_provider.dart';
 
 class HeaderButtons extends StatelessWidget {
   final bool onBack;
@@ -11,6 +14,7 @@ class HeaderButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -20,10 +24,12 @@ class HeaderButtons extends StatelessWidget {
                 padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white,
+                  color: Theme.of(context).dialogBackgroundColor,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5), // Shadow color
+                      color: themeProvider.themeMode == ThemeMode.light
+                          ? Colors.grey.withOpacity(0.5)
+                          : Colors.grey.withOpacity(0 ), // Shadow color
                       spreadRadius: 2, // Spread radius
                       blurRadius: 5, // Blur radius
                       offset: const Offset(0, 3), // Offset in the x,y direction

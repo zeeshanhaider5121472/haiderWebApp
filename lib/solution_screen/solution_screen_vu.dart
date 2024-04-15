@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
 import '../reusable_widgets/side_menu.dart';
 import 'solution_screen_vm.dart';
 
@@ -30,7 +31,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
-      endDrawer: GenericDrawer(scaffoldKey: scaffoldKey),
+      endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
       // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
 
       // backgroundColor: Colors.amber,
