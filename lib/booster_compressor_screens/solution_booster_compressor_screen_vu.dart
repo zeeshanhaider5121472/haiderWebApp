@@ -40,6 +40,7 @@ class BoosterCompressorSolutionScreenVU
     return Scaffold(
       key: scaffoldKey,
       endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
 
       // backgroundColor: Colors.amber,
@@ -480,7 +481,7 @@ class ShareButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 229, 232, 235),
+        color: Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: SingleChildScrollView(
@@ -607,7 +608,7 @@ class _GenericLVBContainer extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
@@ -651,9 +652,9 @@ class _GenericLVBContainer extends StatelessWidget {
                             .solution[index6]
                             .title!,
                         style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black)),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        )),
                   ),
                 ],
               );
@@ -682,7 +683,7 @@ class _GenericSolutionContainer extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
@@ -701,10 +702,7 @@ class _GenericSolutionContainer extends StatelessWidget {
               maxLines: 4,
               overflow: TextOverflow.ellipsis,
               data,
-              style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black))
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
         ],
       ),
     );

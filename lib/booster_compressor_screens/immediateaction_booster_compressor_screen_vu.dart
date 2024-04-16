@@ -32,6 +32,7 @@ class ImmediateActionCompressorScreenVU
     return Scaffold(
         key: scaffoldKey,
         endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),
@@ -199,7 +200,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
@@ -293,7 +294,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(

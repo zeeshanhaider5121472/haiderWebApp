@@ -4,7 +4,6 @@ import 'package:stacked/stacked.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
-import '../reusable_widgets/side_menu.dart';
 import 'booster_compressor_screen_vm.dart';
 import 'problemcause_booster_compressor_screen_vu.dart';
 
@@ -29,6 +28,7 @@ class ProblemBoosterCompressorScreenVU
     return Scaffold(
         key: scaffoldKey,
         endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),
@@ -189,7 +189,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
@@ -288,7 +288,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(

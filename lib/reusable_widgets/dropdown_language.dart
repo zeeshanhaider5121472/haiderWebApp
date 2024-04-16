@@ -27,7 +27,8 @@ class _DropdownLanguageState extends State<DropdownLanguage> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          color: Theme.of(context).dialogBackgroundColor,
+          borderRadius: BorderRadius.circular(5)),
       margin: EdgeInsets.fromLTRB(12, 5, 12, 12),
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       child: Column(
@@ -44,7 +45,7 @@ class _DropdownLanguageState extends State<DropdownLanguage> {
               value: selectedLanguage,
               icon: const Icon(Icons.arrow_drop_down),
               elevation: 16,
-              style: const TextStyle(color: Colors.black),
+              // style: const TextStyle(color: Colors.black),
               onChanged: (String? newValue) {
                 setState(() {
                   selectedLanguage = newValue!;

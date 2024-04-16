@@ -76,7 +76,7 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                 Transform.scale(
                   scale: 0.8,
                   child: Switch(
-                    inactiveThumbColor: Colors.amber,
+                    // inactiveThumbColor: Colors.amber,
                     thumbColor: MaterialStateProperty.all(
                         const Color.fromARGB(255, 255, 255, 255)),
                     activeTrackColor: const Color(0xffb6000f),
