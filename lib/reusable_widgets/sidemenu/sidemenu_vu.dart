@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 
+import '../dropdown_language.dart';
 import '../theme/theme_provider.dart';
 import 'sidemenu_vm.dart';
 
@@ -17,12 +18,15 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
     Widget? child,
   ) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+    String selectedLanguage = 'English';
+    List<String> languages = ['English', 'Français', 'Español', 'Deutsch'];
     bool isSwitched; // Initial value for the switch
     themeProvider.themeMode == ThemeMode.dark
         ? isSwitched = true // Initial value for the switch
         : isSwitched = false;
 
     return Drawer(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       shape: Border.all(color: const Color.fromARGB(0, 0, 0, 0)),
       child: ListView(
         children: [
@@ -39,10 +43,12 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                 Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.white,
+                    color: Theme.of(context).dialogBackgroundColor,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: themeProvider.themeMode == ThemeMode.light
+                            ? Colors.grey.withOpacity(0.5)
+                            : Colors.grey.withOpacity(0),
                         spreadRadius: 2,
                         blurRadius: 5,
                         offset: const Offset(0, 3),
@@ -59,24 +65,108 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
               ],
             ),
           ),
+          SizedBox(width: 70, height: 80, child: DropdownLanguage()),
+
           ListTile(
             leading: const Icon(Icons.dark_mode),
-            trailing: Transform.scale(
-              scale: 0.8,
-              child: Switch(
-                activeTrackColor: const Color.fromARGB(255, 118, 35, 35),
-                value: isSwitched,
-                onChanged: (value) {
-                  isSwitched = !isSwitched;
-                  viewModel.notifyListeners();
-                  viewModel.toggleTheme(themeProvider);
-                },
-              ),
+            trailing: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Transform.scale(
+                  scale: 0.8,
+                  child: Switch(
+                    inactiveThumbColor: Colors.amber,
+                    thumbColor: MaterialStateProperty.all(
+                        const Color.fromARGB(255, 255, 255, 255)),
+                    activeTrackColor: const Color(0xffb6000f),
+                    value: isSwitched,
+                    onChanged: (value) {
+                      isSwitched = !isSwitched;
+                      viewModel.notifyListeners();
+                      viewModel.toggleTheme(themeProvider);
+                    },
+                  ),
+                ),
+              ],
             ),
             title: const Text(
               'Dark mode',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+          ),
+
+          const ListTile(
+            title: Text(
+              "Troubleshooter",
+              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+            ),
+          ),
+          ListTile(
+            trailing: Icon(
+              Icons.info,
+              color: Colors.grey[700],
+            ),
+            title: Text(
+              'Tips & Tricks',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[600],
+              ),
+            ),
+            onTap: () {
+              // Navigate to home screen
+            },
+          ),
+          const Divider(
+            thickness: 0.5,
+            indent: 16,
+            endIndent: 16,
+          ),
+          // ListTile(
+          //   trailing: Icon(
+          //     Icons.info,
+          //     color: Colors.grey[700],
+          //   ),
+          //   title: Text(
+          //     'End User License Agreement',
+          //     style: TextStyle(
+          //       fontSize: 14,
+          //       fontWeight: FontWeight.w600,
+          //       color: Colors.grey[600],
+          //     ),
+          //   ),
+          //   onTap: () {
+          //     // Navigate to home screen
+          //   },
+          // ),
+          // const Divider(
+          //   thickness: 0.5,
+          //   indent: 16,
+          //   endIndent: 16,
+          // ),
+          ListTile(
+            trailing: Icon(
+              Icons.assignment_turned_in,
+              color: Colors.grey[700],
+            ),
+            title: Text(
+              'Feedback',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[600],
+              ),
+            ),
+            onTap: () {
+              // Navigate to home screen
+            },
+          ),
+          const Divider(
+            thickness: 0.5,
+            indent: 16,
+            endIndent: 16,
           ),
         ],
       ),

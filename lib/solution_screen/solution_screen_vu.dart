@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
-import '../reusable_widgets/side_menu.dart';
+import '../reusable_widgets/theme/theme_provider.dart';
 import 'solution_screen_vm.dart';
 
 class SolutionScreenVU extends StackedView<SolutionScreenVM> {
@@ -28,10 +29,12 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
   @override
   Widget builder(
       BuildContext context, SolutionScreenVM viewModel, Widget? child) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
       endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
 
       // backgroundColor: Colors.amber,
@@ -76,7 +79,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                                   index3: index3),
 
                               screenSize.width < 600
-                                  ? const ShareButton()
+                                  ? ShareButton(themeProvider: themeProvider)
                                   : const SizedBox()
 
                               // Container(
@@ -307,7 +310,10 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                         ),
 
                         screenSize.width > 600
-                            ? const Expanded(child: ShareButton())
+                            ? Expanded(
+                                child: ShareButton(
+                                themeProvider: themeProvider,
+                              ))
                             : const SizedBox()
 
                         // Expanded(
@@ -451,8 +457,10 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
 }
 
 class ShareButton extends StatelessWidget {
+  final ThemeProvider themeProvider;
   const ShareButton({
     super.key,
+    required this.themeProvider,
   });
 
   @override
@@ -462,7 +470,9 @@ class ShareButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 229, 232, 235),
+        color: themeProvider.themeMode == ThemeMode.light
+            ? const Color.fromARGB(255, 229, 232, 235)
+            : Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: SingleChildScrollView(
@@ -585,7 +595,7 @@ class _GenericLVBContainer extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
@@ -623,9 +633,9 @@ class _GenericLVBContainer extends StatelessWidget {
                                 .title ??
                             "",
                         style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black)),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          )),
                   ),
                 ],
               );
@@ -654,7 +664,7 @@ class _GenericSolutionContainer extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
@@ -674,9 +684,9 @@ class _GenericSolutionContainer extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               data,
               style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black))
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+              ))
         ],
       ),
     );

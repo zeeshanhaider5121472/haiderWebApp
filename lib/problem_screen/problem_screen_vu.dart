@@ -25,6 +25,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
       BuildContext context, ProblemScreenVM viewModel, Widget? child) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         key: scaffoldKey,
         endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
         // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
@@ -172,9 +173,10 @@ class GenericAnswers extends StatelessWidget {
               maxWidth: 594,
             ),
             child: ListView.builder(
-              shrinkWrap: true, // Add this line
-              physics: const NeverScrollableScrollPhysics(), // Add this line
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
+
               itemCount:
                   viewModel.record[index1].questions[index2].options.length,
               itemBuilder: (context, index3) {
@@ -186,7 +188,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
@@ -254,7 +256,7 @@ class GenericAnswers extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 12),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).dialogBackgroundColor,
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
