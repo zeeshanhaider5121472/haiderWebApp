@@ -12,7 +12,7 @@ import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
+import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../reusable_widgets/side_menu.dart';
 import 'booster_compressor_screen_vm.dart';
 import 'solution_booster_compressor_screen_vu.dart';

@@ -6,7 +6,7 @@ import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 // import '../reusable_widgets/side_menu.dart';
-import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
+import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {

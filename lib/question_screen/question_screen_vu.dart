@@ -6,7 +6,7 @@ import 'package:troubleshooter/reusable_widgets/header_button.dart';
 
 import '../problem_screen/problem_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
+import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../reusable_widgets/theme/theme_provider.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {

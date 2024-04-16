@@ -4,8 +4,7 @@ import 'package:troubleshooter/booster_compressor_screens/problemcause_booster_c
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/sdemenu/sidemenu_vu.dart';
-import '../reusable_widgets/side_menu.dart';
+import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import 'booster_compressor_screen_vm.dart';
 
 class ImmediateActionCompressorScreenVU
