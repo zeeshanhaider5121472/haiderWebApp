@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:troubleshooter/home_screen/home_screen_vu.dart';
-import 'package:troubleshooter/question_screen/question_screen_vu.dart';
 
 import 'reusable_widgets/theme/theme_provider.dart';
+import 'routing/app_route_config.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -15,21 +14,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'PSA Troubleshooter',
       theme: themeProvider.themeData,
       darkTheme: themeProvider.themeData,
       themeMode: themeProvider.themeMode,
-      home: HomeScreenVU(),
-      initialRoute: "/home_screen",
-      routes: {
-        "/home_screen": (context) => HomeScreenVU(), // Define the named route
-        "/problem_screen": (context) => QuestionScreenVU(
-              area: "",
-              index1: 0,
-            ), // Define the named route
-      },
+      routerConfig: MyAppRouter().router,
+      // routeInformationParser: MyAppRouter().router.routeInformationParser,
+      // routerDelegate: MyAppRouter().router.routerDelegate,
+
+      // home: HomeScreenVU(),
+      // initialRoute: "/home_screen",
+      // routes: {
+      //   "/home_screen": (context) => HomeScreenVU(), // Define the named route
+      //   "/problem_screen": (context) => QuestionScreenVU(
+      //         area: "",
+      //         index1: 0,
+      //       ), // Define the named route
+      // },
     );
   }
 }

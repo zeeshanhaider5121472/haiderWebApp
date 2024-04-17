@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/booster_compressor_screens/question_booster_compressor_vu.dart';
 
@@ -7,6 +8,7 @@ import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 // import '../reusable_widgets/side_menu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
+import '../routing/app_route_consts.dart';
 import 'home_screen_vm.dart';
 
 class HomeScreenVU extends StackedView<HomeScreenVM> {
@@ -154,11 +156,42 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return QuestionScreenVU(
-                                        index1: 1, area: "Refrigerated Dryer");
-                                  }));
+                                  final path =
+                                      '/question/${Uri.encodeComponent("Refrigerated Dryer")}/${"1"}';
+                                  GoRouter.of(context).pushNamed(
+                                    MyAppRouteConstants.questionRouteName,
+                                    pathParameters: {
+                                      'area': Uri.encodeComponent(
+                                          "Refrigerated Dryer"),
+                                      'index1': '1',
+                                    },
+                                  );
+                                  // final path =
+                                  //     '/question/${Uri.encodeComponent("Refrigerated Dryer")}/${"1"}';
+                                  // GoRouter.of(context).go(path);
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) =>
+                                  //             QuestionScreenVU(
+                                  //               area: "Refrigerated Dryer",
+                                  //               index1: 1,
+                                  //             )));
+                                  // final path =
+                                  //     '/${MyAppRouteConstants.questionRouteName}/${Uri.encodeComponent("Refrigerated Dryer")}/${"1"}';
+                                  // GoRouter.of(context).go(path);
+                                  // GoRouter.of(context).pushNamed(
+                                  //     MyAppRouteConstants.questionRouteName,
+                                  //     pathParameters: {
+                                  //       'index1': '1',
+                                  //       'area': "Refrigerated Dryer"
+                                  //     });
+
+                                  // Navigator.push(context,
+                                  //     MaterialPageRoute(builder: (context) {
+                                  //   return QuestionScreenVU(
+                                  //       index1: 1, area: "Refrigerated Dryer");
+                                  // }));
                                 },
                                 child: const Image(
                                     image: AssetImage('lib/assets/select.png')),
