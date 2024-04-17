@@ -48,7 +48,7 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                       BoxShadow(
                         color: themeProvider.themeMode == ThemeMode.light
                             ? Colors.grey.withOpacity(0.5)
-                            : Colors.grey.withOpacity(0),
+                            : Colors.grey.withOpacity(0.2),
                         spreadRadius: 2,
                         blurRadius: 5,
                         offset: const Offset(0, 3),

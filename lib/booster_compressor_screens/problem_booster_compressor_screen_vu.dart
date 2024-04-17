@@ -28,7 +28,7 @@ class ProblemBoosterCompressorScreenVU
     return Scaffold(
         key: scaffoldKey,
         endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),

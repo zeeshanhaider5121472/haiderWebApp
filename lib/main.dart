@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:troubleshooter/home_screen/home_screen_vu.dart';
+import 'package:troubleshooter/question_screen/question_screen_vu.dart';
 
 import 'reusable_widgets/theme/theme_provider.dart';
 
@@ -21,6 +22,14 @@ class MyApp extends StatelessWidget {
       darkTheme: themeProvider.themeData,
       themeMode: themeProvider.themeMode,
       home: HomeScreenVU(),
+      initialRoute: "/home_screen",
+      routes: {
+        "/home_screen": (context) => HomeScreenVU(), // Define the named route
+        "/problem_screen": (context) => QuestionScreenVU(
+              area: "",
+              index1: 0,
+            ), // Define the named route
+      },
     );
   }
 }
