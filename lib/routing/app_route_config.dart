@@ -9,29 +9,32 @@ class MyAppRouter {
   // static const String homeRouteName = '/';
   // static const String finalScreenRouteName = '/final-screen';
 
-  GoRouter router = GoRouter(
-    routes: [
-      GoRoute(
-        name: MyAppRouteConstants.homeRouteName,
-        path: '/',
-        pageBuilder: (context, state) => MaterialPage(child: HomeScreenVU()),
-      ),
-      GoRoute(
-        name: MyAppRouteConstants.questionRouteName,
-        path: '/question/:area/:index1',
-        pageBuilder: (context, state) {
-          final area = state.pathParameters['area']!;
-          final index1 = int.parse(state.pathParameters['index1']!);
-          return MaterialPage(
-            child: QuestionScreenVU(
-              area: area,
-              index1: index1,
-            ),
-            fullscreenDialog: true,
-          );
-        },
-      ),
-    ],
-    initialLocation: '/',
-  );
+  static GoRouter returnRouter(bool isAuth) {
+    GoRouter router = GoRouter(
+      routes: [
+        GoRoute(
+          name: MyAppRouteConstants.homeRouteName,
+          path: '/',
+          pageBuilder: (context, state) => MaterialPage(child: HomeScreenVU()),
+        ),
+        GoRoute(
+          name: MyAppRouteConstants.questionRouteName,
+          path: '/:area/questions/:index1',
+          pageBuilder: (context, state) {
+            final area = state.params['area']!;
+            final index1 = int.parse(state.params['index1']!);
+            return MaterialPage(
+              child: QuestionScreenVU(
+                area: area,
+                index1: index1,
+              ),
+              // fullscreenDialog: true,
+            );
+          },
+        ),
+      ],
+      // initialLocation: '/',
+    );
+    return router;
+  }
 }

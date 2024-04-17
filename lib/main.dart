@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.themeData,
       darkTheme: themeProvider.themeData,
       themeMode: themeProvider.themeMode,
-      routerConfig: MyAppRouter().router,
-      // routeInformationParser: MyAppRouter().router.routeInformationParser,
-      // routerDelegate: MyAppRouter().router.routerDelegate,
+      // routerConfig: MyAppRouter().router,
+      routeInformationParser:
+          MyAppRouter.returnRouter(false).routeInformationParser,
+      routerDelegate: MyAppRouter.returnRouter(false).routerDelegate,
 
       // home: HomeScreenVU(),
       // initialRoute: "/home_screen",

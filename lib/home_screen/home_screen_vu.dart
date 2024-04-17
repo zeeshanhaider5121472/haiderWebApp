@@ -158,11 +158,11 @@ class MainImgClickablewidget extends StatelessWidget {
                                 onTap: () {
                                   final path =
                                       '/question/${Uri.encodeComponent("Refrigerated Dryer")}/${"1"}';
+                                  print(path);
                                   GoRouter.of(context).pushNamed(
                                     MyAppRouteConstants.questionRouteName,
-                                    pathParameters: {
-                                      'area': Uri.encodeComponent(
-                                          "Refrigerated Dryer"),
+                                    params: {
+                                      'area': "Refrigerated Dryer",
                                       'index1': '1',
                                     },
                                   );
