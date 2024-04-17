@@ -117,13 +117,20 @@ class MainImgClickablewidget extends StatelessWidget {
                                 Colors.transparent),
                             hoverColor: Colors.transparent,
                             onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return QuestionScreenVU(
-                                  index1: 0,
-                                  area: "Air Compressor",
-                                );
-                              }));
+                              GoRouter.of(context).pushNamed(
+                                MyAppRouteConstants.questionRouteName,
+                                params: {
+                                  'area': "Air Compressor",
+                                  'index1': '0',
+                                },
+                              );
+                              // Navigator.push(context,
+                              //     MaterialPageRoute(builder: (context) {
+                              //   return QuestionScreenVU(
+                              //     index1: 0,
+                              //     area: "Air Compressor",
+                              //   );
+                              // }));
                             },
                             child: const Image(
                                 image: AssetImage('lib/assets/select.png')),
@@ -226,13 +233,13 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return QuestionScreenVU(
-                                      index1: 4,
-                                      area: "Oxygen Generator",
-                                    );
-                                  }));
+                                  GoRouter.of(context).pushNamed(
+                                    MyAppRouteConstants.questionRouteName,
+                                    params: {
+                                      'area': "Oxygen Generator",
+                                      'index1': '4',
+                                    },
+                                  );
                                 },
                                 child: const Image(
                                     image: AssetImage('lib/assets/select.png')),

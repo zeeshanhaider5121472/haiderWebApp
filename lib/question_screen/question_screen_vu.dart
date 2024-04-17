@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 import 'package:troubleshooter/reusable_widgets/header_button.dart';
 
-import '../problem_screen/problem_screen_vu.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../reusable_widgets/theme/theme_provider.dart';
+import '../routing/app_route_consts.dart';
 
 class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   final String area;
@@ -129,16 +130,27 @@ class GenericAnswers extends StatelessWidget {
                         ],
                       )),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProblemScreenVU(
-                                area: area,
-                                problem: viewModel.record[index1]
-                                        .questions[index2].title ??
-                                    "",
-                                index1: index1,
-                                index2: index2)));
+                    GoRouter.of(context).pushNamed(
+                      MyAppRouteConstants.problemRouteName,
+                      params: {
+                        'area': "${area}",
+                        'index1': '${index1}',
+                        'index2': '${index2}',
+                        'problem':
+                            '${viewModel.record[index1].questions[index2].title}' ??
+                                ""
+                      },
+                    );
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => ProblemScreenVU(
+                    //             area: area,
+                    //             problem: viewModel.record[index1]
+                    //                     .questions[index2].title ??
+                    //                 "",
+                    //             index1: index1,
+                    //             index2: index2)));
                   },
                 );
               },
@@ -192,16 +204,17 @@ class GenericAnswers extends StatelessWidget {
                         ],
                       )),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProblemScreenVU(
-                                area: area,
-                                problem: viewModel.record[index1]
-                                        .questions[index2].title ??
-                                    "",
-                                index1: index1,
-                                index2: index2)));
+                    GoRouter.of(context).pushNamed(
+                      MyAppRouteConstants.problemRouteName,
+                      params: {
+                        'area': "${area}",
+                        'index1': '${index1}',
+                        'index2': '${index2}',
+                        'problem':
+                            '${viewModel.record[index1].questions[index2].title}' ??
+                                ""
+                      },
+                    );
                   },
                 );
               },
