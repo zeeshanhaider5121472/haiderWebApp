@@ -165,13 +165,13 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
             ),
             onTap: () async {
               const String recipient = 'saq101@gmail.com';
-              const String subject = 'Feedback - troubleshooter';
-              // final String body = 'Hi! I am using Flutter to send this email.';
+              const String subject = "Feedback - troubleshooter";
 
               final Uri mailUri = Uri(
                 scheme: 'mailto',
                 path: recipient,
-                queryParameters: {'subject': subject},
+                query: 'subject=$subject',
+                // queryParameters: {'subject': subject},
               );
 
               if (await canLaunchUrl(mailUri)) {

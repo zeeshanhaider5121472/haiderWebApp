@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
@@ -100,7 +101,19 @@ class BoosterCompressorSolutionScreenVU
                                   data: immediateaction),
 
                               screenSize.width < 600
-                                  ? ShareButton(themeProvider: themeProvider)
+                                  ? ShareButton(
+                                      themeProvider: themeProvider,
+                                      index1: index1,
+                                      index2: index2,
+                                      index3: index3,
+                                      index4: index4,
+                                      area: area,
+                                      problem: problem,
+                                      immediateaction: immediateaction,
+                                      problemCause: problemCause,
+                                      index5: index5,
+                                      question: question,
+                                    )
                                   : const SizedBox()
 
                               // Container(
@@ -333,6 +346,16 @@ class BoosterCompressorSolutionScreenVU
                         screenSize.width > 600
                             ? Expanded(
                                 child: ShareButton(
+                                area: area,
+                                question: question,
+                                problem: problem,
+                                immediateaction: immediateaction,
+                                problemCause: problemCause,
+                                index1: index1,
+                                index2: index2,
+                                index3: index3,
+                                index4: index4,
+                                index5: index5,
                                 themeProvider: themeProvider,
                               ))
                             : const SizedBox()
@@ -480,14 +503,40 @@ class BoosterCompressorSolutionScreenVU
 
 class ShareButton extends StatelessWidget {
   final ThemeProvider themeProvider;
+  final String area;
+  final String question;
+  final String immediateaction;
+  final String problem;
+  final String problemCause;
+  final int index1;
+  final int index2;
+  final int index3;
+  final int index4;
+  final int index5;
 
   const ShareButton({
     super.key,
     required this.themeProvider,
+    required this.index1,
+    required this.index2,
+    required this.index3,
+    required this.index4,
+    required this.index5,
+    required this.area,
+    required this.question,
+    required this.immediateaction,
+    required this.problem,
+    required this.problemCause,
   });
 
   @override
   Widget build(BuildContext context) {
+    String baseUrl = 'https://haider-web-app.vercel.app/#';
+    String dynamicUrl = Uri(
+            path:
+                '/:$area/bcproblemcause/:$question/:$problem/:$immediateaction/:$problemCause/:$index1/:$index2/:$index3/:$index4/:$index5')
+        .toString();
+    String url = '$baseUrl$dynamicUrl';
     return Container(
       width: 594,
       margin: const EdgeInsets.only(bottom: 10),
@@ -521,6 +570,8 @@ class ShareButton extends StatelessWidget {
               height: 45,
               child: PrimaryButton(
                 onPressed: () {
+                  print(url);
+                  Share.share('Check out my Solution \n$url');
                   // Navigator.push(
                   //     context,
                   //     MaterialPageRoute(
