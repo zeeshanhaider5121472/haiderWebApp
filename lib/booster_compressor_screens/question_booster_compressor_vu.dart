@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
+import '../routing/app_route_consts.dart';
 import 'booster_compressor_screen_vm.dart';
-import 'problem_booster_compressor_screen_vu.dart';
 
 class QuestionBoosterCompressorScreenVU
     extends StackedView<BoosterCompressorScreenVM> {
@@ -129,17 +130,17 @@ class GenericAnswers extends StatelessWidget {
                         ],
                       )),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                ProblemBoosterCompressorScreenVU(
-                                    area: area,
-                                    question: viewModel.questionsModel
-                                            .questions[index2].title ??
-                                        "",
-                                    index1: index1,
-                                    index2: index2)));
+                    GoRouter.of(context).pushNamed(
+                      MyAppRouteConstants.bcProblemRouteName,
+                      params: {
+                        'area': area,
+                        'question':
+                            '${viewModel.questionsModel.questions[index2].title}' ??
+                                "",
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
+                      },
+                    );
                   },
                 );
               },
@@ -192,17 +193,17 @@ class GenericAnswers extends StatelessWidget {
                         ],
                       )),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                ProblemBoosterCompressorScreenVU(
-                                    area: area,
-                                    question: viewModel.questionsModel
-                                            .questions[index2].title ??
-                                        "",
-                                    index1: index1,
-                                    index2: index2)));
+                    GoRouter.of(context).pushNamed(
+                      MyAppRouteConstants.bcProblemRouteName,
+                      params: {
+                        'area': area,
+                        'question':
+                            '${viewModel.questionsModel.questions[index2].title}' ??
+                                "",
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
+                      },
+                    );
                   },
                 );
               },

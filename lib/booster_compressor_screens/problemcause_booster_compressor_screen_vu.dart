@@ -8,13 +8,14 @@
 // import 'problem_booster_compressor_screen_vm.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
+import '../routing/app_route_consts.dart';
 import 'booster_compressor_screen_vm.dart';
-import 'solution_booster_compressor_screen_vu.dart';
 
 class ProblemCauseCompressorScreenVU
     extends StackedView<BoosterCompressorScreenVM> {
@@ -252,28 +253,28 @@ class GenericAnswers extends StatelessWidget {
                         ],
                       )),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                BoosterCompressorSolutionScreenVU(
-                                    index1: index1,
-                                    index2: index2,
-                                    index3: index3,
-                                    index4: index4,
-                                    index5: index5,
-                                    area: area,
-                                    problem: problem,
-                                    question: question,
-                                    immediateaction: immediateaction,
-                                    problemCause: viewModel
-                                            .questionsModel
-                                            .questions[index2]
-                                            .problem[index3]
-                                            .immediateAction[index4]
-                                            .problemCause[index5]
-                                            .title ??
-                                        "")));
+                    GoRouter.of(context).pushNamed(
+                      MyAppRouteConstants.bcSolutionRouteName,
+                      params: {
+                        'area': area,
+                        'question': question,
+                        'immediateaction': immediateaction,
+                        'problem': problem,
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
+                        'index3': index3.toString(),
+                        'index4': index4.toString(),
+                        'index5': index5.toString(),
+                        'problemCause': viewModel
+                                .questionsModel
+                                .questions[index2]
+                                .problem[index3]
+                                .immediateAction[index4]
+                                .problemCause[index5]
+                                .title ??
+                            ""
+                      },
+                    );
                   },
                 );
               },
@@ -337,28 +338,28 @@ class GenericAnswers extends StatelessWidget {
                         ],
                       )),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                BoosterCompressorSolutionScreenVU(
-                                    index1: index1,
-                                    index2: index2,
-                                    index3: index3,
-                                    index4: index4,
-                                    index5: index5,
-                                    area: area,
-                                    problem: problem,
-                                    question: question,
-                                    immediateaction: immediateaction,
-                                    problemCause: viewModel
-                                            .questionsModel
-                                            .questions[index2]
-                                            .problem[index3]
-                                            .immediateAction[index4]
-                                            .problemCause[index5]
-                                            .title ??
-                                        "")));
+                    GoRouter.of(context).pushNamed(
+                      MyAppRouteConstants.bcSolutionRouteName,
+                      params: {
+                        'area': area,
+                        'question': question,
+                        'immediateaction': immediateaction,
+                        'problem': problem,
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
+                        'index3': index3.toString(),
+                        'index4': index4.toString(),
+                        'index5': index5.toString(),
+                        'problemCause': viewModel
+                                .questionsModel
+                                .questions[index2]
+                                .problem[index3]
+                                .immediateAction[index4]
+                                .problemCause[index5]
+                                .title ??
+                            ""
+                      },
+                    );
                   },
                 );
               },

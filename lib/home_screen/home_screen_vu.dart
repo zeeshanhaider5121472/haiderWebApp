@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
-import 'package:troubleshooter/booster_compressor_screens/question_booster_compressor_vu.dart';
 
-import '../question_screen/question_screen_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 // import '../reusable_widgets/side_menu.dart';
@@ -293,13 +291,20 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return QuestionBoosterCompressorScreenVU(
-                                      index1: 0,
-                                      area: "Booster Compressor",
-                                    );
-                                  }));
+                                  GoRouter.of(context).pushNamed(
+                                    MyAppRouteConstants.bcQuestionRouteName,
+                                    params: {
+                                      'area': "Booster Compressor",
+                                      'index1': '0',
+                                    },
+                                  );
+                                  // Navigator.push(context,
+                                  //     MaterialPageRoute(builder: (context) {
+                                  //   return QuestionBoosterCompressorScreenVU(
+                                  //     index1: 0,
+                                  //     area: "Booster Compressor",
+                                  //   );
+                                  // }));
                                 },
                                 child: const Image(
                                     image: AssetImage('lib/assets/select.png')),
@@ -338,13 +343,13 @@ class MainImgClickablewidget extends StatelessWidget {
                                 Colors.transparent),
                             hoverColor: Colors.transparent,
                             onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return QuestionScreenVU(
-                                  index1: 0,
-                                  area: "Air Compressor",
-                                );
-                              }));
+                              GoRouter.of(context).pushNamed(
+                                MyAppRouteConstants.questionRouteName,
+                                params: {
+                                  'area': "Air Compressor",
+                                  'index1': '0',
+                                },
+                              );
                             },
                             child: const Image(
                                 image: AssetImage('lib/assets/select.png')),
@@ -377,11 +382,13 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return QuestionScreenVU(
-                                        index1: 1, area: "Refrigerated Dryer");
-                                  }));
+                                  GoRouter.of(context).pushNamed(
+                                    MyAppRouteConstants.questionRouteName,
+                                    params: {
+                                      'area': "Refrigerated Dryer",
+                                      'index1': '1',
+                                    },
+                                  );
                                 },
                                 child: const Image(
                                     image: AssetImage('lib/assets/select.png')),
@@ -416,13 +423,13 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return QuestionScreenVU(
-                                      index1: 4,
-                                      area: "Oxygen Generator",
-                                    );
-                                  }));
+                                  GoRouter.of(context).pushNamed(
+                                    MyAppRouteConstants.questionRouteName,
+                                    params: {
+                                      'area': "Oxygen Generator",
+                                      'index1': '4',
+                                    },
+                                  );
                                 },
                                 child: const Image(
                                     image: AssetImage('lib/assets/select.png')),
@@ -443,8 +450,8 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {},
-                                child: const Image(
-                                    image: AssetImage('lib/assets/select.png')),
+                                // child: const Image(
+                                //     image: AssetImage('lib/assets/select.png')),
                               ),
                             ),
                             Container(
@@ -476,13 +483,13 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return QuestionBoosterCompressorScreenVU(
-                                      index1: 0,
-                                      area: "Booster Compressor",
-                                    );
-                                  }));
+                                  GoRouter.of(context).pushNamed(
+                                    MyAppRouteConstants.bcQuestionRouteName,
+                                    params: {
+                                      'area': "Booster Compressor",
+                                      'index1': '0',
+                                    },
+                                  );
                                 },
                                 child: const Image(
                                     image: AssetImage('lib/assets/select.png')),

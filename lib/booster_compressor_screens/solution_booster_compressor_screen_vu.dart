@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
+import '../reusable_widgets/theme/theme_provider.dart';
 import 'booster_compressor_screen_vm.dart';
 
 class BoosterCompressorSolutionScreenVU
@@ -36,6 +38,7 @@ class BoosterCompressorSolutionScreenVU
   @override
   Widget builder(BuildContext context, BoosterCompressorScreenVM viewModel,
       Widget? child) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
@@ -57,10 +60,13 @@ class BoosterCompressorSolutionScreenVU
                 //   height: 20,
                 // ),
                 Padding(
-                  padding: screenSize.width < 600
-                      ? const EdgeInsets.fromLTRB(24, 24, 12, 24)
-                      : const EdgeInsets.all(24),
+                  padding: const EdgeInsets.all(24),
+                  // padding: screenSize.width < 600
+                  //     ? const EdgeInsets.fromLTRB(24, 24, 12, 24)
+                  //     : const EdgeInsets.all(24),
                   child: SizedBox(
+                    width: 1200,
+
                     // width: 1000,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +100,7 @@ class BoosterCompressorSolutionScreenVU
                                   data: immediateaction),
 
                               screenSize.width < 600
-                                  ? const ShareButton()
+                                  ? ShareButton(themeProvider: themeProvider)
                                   : const SizedBox()
 
                               // Container(
@@ -325,7 +331,10 @@ class BoosterCompressorSolutionScreenVU
                         ),
 
                         screenSize.width > 600
-                            ? const Expanded(child: ShareButton())
+                            ? Expanded(
+                                child: ShareButton(
+                                themeProvider: themeProvider,
+                              ))
                             : const SizedBox()
 
                         // Expanded(
@@ -470,8 +479,11 @@ class BoosterCompressorSolutionScreenVU
 }
 
 class ShareButton extends StatelessWidget {
+  final ThemeProvider themeProvider;
+
   const ShareButton({
     super.key,
+    required this.themeProvider,
   });
 
   @override
@@ -481,7 +493,9 @@ class ShareButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: Theme.of(context).dialogBackgroundColor,
+        color: themeProvider.themeMode == ThemeMode.light
+            ? const Color.fromARGB(255, 229, 232, 235)
+            : Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: SingleChildScrollView(

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:troubleshooter/booster_compressor_screens/problem_booster_compressor_screen_vu.dart';
+import 'package:troubleshooter/booster_compressor_screens/problemcause_booster_compressor_screen_vu.dart';
+import 'package:troubleshooter/booster_compressor_screens/question_booster_compressor_vu.dart';
+import 'package:troubleshooter/booster_compressor_screens/solution_booster_compressor_screen_vu.dart';
 import 'package:troubleshooter/question_screen/question_screen_vu.dart';
 import 'package:troubleshooter/routing/app_route_consts.dart';
 import 'package:troubleshooter/solution_screen/solution_screen_vu.dart';
@@ -71,6 +75,100 @@ class MyAppRouter {
                 problem: problem,
                 index2: index2,
                 index3: index3,
+                problemCause: problemCause,
+              ),
+              // fullscreenDialog: true,
+            );
+          },
+        ),
+        GoRoute(
+          name: MyAppRouteConstants.bcQuestionRouteName,
+          path: '/:area/bcquestion/:index1',
+          pageBuilder: (context, state) {
+            final area = state.params['area']!;
+            final index1 = int.parse(state.params['index1']!);
+            return MaterialPage(
+              child: QuestionBoosterCompressorScreenVU(
+                area: area,
+                index1: index1,
+              ),
+              // fullscreenDialog: true,
+            );
+          },
+        ),
+        GoRoute(
+          name: MyAppRouteConstants.bcProblemRouteName,
+          path: '/:area/bcproblem/:question/:index1/:index2',
+          pageBuilder: (context, state) {
+            final area = state.params['area']!;
+            final question = state.params['question']!;
+            final index1 = int.parse(state.params['index1']!);
+            final index2 = int.parse(state.params['index2']!);
+            return MaterialPage(
+              child: ProblemBoosterCompressorScreenVU(
+                area: area,
+                index1: index1,
+                question: question,
+                index2: index2,
+              ),
+              // fullscreenDialog: true,
+            );
+          },
+        ),
+        GoRoute(
+          name: MyAppRouteConstants.bcProblemCauseRouteName,
+          path:
+              '/:area/bcproblemcause/:question/:problem/:immediateaction/:index1/:index2/:index3/:index4',
+          pageBuilder: (context, state) {
+            final area = state.params['area']!;
+            final question = state.params['question']!;
+            final problem = state.params['problem']!;
+            final immediateaction = state.params['immediateaction']!;
+            final index1 = int.parse(state.params['index1']!);
+            final index2 = int.parse(state.params['index2']!);
+            final index3 = int.parse(state.params['index3']!);
+            final index4 = int.parse(state.params['index4']!);
+            return MaterialPage(
+              child: ProblemCauseCompressorScreenVU(
+                area: area,
+                index1: index1,
+                question: question,
+                index2: index2,
+                index3: index3,
+                index4: index4,
+                problem: problem,
+                immediateaction: immediateaction,
+              ),
+              // fullscreenDialog: true,
+            );
+          },
+        ),
+        GoRoute(
+          name: MyAppRouteConstants.bcSolutionRouteName,
+          path:
+              '/:area/bcproblemcause/:question/:problem/:immediateaction/:problemCause/:index1/:index2/:index3/:index4/:index5',
+          pageBuilder: (context, state) {
+            final area = state.params['area']!;
+            final question = state.params['question']!;
+            final problem = state.params['problem']!;
+            final problemCause = state.params['problemCause']!;
+            final immediateaction = state.params['immediateaction']!;
+            final index1 = int.parse(state.params['index1']!);
+            final index2 = int.parse(state.params['index2']!);
+            final index3 = int.parse(state.params['index3']!);
+            final index4 = int.parse(state.params['index4']!);
+            final index5 = int.parse(state.params['index5']!);
+            return MaterialPage(
+              child: BoosterCompressorSolutionScreenVU(
+                area: area,
+                index1: index1,
+                question: question,
+                index2: index2,
+                index3: index3,
+                index4: index4,
+                problem: problem,
+                immediateaction: immediateaction,
+                index5: index5,
                 problemCause: problemCause,
               ),
               // fullscreenDialog: true,

@@ -67,34 +67,34 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
           ),
           SizedBox(width: 70, height: 80, child: DropdownLanguage()),
 
-          ListTile(
-            leading: const Icon(Icons.dark_mode),
-            trailing: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Transform.scale(
-                  scale: 0.8,
-                  child: Switch(
-                    // inactiveThumbColor: Colors.amber,
-                    thumbColor: MaterialStateProperty.all(
-                        const Color.fromARGB(255, 255, 255, 255)),
-                    activeTrackColor: const Color(0xffb6000f),
-                    value: isSwitched,
-                    onChanged: (value) {
-                      isSwitched = !isSwitched;
-                      viewModel.notifyListeners();
-                      viewModel.toggleTheme(themeProvider);
-                    },
-                  ),
-                ),
-              ],
-            ),
-            title: const Text(
-              'Dark mode',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.dark_mode),
+          //   trailing: Row(
+          //     mainAxisAlignment: MainAxisAlignment.start,
+          //     mainAxisSize: MainAxisSize.min,
+          //     children: [
+          //       Transform.scale(
+          //         scale: 0.8,
+          //         child: Switch(
+          //           // inactiveThumbColor: Colors.amber,
+          //           thumbColor: MaterialStateProperty.all(
+          //               const Color.fromARGB(255, 255, 255, 255)),
+          //           activeTrackColor: const Color(0xffb6000f),
+          //           value: isSwitched,
+          //           onChanged: (value) {
+          //             isSwitched = !isSwitched;
+          //             viewModel.notifyListeners();
+          //             viewModel.toggleTheme(themeProvider);
+          //           },
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          //   title: const Text(
+          //     'Dark mode',
+          //     style: TextStyle(fontWeight: FontWeight.bold),
+          //   ),
+          // ),
 
           const ListTile(
             title: Text(
