@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
@@ -79,7 +80,14 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                                   index3: index3),
 
                               screenSize.width < 600
-                                  ? ShareButton(themeProvider: themeProvider)
+                                  ? ShareButton(
+                                      themeProvider: themeProvider,
+                                      index1: index1,
+                                      index2: index2,
+                                      index3: index3,
+                                      area: area,
+                                      problem: problem,
+                                      problemCause: problemCause)
                                   : const SizedBox()
 
                               // Container(
@@ -313,6 +321,12 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                             ? Expanded(
                                 child: ShareButton(
                                 themeProvider: themeProvider,
+                                index1: index1,
+                                index2: index2,
+                                index3: index3,
+                                area: area,
+                                problem: problem,
+                                problemCause: problemCause,
                               ))
                             : const SizedBox()
 
@@ -458,13 +472,31 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
 
 class ShareButton extends StatelessWidget {
   final ThemeProvider themeProvider;
+  final int index1;
+  final int index2;
+  final int index3;
+  final String area;
+  final String problem;
+  final String problemCause;
   const ShareButton({
     super.key,
     required this.themeProvider,
+    required this.index1,
+    required this.index2,
+    required this.index3,
+    required this.area,
+    required this.problem,
+    required this.problemCause,
   });
 
   @override
   Widget build(BuildContext context) {
+    String baseUrl = 'https://haider-web-app.vercel.app/#';
+    String dynamicUrl = Uri(
+            path:
+                '/$area/solutions/$problem/$problemCause/$index1/$index2/$index3')
+        .toString();
+    String url = '$baseUrl$dynamicUrl';
     return Container(
       width: 594,
       margin: const EdgeInsets.only(bottom: 10),
@@ -498,6 +530,9 @@ class ShareButton extends StatelessWidget {
               height: 45,
               child: PrimaryButton(
                 onPressed: () {
+                  print(url);
+                  // '/:area/solutions/:problem/:problemCause/:index1/:index2/:index3'
+                  Share.share('Check out my Solution \n$url');
                   // Navigator.push(
                   //     context,
                   //     MaterialPageRoute(
@@ -635,7 +670,7 @@ class _GenericLVBContainer extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          )),
+                        )),
                   ),
                 ],
               );
