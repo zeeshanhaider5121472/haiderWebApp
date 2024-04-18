@@ -225,42 +225,47 @@ class FullScreenPopup extends StatelessWidget {
       backgroundColor: Colors.black, // Background color
       insetPadding: const EdgeInsets.all(0), // No padding around the dialog
       child: Container(
+        height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(0)),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                icon: const Icon(Icons.close, color: Colors.white),
-                onPressed: () {
-                  Navigator.of(context).pop(); // Close the dialog
-                },
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: const Icon(Icons.close, color: Colors.white),
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Close the dialog
+                  },
+                ),
               ),
-            ),
-            const Text(
-              'Tips & Tricks',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+              const Text(
+                'Tips & Tricks',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 65),
-            const SizedBox(
-              width: 600,
-              child: Text(
-                'Description\n'
-                'The Troubleshooter is based on the popular and informative Filters Notes. The Troubleshooter gives you instant access to Danfoss’ years of accumulated knowledge of refrigeration applications and their function, aiding you in your day-to-day work servicing your customers’ systems.\n\n'
-                'How to use\n'
-                'At startup, a diagram over a refrigeration system is shown. The diagram is divided into five main areas; compressor, solenoid valve, low pressure, high pressure, and liquid line components. Choose an area you believe is faulty in your system by clicking on it by clicking on its diagram. The “Symptom” page is now shown, and on this page you will be able to find a list of most probable causes for problems you are experiencing. Once the correct symptom has been identified; you can select possible causes (of this symptom) and following this; you can select what it believed to be relevant causes. You will then be taken to the “Remedy” page where relevant procedures required for that exact symptom/cause are shown…\n\n'
-                'It’s easy to move back and forth between symptoms/causes/remedy pages should you need or want to try out other solutions.\n\n'
-                'The Troubleshooter application has been designed so that the entire database is available at all times. This means that should you find yourself in an area without signal for your mobile device, the full functionality of the Troubleshooter app will still be available.',
-                style: TextStyle(color: Colors.white),
+              const SizedBox(height: 65),
+              const SizedBox(
+                width: 600,
+                child: Text(
+                  'Description\n'
+                  "\n"
+                  'The Troubleshooter is based on the popular and informative Filters Notes. The Troubleshooter gives you instant access to Danfoss’ years of accumulated knowledge of refrigeration applications and their function, aiding you in your day-to-day work servicing your customers’ systems.\n\n'
+                  'How to use\n'
+                  "\n"
+                  'At startup, a diagram over a refrigeration system is shown. The diagram is divided into five main areas; compressor, solenoid valve, low pressure, high pressure, and liquid line components. Choose an area you believe is faulty in your system by clicking on it by clicking on its diagram. The “Symptom” page is now shown, and on this page you will be able to find a list of most probable causes for problems you are experiencing. Once the correct symptom has been identified; you can select possible causes (of this symptom) and following this; you can select what it believed to be relevant causes. You will then be taken to the “Remedy” page where relevant procedures required for that exact symptom/cause are shown…\n\n'
+                  'It’s easy to move back and forth between symptoms/causes/remedy pages should you need or want to try out other solutions.\n\n'
+                  'The Troubleshooter application has been designed so that the entire database is available at all times. This means that should you find yourself in an area without signal for your mobile device, the full functionality of the Troubleshooter app will still be available.',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
