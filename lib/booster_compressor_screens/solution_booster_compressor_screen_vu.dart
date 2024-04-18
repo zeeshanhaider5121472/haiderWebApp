@@ -534,7 +534,7 @@ class ShareButton extends StatelessWidget {
     String baseUrl = 'https://haider-web-app.vercel.app/#';
     String dynamicUrl = Uri(
             path:
-                '/:$area/bcproblemcause/:$question/:$problem/:$immediateaction/:$problemCause/:$index1/:$index2/:$index3/:$index4/:$index5')
+                '/$area/bcproblemcause/$question/$problem/$immediateaction/$problemCause/$index1/$index2/$index3/$index4/$index5')
         .toString();
     String url = '$baseUrl$dynamicUrl';
     return Container(
