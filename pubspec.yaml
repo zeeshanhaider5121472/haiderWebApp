@@ -38,6 +38,7 @@ dependencies:
   stacked: ^3.4.2
   go_router: ^5.2.0
   share_plus: ^8.0.3
+  url_launcher: ^6.2.6
 
 dev_dependencies:
   flutter_test:

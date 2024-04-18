@@ -135,8 +135,7 @@ class GenericAnswers extends StatelessWidget {
                       params: {
                         'area': area,
                         'question':
-                            '${viewModel.questionsModel.questions[index2].title}' ??
-                                "",
+                            '${viewModel.questionsModel.questions[index2].title}',
                         'index1': index1.toString(),
                         'index2': index2.toString(),
                       },

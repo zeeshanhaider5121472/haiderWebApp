@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../dropdown_language.dart';
 import '../theme/theme_provider.dart';
@@ -159,8 +160,39 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                 color: Colors.grey[600],
               ),
             ),
-            onTap: () {
-              // Navigate to home screen
+            onTap: () async {
+              const String recipient = 'saq101@gmail.com';
+              const String subject = 'Feedback - troubleshooter';
+              // final String body = 'Hi! I am using Flutter to send this email.';
+
+              final Uri mailUri = Uri(
+                scheme: 'mailto',
+                path: recipient,
+                queryParameters: {'subject': subject},
+              );
+
+              if (await canLaunchUrl(mailUri)) {
+                await launchUrl(mailUri);
+              } else {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('Error Sending Email'),
+                      content: const Text(
+                          'Oops! Something went wrong while sending the email.'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(); // Close the dialog
+                          },
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }
             },
           ),
           const Divider(
