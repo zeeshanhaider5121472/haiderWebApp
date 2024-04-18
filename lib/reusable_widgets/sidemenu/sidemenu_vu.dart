@@ -68,34 +68,34 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
           ),
           SizedBox(width: 70, height: 80, child: DropdownLanguage()),
 
-          ListTile(
-            leading: const Icon(Icons.dark_mode),
-            trailing: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Transform.scale(
-                  scale: 0.8,
-                  child: Switch(
-                    // inactiveThumbColor: Colors.amber,
-                    thumbColor: MaterialStateProperty.all(
-                        const Color.fromARGB(255, 255, 255, 255)),
-                    activeTrackColor: const Color(0xffb6000f),
-                    value: isSwitched,
-                    onChanged: (value) {
-                      isSwitched = !isSwitched;
-                      viewModel.notifyListeners();
-                      viewModel.toggleTheme(themeProvider);
-                    },
-                  ),
-                ),
-              ],
-            ),
-            title: const Text(
-              'Dark mode',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.dark_mode),
+          //   trailing: Row(
+          //     mainAxisAlignment: MainAxisAlignment.start,
+          //     mainAxisSize: MainAxisSize.min,
+          //     children: [
+          //       Transform.scale(
+          //         scale: 0.8,
+          //         child: Switch(
+          //           // inactiveThumbColor: Colors.amber,
+          //           thumbColor: MaterialStateProperty.all(
+          //               const Color.fromARGB(255, 255, 255, 255)),
+          //           activeTrackColor: const Color(0xffb6000f),
+          //           value: isSwitched,
+          //           onChanged: (value) {
+          //             isSwitched = !isSwitched;
+          //             viewModel.notifyListeners();
+          //             viewModel.toggleTheme(themeProvider);
+          //           },
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          //   title: const Text(
+          //     'Dark mode',
+          //     style: TextStyle(fontWeight: FontWeight.bold),
+          //   ),
+          // ),
 
           const ListTile(
             title: Text(
@@ -117,7 +117,10 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
               ),
             ),
             onTap: () {
-              // Navigate to home screen
+              showDialog(
+                context: context,
+                builder: (context) => const FullScreenPopup(),
+              );
             },
           ),
           const Divider(
@@ -207,4 +210,59 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
 
   @override
   GenericDrawerVM viewModelBuilder(BuildContext context) => GenericDrawerVM();
+}
+
+class FullScreenPopup extends StatelessWidget {
+  const FullScreenPopup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        // Set the shape to a square with sharp corners
+        borderRadius: BorderRadius.circular(0),
+      ),
+      backgroundColor: Colors.black, // Background color
+      insetPadding: const EdgeInsets.all(0), // No padding around the dialog
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(0)),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: const Icon(Icons.close, color: Colors.white),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+              ),
+            ),
+            const Text(
+              'Tips & Tricks',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 65),
+            const SizedBox(
+              width: 600,
+              child: Text(
+                'Description\n'
+                'The Troubleshooter is based on the popular and informative Filters Notes. The Troubleshooter gives you instant access to Danfoss’ years of accumulated knowledge of refrigeration applications and their function, aiding you in your day-to-day work servicing your customers’ systems.\n\n'
+                'How to use\n'
+                'At startup, a diagram over a refrigeration system is shown. The diagram is divided into five main areas; compressor, solenoid valve, low pressure, high pressure, and liquid line components. Choose an area you believe is faulty in your system by clicking on it by clicking on its diagram. The “Symptom” page is now shown, and on this page you will be able to find a list of most probable causes for problems you are experiencing. Once the correct symptom has been identified; you can select possible causes (of this symptom) and following this; you can select what it believed to be relevant causes. You will then be taken to the “Remedy” page where relevant procedures required for that exact symptom/cause are shown…\n\n'
+                'It’s easy to move back and forth between symptoms/causes/remedy pages should you need or want to try out other solutions.\n\n'
+                'The Troubleshooter application has been designed so that the entire database is available at all times. This means that should you find yourself in an area without signal for your mobile device, the full functionality of the Troubleshooter app will still be available.',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
