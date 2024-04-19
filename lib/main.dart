@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+import 'package:troubleshooter/reusable_widgets/theme/theme.dart';
 
-import 'reusable_widgets/theme/theme_provider.dart';
 import 'routing/app_route_config.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (_) => ThemeProvider(), child: const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-    return MaterialApp.router(
+    // final themeProvider = Provider.of<ThemeProvider>(context);
+    return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'PSA Troubleshooter',
-      theme: themeProvider.themeData,
-      darkTheme: themeProvider.themeData,
-      themeMode: themeProvider.themeMode,
+      theme: Themes().lightTheme,
+      darkTheme: Themes().darkTheme,
+      // themeMode: ThemeMode.system,
       // routerConfig: MyAppRouter().router,
       routeInformationParser:
           MyAppRouter.returnRouter(false).routeInformationParser,

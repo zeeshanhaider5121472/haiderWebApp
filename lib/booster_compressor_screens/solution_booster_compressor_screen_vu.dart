@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
 
@@ -7,7 +6,6 @@ import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
-import '../reusable_widgets/theme/theme_provider.dart';
 import 'booster_compressor_screen_vm.dart';
 
 class BoosterCompressorSolutionScreenVU
@@ -39,7 +37,7 @@ class BoosterCompressorSolutionScreenVU
   @override
   Widget builder(BuildContext context, BoosterCompressorScreenVM viewModel,
       Widget? child) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    // final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
@@ -102,7 +100,6 @@ class BoosterCompressorSolutionScreenVU
 
                               screenSize.width < 600
                                   ? ShareButton(
-                                      themeProvider: themeProvider,
                                       index1: index1,
                                       index2: index2,
                                       index3: index3,
@@ -356,7 +353,6 @@ class BoosterCompressorSolutionScreenVU
                                 index3: index3,
                                 index4: index4,
                                 index5: index5,
-                                themeProvider: themeProvider,
                               ))
                             : const SizedBox()
 
@@ -502,7 +498,7 @@ class BoosterCompressorSolutionScreenVU
 }
 
 class ShareButton extends StatelessWidget {
-  final ThemeProvider themeProvider;
+  // final ThemeProvider themeProvider;
   final String area;
   final String question;
   final String immediateaction;
@@ -516,7 +512,7 @@ class ShareButton extends StatelessWidget {
 
   const ShareButton({
     super.key,
-    required this.themeProvider,
+    // required this.themeProvider,
     required this.index1,
     required this.index2,
     required this.index3,
@@ -542,9 +538,10 @@ class ShareButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: themeProvider.themeMode == ThemeMode.light
-            ? const Color.fromARGB(255, 229, 232, 235)
-            : Theme.of(context).dialogBackgroundColor,
+        color: const Color.fromARGB(255, 229, 232, 235),
+        // color: themeProvider.themeMode == ThemeMode.light
+        //     ? const Color.fromARGB(255, 229, 232, 235)
+        //     : Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: SingleChildScrollView(

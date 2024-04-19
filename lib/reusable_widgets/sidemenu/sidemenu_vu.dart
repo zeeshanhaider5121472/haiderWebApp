@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:stacked/stacked.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../dropdown_language.dart';
-import '../theme/theme_provider.dart';
 import 'sidemenu_vm.dart';
 
 class GenericDrawerVU extends StackedView<GenericDrawerVM> {
@@ -18,13 +16,13 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
     GenericDrawerVM viewModel,
     Widget? child,
   ) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    // final themeProvider = Provider.of<ThemeProvider>(context);
     String selectedLanguage = 'English';
     List<String> languages = ['English', 'Français', 'Español', 'Deutsch'];
     bool isSwitched; // Initial value for the switch
-    themeProvider.themeMode == ThemeMode.dark
-        ? isSwitched = true // Initial value for the switch
-        : isSwitched = false;
+    // themeProvider.themeMode == ThemeMode.dark
+    //     ? isSwitched = true // Initial value for the switch
+    //     : isSwitched = false;
 
     return Drawer(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -47,9 +45,10 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                     color: Theme.of(context).dialogBackgroundColor,
                     boxShadow: [
                       BoxShadow(
-                        color: themeProvider.themeMode == ThemeMode.light
-                            ? Colors.grey.withOpacity(0.5)
-                            : Colors.grey.withOpacity(0.2),
+                        // color: themeProvider.themeMode == ThemeMode.light
+                        //     ? Colors.grey.withOpacity(0.5)
+                        //     : Colors.grey.withOpacity(0.2),
+                        color: Colors.grey.withOpacity(0.2),
                         spreadRadius: 2,
                         blurRadius: 5,
                         offset: const Offset(0, 3),

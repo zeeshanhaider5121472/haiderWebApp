@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
 
@@ -30,26 +31,31 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    Text(
+                      'Click on switch to change to ${viewModel.isLightThemeBool ? 'Dark' : 'Light'} theme',
+                    ),
+                    Switch(
+                      value: viewModel.isLightThemeBool,
+                      onChanged: (value) {
+                        viewModel.isLightThemeBool = value;
+                        viewModel.notifyListeners();
+                        Get.changeThemeMode(
+                          value ? ThemeMode.light : ThemeMode.dark,
+                        );
+                      },
+                      // value: viewModel.isLightThemeBool,
+                      // onChanged: (val) {
+                      //   viewModel.saveThemeStatus(val);
+                      //   Get.changeThemeMode(
+                      //     val ? ThemeMode.light : ThemeMode.dark,
+                      //   );
+                      // },
+                    ),
                     const GenericHeader(
                       title: 'System Areas',
                       // color: Colors.white,
                     ),
-                    // screenSize.width < 1100
-                    //     ?
                     MainImgClickablewidget(screenSize: screenSize),
-                    // : const Row(
-                    //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    //     children: [
-                    //       Text(
-                    //         "PSA\nTROUBLESHOOTER\nAPP",
-                    //         style: TextStyle(
-                    //             fontSize: 52,
-                    //             fontWeight: FontWeight.w800,
-                    //             fontFamily: 'Montserrat'),
-                    //       ),
-                    //       MainImgClickablewidget(),
-                    //     ],
-                    //   ),
                     SizedBox(
                       height: 40,
                     ),

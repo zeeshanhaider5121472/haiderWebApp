@@ -19,7 +19,7 @@ class QuestionScreenVU extends StackedView<QuestionScreenVM> {
   @override
   Widget builder(
       BuildContext context, QuestionScreenVM viewModel, Widget? child) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    // final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: scaffoldKey,

@@ -30,7 +30,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
   @override
   Widget builder(
       BuildContext context, SolutionScreenVM viewModel, Widget? child) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    // final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
@@ -81,7 +81,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
 
                               screenSize.width < 600
                                   ? ShareButton(
-                                      themeProvider: themeProvider,
+                                      // themeProvider: themeProvider,
                                       index1: index1,
                                       index2: index2,
                                       index3: index3,
@@ -320,7 +320,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                         screenSize.width > 600
                             ? Expanded(
                                 child: ShareButton(
-                                themeProvider: themeProvider,
+                                // themeProvider: themeProvider,
                                 index1: index1,
                                 index2: index2,
                                 index3: index3,
@@ -471,7 +471,6 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
 }
 
 class ShareButton extends StatelessWidget {
-  final ThemeProvider themeProvider;
   final int index1;
   final int index2;
   final int index3;
@@ -480,7 +479,6 @@ class ShareButton extends StatelessWidget {
   final String problemCause;
   const ShareButton({
     super.key,
-    required this.themeProvider,
     required this.index1,
     required this.index2,
     required this.index3,
@@ -502,9 +500,10 @@ class ShareButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: themeProvider.themeMode == ThemeMode.light
-            ? const Color.fromARGB(255, 229, 232, 235)
-            : Theme.of(context).dialogBackgroundColor,
+        color: const Color.fromARGB(255, 229, 232, 235),
+        // color: themeProvider.themeMode == ThemeMode.light
+        //     ? const Color.fromARGB(255, 229, 232, 235)
+        //     : Theme.of(context).dialogBackgroundColor,
         borderRadius: BorderRadius.circular(18),
       ),
       child: SingleChildScrollView(
