@@ -55,9 +55,8 @@ class QuestionBoosterCompressorScreenVU
                   ],
                 ),
               ),
-              HeaderButtons(
-                scaffoldKey: scaffoldKey,
-              )
+              // HeaderButtons(
+              // )
             ],
           ),
         ));

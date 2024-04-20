@@ -62,7 +62,7 @@ class ProblemBoosterCompressorScreenVU
                   ],
                 ),
               ),
-              HeaderButtons(scaffoldKey: scaffoldKey),
+              // HeaderButtons(),
             ],
           ),
         ));

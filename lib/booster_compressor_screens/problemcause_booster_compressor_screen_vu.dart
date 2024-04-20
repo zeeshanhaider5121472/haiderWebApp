@@ -84,7 +84,7 @@ class ProblemCauseCompressorScreenVU
                   ],
                 ),
               ),
-              HeaderButtons(scaffoldKey: scaffoldKey),
+              // HeaderButtons(),
             ],
           ),
         ));

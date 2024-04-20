@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
 
@@ -7,7 +6,6 @@ import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
-import '../reusable_widgets/theme/theme_provider.dart';
 import 'solution_screen_vm.dart';
 
 class SolutionScreenVU extends StackedView<SolutionScreenVM> {
@@ -25,7 +23,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
       required this.area,
       required this.problem,
       required this.problemCause});
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(
@@ -33,8 +31,8 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
     // final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      key: scaffoldKey,
-      endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+      key: _scaffoldKey,
+      endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
 
@@ -459,7 +457,7 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
             ),
           ),
           HeaderButtons(
-            scaffoldKey: scaffoldKey,
+            widgetScaffoldkey: _scaffoldKey,
           )
         ],
       ),

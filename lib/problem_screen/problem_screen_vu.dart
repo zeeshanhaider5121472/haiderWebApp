@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
+import 'package:troubleshooter/reusable_widgets/custom_drawer.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
 import 'problem_screen_vm.dart';
 
@@ -19,7 +19,7 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
       required this.problem,
       required this.index1,
       required this.index2});
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget builder(
@@ -27,8 +27,9 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        key: scaffoldKey,
-        endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        key: _scaffoldKey,
+        drawer: CustomDrawer(),
+        // endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
         // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),
@@ -61,7 +62,9 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
                   ],
                 ),
               ),
-              HeaderButtons(scaffoldKey: scaffoldKey),
+              HeaderButtons(
+                widgetScaffoldkey: _scaffoldKey,
+              ),
             ],
           ),
         ));

@@ -1,26 +1,35 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
-import 'package:stacked/stacked.dart';
+// ignore_for_file: library_private_types_in_public_api
 
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../reusable_widgets/custom_drawer.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
-// import '../reusable_widgets/side_menu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
-import 'home_screen_vm.dart';
 
-class HomeScreenVU extends StackedView<HomeScreenVM> {
-  HomeScreenVU({super.key});
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
+class HomeScreenVU extends StatefulWidget {
   @override
-  Widget builder(BuildContext context, HomeScreenVM viewModel, Widget? child) {
+  _HomeScreenVUState createState() => _HomeScreenVUState();
+}
+
+// HomeScreenVU({super.key});
+// // final scaffoldKey = GlobalKey<ScaffoldState>();
+
+class _HomeScreenVUState extends State<HomeScreenVU> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isLightThemeBool = false;
+  bool onhover = false;
+  @override
+  Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        key: scaffoldKey,
-        endDrawer: GenericDrawerVU(scaffoldKey: scaffoldKey),
+        key: _scaffoldKey,
+        // appBar: AppBar(),
+        drawer: const CustomDrawer(),
+        endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
         body: Stack(
           // alignment: Alignment.topRight,
           children: [
@@ -31,39 +40,45 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      'Click on switch to change to ${viewModel.isLightThemeBool ? 'Dark' : 'Light'} theme',
-                    ),
-                    Switch(
-                      value: viewModel.isLightThemeBool,
-                      onChanged: (value) {
-                        viewModel.isLightThemeBool = value;
-                        viewModel.notifyListeners();
-                        Get.changeThemeMode(
-                          value ? ThemeMode.light : ThemeMode.dark,
-                        );
-                      },
-                      // value: viewModel.isLightThemeBool,
-                      // onChanged: (val) {
-                      //   viewModel.saveThemeStatus(val);
-                      //   Get.changeThemeMode(
-                      //     val ? ThemeMode.light : ThemeMode.dark,
-                      //   );
-                      // },
-                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          _scaffoldKey.currentState?.openDrawer();
+                          // viewModel.notifyListeners();
+                        },
+                        child: const Text("Open Drawerr")),
+                    // Text(
+                    //   'Click on switch to change to ${_isLightThemeBool ? 'Dark' : 'Light'} theme',
+                    // ),
+                    // Switch(
+                    //   value: viewModel.isLightThemeBool,
+                    //   onChanged: (value) {
+                    //     viewModel.isLightThemeBool = value;
+                    //     viewModel.notifyListeners();
+                    //     Get.changeThemeMode(
+                    //       value ? ThemeMode.light : ThemeMode.dark,
+                    //     );
+                    //   },
+                    //   // value: viewModel.isLightThemeBool,
+                    //   // onChanged: (val) {
+                    //   //   viewModel.saveThemeStatus(val);
+                    //   //   Get.changeThemeMode(
+                    //   //     val ? ThemeMode.light : ThemeMode.dark,
+                    //   //   );
+                    //   // },
+                    // ),
                     const GenericHeader(
                       title: 'System Areas',
                       // color: Colors.white,
                     ),
                     MainImgClickablewidget(screenSize: screenSize),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                   ],
                 ),
               ),
             ),
-            HeaderButtons(onBack: false, scaffoldKey: scaffoldKey)
+            HeaderButtons(onBack: false, widgetScaffoldkey: _scaffoldKey)
             // Container(
             //     margin: const EdgeInsets.fromLTRB(0, 12, 12, 0),
             //     decoration: BoxDecoration(
@@ -79,9 +94,6 @@ class HomeScreenVU extends StackedView<HomeScreenVM> {
           ],
         ));
   }
-
-  @override
-  HomeScreenVM viewModelBuilder(BuildContext context) => HomeScreenVM();
 }
 
 class MainImgClickablewidget extends StatelessWidget {
@@ -421,7 +433,7 @@ class MainImgClickablewidget extends StatelessWidget {
                             ),
                             Container(
                               margin: const EdgeInsets.only(left: 89, top: 0),
-                              color: Color.fromARGB(0, 255, 24, 12),
+                              color: const Color.fromARGB(0, 255, 24, 12),
                               width: 60,
                               height: 120,
                               child: InkWell(
@@ -448,7 +460,7 @@ class MainImgClickablewidget extends StatelessWidget {
                           children: [
                             Container(
                               margin: const EdgeInsets.only(top: 18, left: 42),
-                              color: Color.fromARGB(0, 16, 138, 238),
+                              color: const Color.fromARGB(0, 16, 138, 238),
                               width: 40,
                               height: 120,
                               child: InkWell(
@@ -462,7 +474,7 @@ class MainImgClickablewidget extends StatelessWidget {
                             ),
                             Container(
                               margin: const EdgeInsets.only(left: 115, top: 8),
-                              color: Color.fromARGB(0, 214, 19, 9),
+                              color: const Color.fromARGB(0, 214, 19, 9),
                               width: 35,
                               height: 80,
                               // child: InkWell(
@@ -481,7 +493,7 @@ class MainImgClickablewidget extends StatelessWidget {
                           children: [
                             Container(
                               margin: const EdgeInsets.only(left: 120, top: 0),
-                              color: Color.fromARGB(0, 189, 31, 23),
+                              color: const Color.fromARGB(0, 189, 31, 23),
                               width: 130,
                               height: 80,
                               child: InkWell(

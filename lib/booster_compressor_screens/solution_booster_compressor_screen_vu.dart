@@ -3,7 +3,6 @@ import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
-import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import 'booster_compressor_screen_vm.dart';
@@ -484,9 +483,8 @@ class BoosterCompressorSolutionScreenVU
               ],
             ),
           ),
-          HeaderButtons(
-            scaffoldKey: scaffoldKey,
-          )
+          // HeaderButtons(
+          // )
         ],
       ),
     );

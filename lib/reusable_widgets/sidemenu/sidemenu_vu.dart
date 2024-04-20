@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stacked/stacked.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../dropdown_language.dart';
+import '../theme/theme_controller.dart';
 import 'sidemenu_vm.dart';
 
 class GenericDrawerVU extends StackedView<GenericDrawerVM> {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
-  GenericDrawerVU({Key? key, required this.scaffoldKey}) : super(key: key);
+  const GenericDrawerVU({Key? key, required this.scaffoldKey})
+      : super(key: key);
 
   @override
   Widget builder(
@@ -23,6 +26,7 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
     // themeProvider.themeMode == ThemeMode.dark
     //     ? isSwitched = true // Initial value for the switch
     //     : isSwitched = false;
+    final themeController = Get.put(ThemeController());
 
     return Drawer(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -67,34 +71,42 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
           ),
           SizedBox(width: 70, height: 80, child: DropdownLanguage()),
 
-          // ListTile(
-          //   leading: const Icon(Icons.dark_mode),
-          //   trailing: Row(
-          //     mainAxisAlignment: MainAxisAlignment.start,
-          //     mainAxisSize: MainAxisSize.min,
-          //     children: [
-          //       Transform.scale(
-          //         scale: 0.8,
-          //         child: Switch(
-          //           // inactiveThumbColor: Colors.amber,
-          //           thumbColor: MaterialStateProperty.all(
-          //               const Color.fromARGB(255, 255, 255, 255)),
-          //           activeTrackColor: const Color(0xffb6000f),
-          //           value: isSwitched,
-          //           onChanged: (value) {
-          //             isSwitched = !isSwitched;
-          //             viewModel.notifyListeners();
-          //             viewModel.toggleTheme(themeProvider);
-          //           },
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          //   title: const Text(
-          //     'Dark mode',
-          //     style: TextStyle(fontWeight: FontWeight.bold),
-          //   ),
-          // ),
+          ListTile(
+            leading: const Icon(Icons.dark_mode),
+            trailing: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Transform.scale(
+                  scale: 0.8,
+                  child: Obx(
+                    () => Switch(
+                      // title: const Text('Change Theme'),
+                      value: themeController.isLightTheme,
+                      onChanged: (value) {
+                        themeController.toggleTheme(value);
+                      },
+                    ),
+                    //  Switch(
+                    //   // inactiveThumbColor: Colors.amber,
+                    //   thumbColor: MaterialStateProperty.all(
+                    //       const Color.fromARGB(255, 255, 255, 255)),
+                    //   activeTrackColor: const Color(0xffb6000f),
+                    //   value: isSwitched,
+                    //   onChanged: (value) {
+                    //     isSwitched = !isSwitched;
+                    //     viewModel.notifyListeners();
+                    //     viewModel.toggleTheme(themeProvider);
+                    //   },
+                  ),
+                ),
+              ],
+            ),
+            title: const Text(
+              'Dark mode',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
 
           const ListTile(
             title: Text(

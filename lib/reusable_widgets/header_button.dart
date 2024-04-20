@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class HeaderButtons extends StatelessWidget {
   final bool onBack;
-  final GlobalKey<ScaffoldState> scaffoldKey;
+  final GlobalKey<ScaffoldState> widgetScaffoldkey;
   const HeaderButtons({
     super.key,
     this.onBack = true,
-    required this.scaffoldKey,
+    required this.widgetScaffoldkey,
   });
 
   @override
@@ -58,7 +58,10 @@ class HeaderButtons extends StatelessWidget {
             ),
             child: IconButton(
                 onPressed: () {
-                  scaffoldKey.currentState?.openEndDrawer();
+                  widgetScaffoldkey.currentState?.openEndDrawer();
+                  // _scaffoldKey.currentState?.openDrawer();
+                  // Scaffold.of(context1).openDrawer();
+                  print("Clicked");
                 },
                 icon: const Icon(
                   Icons.tune,
