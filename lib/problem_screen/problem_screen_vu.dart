@@ -66,6 +66,11 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
               ),
               HeaderButtons(
                 widgetScaffoldkey: _scaffoldKey,
+                routeName: MyAppRouteConstants.questionRouteName,
+                params: {
+                  'area': area,
+                  'index1': index1.toString(),
+                },
               ),
             ],
           ),
@@ -226,13 +231,15 @@ class GenericAnswers extends StatelessWidget {
                       MyAppRouteConstants.solutionRouteName,
                       params: {
                         'area': area,
-                        'index1': '$index1',
-                        'index2': '$index2',
-                        'index3': '$index3',
-                        'problemCause':
-                            '${viewModel.record[index1].questions[index2].options[index3].title}',
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
+                        'index3': index3.toString(),
+                        'problemCause': viewModel.record[index1]
+                                .questions[index2].options[index3].title ??
+                            "",
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}'
+                            viewModel.record[index1].questions[index2].title ??
+                                ""
                       },
                     );
                   },
@@ -292,13 +299,15 @@ class GenericAnswers extends StatelessWidget {
                       MyAppRouteConstants.solutionRouteName,
                       params: {
                         'area': area,
-                        'index1': '$index1',
-                        'index2': '$index2',
-                        'index3': '$index3',
-                        'problemCause':
-                            '${viewModel.record[index1].questions[index2].options[index3].title}',
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
+                        'index3': index3.toString(),
+                        'problemCause': viewModel.record[index1]
+                                .questions[index2].options[index3].title ??
+                            "",
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}'
+                            viewModel.record[index1].questions[index2].title ??
+                                ""
                       },
                     );
                   },

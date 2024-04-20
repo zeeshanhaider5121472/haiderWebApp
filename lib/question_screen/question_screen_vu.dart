@@ -72,6 +72,7 @@ class _QuestionScreenState extends State<QuestionScreenVU> {
               ),
               HeaderButtons(
                 widgetScaffoldkey: _scaffoldKey,
+                routeName: MyAppRouteConstants.homeRouteName,
               )
             ],
           ),
@@ -149,10 +150,11 @@ class GenericAnswers extends StatelessWidget {
                       MyAppRouteConstants.problemRouteName,
                       params: {
                         'area': area,
-                        'index1': '$index1',
-                        'index2': '$index2',
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}'
+                            viewModel.record[index1].questions[index2].title ??
+                                ""
                       },
                     );
                     // Navigator.push(
@@ -222,10 +224,11 @@ class GenericAnswers extends StatelessWidget {
                       MyAppRouteConstants.problemRouteName,
                       params: {
                         'area': area,
-                        'index1': '$index1',
-                        'index2': '$index2',
+                        'index1': index1.toString(),
+                        'index2': index2.toString(),
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}'
+                            viewModel.record[index1].questions[index2].title ??
+                                ""
                       },
                     );
                   },

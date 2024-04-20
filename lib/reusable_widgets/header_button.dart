@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HeaderButtons extends StatelessWidget {
   final bool onBack;
   final GlobalKey<ScaffoldState> widgetScaffoldkey;
+  final String? routeName;
+  final Map<String, String>? params;
   const HeaderButtons({
     super.key,
     this.onBack = true,
     required this.widgetScaffoldkey,
+    this.routeName,
+    this.params,
   });
 
   @override
@@ -36,7 +41,12 @@ class HeaderButtons extends StatelessWidget {
                 ),
                 child: IconButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      routeName != null
+                          ? GoRouter.of(context).pushNamed(
+                              routeName!,
+                              params: params ?? {},
+                            )
+                          : Navigator.pop(context);
                     },
                     icon: const Icon(Icons.arrow_back)))
             : const Text(""),

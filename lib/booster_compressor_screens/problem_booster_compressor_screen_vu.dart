@@ -64,6 +64,11 @@ class ProblemBoosterCompressorScreenVU
               ),
               HeaderButtons(
                 widgetScaffoldkey: scaffoldKey,
+                routeName: MyAppRouteConstants.bcQuestionRouteName,
+                params: {
+                  'area': area,
+                  'index1': index1.toString(),
+                },
               ),
             ],
           ),

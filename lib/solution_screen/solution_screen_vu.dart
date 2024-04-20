@@ -6,6 +6,7 @@ import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
+import '../routing/app_route_consts.dart';
 import 'solution_screen_vm.dart';
 
 class SolutionScreenVU extends StackedView<SolutionScreenVM> {
@@ -458,6 +459,13 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
           ),
           HeaderButtons(
             widgetScaffoldkey: _scaffoldKey,
+            routeName: MyAppRouteConstants.problemRouteName,
+            params: {
+              'area': area,
+              'index1': index1.toString(),
+              'index2': index2.toString(),
+              'problem': problem
+            },
           )
         ],
       ),
@@ -635,7 +643,7 @@ class _GenericLVBContainer extends StatelessWidget {
         children: [
           Text(
               textAlign: TextAlign.left,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               title),
           const SizedBox(
             height: 2,
@@ -665,8 +673,8 @@ class _GenericLVBContainer extends StatelessWidget {
                                 .title ??
                             "",
                         style: const TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                         )),
                   ),
                 ],
@@ -704,7 +712,7 @@ class _GenericSolutionContainer extends StatelessWidget {
         children: [
           Text(
               textAlign: TextAlign.left,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               title),
           const SizedBox(
             height: 2,
@@ -716,7 +724,7 @@ class _GenericSolutionContainer extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               data,
               style: const TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: FontWeight.w400,
               ))
         ],

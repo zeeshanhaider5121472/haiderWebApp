@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
+import 'package:troubleshooter/routing/app_route_consts.dart';
 
 import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
@@ -486,6 +487,17 @@ class BoosterCompressorSolutionScreenVU
           ),
           HeaderButtons(
             widgetScaffoldkey: scaffoldKey,
+            routeName: MyAppRouteConstants.bcProblemCauseRouteName,
+            params: {
+              'area': area,
+              'question': question,
+              'immediateaction': immediateaction,
+              'problem': problem,
+              'index1': index1.toString(),
+              'index2': index2.toString(),
+              'index3': index3.toString(),
+              'index4': index4.toString(),
+            },
           )
         ],
       ),

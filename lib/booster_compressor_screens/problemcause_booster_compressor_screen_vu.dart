@@ -86,6 +86,13 @@ class ProblemCauseCompressorScreenVU
               ),
               HeaderButtons(
                 widgetScaffoldkey: scaffoldKey,
+                routeName: MyAppRouteConstants.bcProblemRouteName,
+                params: {
+                  'area': area,
+                  'question': question,
+                  'index1': index1.toString(),
+                  'index2': index2.toString(),
+                },
               ),
             ],
           ),
