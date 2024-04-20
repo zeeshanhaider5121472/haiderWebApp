@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
@@ -223,16 +225,14 @@ class GenericAnswers extends StatelessWidget {
                     GoRouter.of(context).pushNamed(
                       MyAppRouteConstants.solutionRouteName,
                       params: {
-                        'area': "${area}",
-                        'index1': '${index1}',
-                        'index2': '${index2}',
-                        'index3': '${index3}',
+                        'area': area,
+                        'index1': '$index1',
+                        'index2': '$index2',
+                        'index3': '$index3',
                         'problemCause':
-                            '${viewModel.record[index1].questions[index2].options[index3].title}' ??
-                                "",
+                            '${viewModel.record[index1].questions[index2].options[index3].title}',
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}' ??
-                                ""
+                            '${viewModel.record[index1].questions[index2].title}'
                       },
                     );
                   },
@@ -291,16 +291,14 @@ class GenericAnswers extends StatelessWidget {
                     GoRouter.of(context).pushNamed(
                       MyAppRouteConstants.solutionRouteName,
                       params: {
-                        'area': "${area}",
-                        'index1': '${index1}',
-                        'index2': '${index2}',
-                        'index3': '${index3}',
+                        'area': area,
+                        'index1': '$index1',
+                        'index2': '$index2',
+                        'index3': '$index3',
                         'problemCause':
-                            '${viewModel.record[index1].questions[index2].options[index3].title}' ??
-                                "",
+                            '${viewModel.record[index1].questions[index2].options[index3].title}',
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}' ??
-                                ""
+                            '${viewModel.record[index1].questions[index2].title}'
                       },
                     );
                   },

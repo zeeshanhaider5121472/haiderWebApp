@@ -1,13 +1,17 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Dropdown Example',
       home: DropdownLanguage(),
     );
@@ -15,6 +19,8 @@ class MyApp extends StatelessWidget {
 }
 
 class DropdownLanguage extends StatefulWidget {
+  const DropdownLanguage({super.key});
+
   @override
   _DropdownLanguageState createState() => _DropdownLanguageState();
 }
@@ -29,14 +35,14 @@ class _DropdownLanguageState extends State<DropdownLanguage> {
       decoration: BoxDecoration(
           color: Theme.of(context).dialogBackgroundColor,
           borderRadius: BorderRadius.circular(5)),
-      margin: EdgeInsets.fromLTRB(12, 5, 12, 12),
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+      margin: const EdgeInsets.fromLTRB(12, 5, 12, 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       child: Column(
         mainAxisAlignment:
             MainAxisAlignment.center, // Align children at the start and end
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Language"),
+          const Text("Language"),
           SizedBox(
             height: 20,
             child: DropdownButton<String>(

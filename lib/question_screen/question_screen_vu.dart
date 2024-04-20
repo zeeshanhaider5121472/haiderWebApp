@@ -149,12 +149,11 @@ class GenericAnswers extends StatelessWidget {
                     GoRouter.of(context).pushNamed(
                       MyAppRouteConstants.problemRouteName,
                       params: {
-                        'area': "${area}",
-                        'index1': '${index1}',
-                        'index2': '${index2}',
+                        'area': area,
+                        'index1': '$index1',
+                        'index2': '$index2',
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}' ??
-                                ""
+                            '${viewModel.record[index1].questions[index2].title}'
                       },
                     );
                     // Navigator.push(
@@ -223,12 +222,11 @@ class GenericAnswers extends StatelessWidget {
                     GoRouter.of(context).pushNamed(
                       MyAppRouteConstants.problemRouteName,
                       params: {
-                        'area': "${area}",
-                        'index1': '${index1}',
-                        'index2': '${index2}',
+                        'area': area,
+                        'index1': '$index1',
+                        'index2': '$index2',
                         'problem':
-                            '${viewModel.record[index1].questions[index2].title}' ??
-                                ""
+                            '${viewModel.record[index1].questions[index2].title}'
                       },
                     );
                   },

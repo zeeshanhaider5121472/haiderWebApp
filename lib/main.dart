@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'PSA Troubleshooter',
       theme: Themes().lightTheme,
       darkTheme: Themes().darkTheme,
-      // themeMode: ThemeMode.system,
+      themeMode: Get.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       // routerConfig: MyAppRouter().router,
       routeInformationParser:
           MyAppRouter.returnRouter(false).routeInformationParser,

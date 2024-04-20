@@ -35,29 +35,36 @@ class Themes {
   //   }).obs;
   //   isLightThemeBool.value = (await _isLight.value)!;
   //   Get.changeThemeMode(isLightThemeBool.value ? ThemeMode.light : ThemeMode.dark);
-  // }
+  // }      scaffoldBackgroundColor:
+  //         _themeMode == ThemeMode.light ? Color(0xfff1f3f5) : Color(0xff111314),
+  //     dialogBackgroundColor:
+  //         _themeMode == ThemeMode.light ? Color(0xffffffff) : Color(0xff1f2021),
 
   final darkTheme = ThemeData.dark().copyWith(
-    scaffoldBackgroundColor: Colors.amber,
-    hintColor: Colors.red,
-    // brightness: Brightness.dark,
-    primaryColor: Colors.amber,
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.amber,
-      disabledColor: Colors.grey,
-    ),
+    scaffoldBackgroundColor: const Color(0xff111314),
+    dialogBackgroundColor: const Color(0xff1f2021),
+    brightness: Brightness.dark,
+    secondaryHeaderColor: const Color(0xff1f2021),
+    // hintColor: Colors.red,
+    // primaryColor: Colors.amber,
+    // buttonTheme: const ButtonThemeData(
+    //   buttonColor: Colors.amber,
+    //   disabledColor: Colors.grey,
+    // ),
   );
 
   final lightTheme = ThemeData.light().copyWith(
-    // ThemeData lightTheme = ThemeData.light().copyWith(
-    scaffoldBackgroundColor: Colors.pink,
+      // ThemeData lightTheme = ThemeData.light().copyWith(
+      scaffoldBackgroundColor: const Color(0xfff1f3f5),
+      dialogBackgroundColor: const Color(0xffffffff),
+      brightness: Brightness.light,
+      secondaryHeaderColor: const Color(0xffe5e8eb)
 
-    hintColor: Colors.pink,
-    // brightness: Brightness.light,
-    primaryColor: Colors.blue,
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.blue,
-      disabledColor: Colors.grey,
-    ),
-  );
+      // hintColor: Colors.pink,
+      // primaryColor: Colors.blue,
+      // buttonTheme: const ButtonThemeData(
+      //   buttonColor: Colors.blue,
+      //   disabledColor: Colors.grey,
+      // ),
+      );
 }

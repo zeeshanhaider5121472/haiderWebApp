@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const, use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stacked/stacked.dart';
@@ -10,8 +12,7 @@ import 'sidemenu_vm.dart';
 class GenericDrawerVU extends StackedView<GenericDrawerVM> {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const GenericDrawerVU({Key? key, required this.scaffoldKey})
-      : super(key: key);
+  const GenericDrawerVU({super.key, required this.scaffoldKey});
 
   @override
   Widget builder(
@@ -20,9 +21,9 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
     Widget? child,
   ) {
     // final themeProvider = Provider.of<ThemeProvider>(context);
-    String selectedLanguage = 'English';
-    List<String> languages = ['English', 'Français', 'Español', 'Deutsch'];
-    bool isSwitched; // Initial value for the switch
+    // String selectedLanguage = 'English';
+    // List<String> languages = ['English', 'Français', 'Español', 'Deutsch'];
+    // bool isSwitched; // Initial value for the switch
     // themeProvider.themeMode == ThemeMode.dark
     //     ? isSwitched = true // Initial value for the switch
     //     : isSwitched = false;
@@ -69,7 +70,7 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
               ],
             ),
           ),
-          SizedBox(width: 70, height: 80, child: DropdownLanguage()),
+          const SizedBox(width: 70, height: 80, child: const DropdownLanguage()),
 
           ListTile(
             leading: const Icon(Icons.dark_mode),
@@ -81,6 +82,9 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                   scale: 0.8,
                   child: Obx(
                     () => Switch(
+                      thumbColor: MaterialStateProperty.all(
+                          const Color.fromARGB(255, 255, 255, 255)),
+                      activeTrackColor: const Color(0xffb6000f),
                       // title: const Text('Change Theme'),
                       value: themeController.isLightTheme,
                       onChanged: (value) {

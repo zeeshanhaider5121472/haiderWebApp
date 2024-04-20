@@ -10,6 +10,8 @@ import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
 
 class HomeScreenVU extends StatefulWidget {
+  const HomeScreenVU({super.key});
+
   @override
   _HomeScreenVUState createState() => _HomeScreenVUState();
 }
@@ -40,12 +42,6 @@ class _HomeScreenVUState extends State<HomeScreenVU> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          _scaffoldKey.currentState?.openDrawer();
-                          // viewModel.notifyListeners();
-                        },
-                        child: const Text("Open Drawerr")),
                     // Text(
                     //   'Click on switch to change to ${_isLightThemeBool ? 'Dark' : 'Light'} theme',
                     // ),
@@ -179,9 +175,9 @@ class MainImgClickablewidget extends StatelessWidget {
                                     Colors.transparent),
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  final path =
-                                      '/question/${Uri.encodeComponent("Refrigerated Dryer")}/${"1"}';
-                                  print(path);
+                                  // final path =
+                                  //     '/question/${Uri.encodeComponent("Refrigerated Dryer")}/${"1"}';
+                                  // print(path);
                                   GoRouter.of(context).pushNamed(
                                     MyAppRouteConstants.questionRouteName,
                                     params: {

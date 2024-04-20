@@ -3,6 +3,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
+import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import 'booster_compressor_screen_vm.dart';
@@ -483,8 +484,9 @@ class BoosterCompressorSolutionScreenVU
               ],
             ),
           ),
-          // HeaderButtons(
-          // )
+          HeaderButtons(
+            widgetScaffoldkey: scaffoldKey,
+          )
         ],
       ),
     );
@@ -536,7 +538,8 @@ class ShareButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 229, 232, 235),
+        color: Theme.of(context).secondaryHeaderColor,
+
         // color: themeProvider.themeMode == ThemeMode.light
         //     ? const Color.fromARGB(255, 229, 232, 235)
         //     : Theme.of(context).dialogBackgroundColor,
@@ -565,7 +568,7 @@ class ShareButton extends StatelessWidget {
               height: 45,
               child: PrimaryButton(
                 onPressed: () {
-                  print(url);
+                  // print(url);
                   Share.share('Check out my Solution \n$url');
                   // Navigator.push(
                   //     context,
