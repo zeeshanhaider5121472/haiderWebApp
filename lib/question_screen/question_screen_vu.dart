@@ -5,6 +5,7 @@ import 'package:troubleshooter/reusable_widgets/header_button.dart';
 
 import '../reusable_widgets/custom_drawer.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
 
 class QuestionScreenVU extends StatefulWidget {
@@ -38,7 +39,7 @@ class _QuestionScreenState extends State<QuestionScreenVU> {
     return Scaffold(
         key: _scaffoldKey,
         drawer: const CustomDrawer(),
-        // endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
+        endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Ink(
           child: Stack(
