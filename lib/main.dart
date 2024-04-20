@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:troubleshooter/reusable_widgets/theme/theme.dart';
 
+import 'reusable_widgets/theme/theme_controller.dart';
 import 'routing/app_route_config.dart';
 
 void main() {
@@ -13,12 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final themeProvider = Provider.of<ThemeProvider>(context);
+    final themeController = Get.put(ThemeController());
     return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'PSA Troubleshooter',
       theme: Themes().lightTheme,
       darkTheme: Themes().darkTheme,
-      themeMode: Get.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      themeMode:
+          themeController.isLightTheme ? ThemeMode.dark : ThemeMode.light,
       // routerConfig: MyAppRouter().router,
       routeInformationParser:
           MyAppRouter.returnRouter(false).routeInformationParser,

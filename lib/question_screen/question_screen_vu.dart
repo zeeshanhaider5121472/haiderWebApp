@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:troubleshooter/question_screen/question_screen_vm.dart';
 import 'package:troubleshooter/reusable_widgets/header_button.dart';
 
-import '../reusable_widgets/custom_drawer.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
@@ -38,7 +37,7 @@ class _QuestionScreenState extends State<QuestionScreenVU> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: _scaffoldKey,
-        drawer: const CustomDrawer(),
+        // drawer: const CustomDrawer(),
         endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Ink(

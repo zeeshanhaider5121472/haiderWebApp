@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../reusable_widgets/custom_drawer.dart';
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
@@ -30,7 +29,7 @@ class _HomeScreenVUState extends State<HomeScreenVU> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         key: _scaffoldKey,
         // appBar: AppBar(),
-        drawer: const CustomDrawer(),
+        // drawer: const CustomDrawer(),
         endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
         body: Stack(
           // alignment: Alignment.topRight,

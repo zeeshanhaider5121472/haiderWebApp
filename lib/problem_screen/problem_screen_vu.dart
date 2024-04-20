@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stacked/stacked.dart';
-import 'package:troubleshooter/reusable_widgets/custom_drawer.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
+import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
 import 'problem_screen_vm.dart';
 
@@ -30,8 +30,8 @@ class ProblemScreenVU extends StackedView<ProblemScreenVM> {
     return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         key: _scaffoldKey,
-        drawer: CustomDrawer(),
-        // endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
+        // drawer: CustomDrawer(),
+        endDrawer: GenericDrawerVU(scaffoldKey: _scaffoldKey),
         // backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         body: Ink(
           // color: const Color.fromARGB(255, 238, 238, 238),
