@@ -50,13 +50,13 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
                     color: Theme.of(context).dialogBackgroundColor,
                     boxShadow: [
                       BoxShadow(
-                        // color: themeProvider.themeMode == ThemeMode.light
-                        //     ? Colors.grey.withOpacity(0.5)
-                        //     : Colors.grey.withOpacity(0.2),
-                        color: Colors.grey.withOpacity(0.2),
+                        color: themeController.isLightTheme
+                            ? Colors.grey.withOpacity(0.2)
+                            : Colors.grey.withOpacity(0.5),
+                        // color: Colors.grey.withOpacity(0.2),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: const Offset(0, 3),
+                        offset: const Offset(0, 0),
                       ),
                     ],
                   ),
@@ -70,7 +70,8 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
               ],
             ),
           ),
-          const SizedBox(width: 70, height: 80, child: const DropdownLanguage()),
+          const SizedBox(
+              width: 70, height: 80, child: const DropdownLanguage()),
 
           ListTile(
             leading: const Icon(Icons.dark_mode),

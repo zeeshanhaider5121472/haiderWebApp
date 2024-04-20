@@ -9,16 +9,29 @@ import '../routing/app_route_consts.dart';
 import 'booster_compressor_screen_vm.dart';
 
 class QuestionBoosterCompressorScreenVU
-    extends StackedView<BoosterCompressorScreenVM> {
+    extends StatefulWidget {
   final String area;
   final int index1;
-  QuestionBoosterCompressorScreenVU(
+  const QuestionBoosterCompressorScreenVU(
       {required this.index1, required this.area, super.key});
+  @override
+  State<QuestionBoosterCompressorScreenVU> createState() =>
+      _QuestionBoosterCompressorScreenVUState();
+}
+
+class _QuestionBoosterCompressorScreenVUState
+    extends State<QuestionBoosterCompressorScreenVU> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late final BoosterCompressorScreenVM _viewModel;
 
   @override
-  Widget builder(BuildContext context, BoosterCompressorScreenVM viewModel,
-      Widget? child) {
+  void initState() {
+    super.initState();
+    _viewModel = BoosterCompressorScreenVM();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: scaffoldKey,
@@ -33,7 +46,7 @@ class QuestionBoosterCompressorScreenVU
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    GenericHeader(title: area),
+                    GenericHeader(title: widget.area),
                     // const SizedBox(
                     //   height: 16,
                     // ),
@@ -44,10 +57,10 @@ class QuestionBoosterCompressorScreenVU
                           const ImageContainer(index1: 7),
                           const SizedBox(height: 16),
                           GenericAnswers(
-                              viewModel: viewModel,
+                              viewModel: _viewModel,
                               screenSize: screenSize,
-                              index1: index1,
-                              area: area),
+                              index1: widget.index1,
+                              area: widget.area),
                           const SizedBox(height: 40),
                         ],
                       ),
@@ -64,9 +77,6 @@ class QuestionBoosterCompressorScreenVU
         ));
   }
 
-  @override
-  BoosterCompressorScreenVM viewModelBuilder(BuildContext context) =>
-      BoosterCompressorScreenVM();
 }
 
 class GenericAnswers extends StatelessWidget {

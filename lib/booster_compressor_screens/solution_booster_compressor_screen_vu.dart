@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:stacked/stacked.dart';
 import 'package:troubleshooter/routing/app_route_consts.dart';
 
 import '../htu_vu.dart';
@@ -9,8 +8,7 @@ import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import 'booster_compressor_screen_vm.dart';
 
-class BoosterCompressorSolutionScreenVU
-    extends StackedView<BoosterCompressorScreenVM> {
+class BoosterCompressorSolutionScreenVU extends StatefulWidget {
   final int index1;
   final int index2;
   final int index3;
@@ -21,7 +19,7 @@ class BoosterCompressorSolutionScreenVU
   final String problem;
   final String immediateaction;
   final String problemCause;
-  BoosterCompressorSolutionScreenVU(
+  const BoosterCompressorSolutionScreenVU(
       {required this.index1,
       required this.index2,
       required this.index3,
@@ -33,11 +31,24 @@ class BoosterCompressorSolutionScreenVU
       required this.problem,
       required this.immediateaction,
       required this.problemCause});
+  @override
+  State<BoosterCompressorSolutionScreenVU> createState() =>
+      _BoosterCompressorSolutionScreenVUState();
+}
+
+class _BoosterCompressorSolutionScreenVUState
+    extends State<BoosterCompressorSolutionScreenVU> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late final BoosterCompressorScreenVM _viewModel;
 
   @override
-  Widget builder(BuildContext context, BoosterCompressorScreenVM viewModel,
-      Widget? child) {
+  void initState() {
+    super.initState();
+    _viewModel = BoosterCompressorScreenVM();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     // final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
@@ -78,39 +89,40 @@ class BoosterCompressorSolutionScreenVU
                           child: Column(
                             children: [
                               _GenericSolutionContainer(
-                                  title: "Area", data: area),
+                                  title: "Area", data: widget.area),
                               _GenericSolutionContainer(
-                                  title: "Question", data: question),
+                                  title: "Question", data: widget.question),
                               _GenericSolutionContainer(
-                                  title: "Problem", data: problem),
+                                  title: "Problem", data: widget.problem),
 
                               _GenericSolutionContainer(
-                                  title: "Problem Cause", data: problemCause),
+                                  title: "Problem Cause",
+                                  data: widget.problemCause),
                               _GenericLVBContainer(
-                                viewModel: viewModel,
+                                viewModel: _viewModel,
                                 title: "Solution",
-                                index1: index1,
-                                index2: index2,
-                                index3: index3,
-                                index4: index4,
-                                index5: index5,
+                                index1: widget.index1,
+                                index2: widget.index2,
+                                index3: widget.index3,
+                                index4: widget.index4,
+                                index5: widget.index5,
                               ),
                               _GenericSolutionContainer(
                                   title: "Immediate Action",
-                                  data: immediateaction),
+                                  data: widget.immediateaction),
 
                               screenSize.width < 600
                                   ? ShareButton(
-                                      index1: index1,
-                                      index2: index2,
-                                      index3: index3,
-                                      index4: index4,
-                                      area: area,
-                                      problem: problem,
-                                      immediateaction: immediateaction,
-                                      problemCause: problemCause,
-                                      index5: index5,
-                                      question: question,
+                                      index1: widget.index1,
+                                      index2: widget.index2,
+                                      index3: widget.index3,
+                                      index4: widget.index4,
+                                      area: widget.area,
+                                      problem: widget.problem,
+                                      immediateaction: widget.immediateaction,
+                                      problemCause: widget.problemCause,
+                                      index5: widget.index5,
+                                      question: widget.question,
                                     )
                                   : const SizedBox()
 
@@ -344,16 +356,16 @@ class BoosterCompressorSolutionScreenVU
                         screenSize.width > 600
                             ? Expanded(
                                 child: ShareButton(
-                                area: area,
-                                question: question,
-                                problem: problem,
-                                immediateaction: immediateaction,
-                                problemCause: problemCause,
-                                index1: index1,
-                                index2: index2,
-                                index3: index3,
-                                index4: index4,
-                                index5: index5,
+                                area: widget.area,
+                                question: widget.question,
+                                problem: widget.problem,
+                                immediateaction: widget.immediateaction,
+                                problemCause: widget.problemCause,
+                                index1: widget.index1,
+                                index2: widget.index2,
+                                index3: widget.index3,
+                                index4: widget.index4,
+                                index5: widget.index5,
                               ))
                             : const SizedBox()
 
@@ -489,24 +501,20 @@ class BoosterCompressorSolutionScreenVU
             widgetScaffoldkey: scaffoldKey,
             routeName: MyAppRouteConstants.bcProblemCauseRouteName,
             params: {
-              'area': area,
-              'question': question,
-              'immediateaction': immediateaction,
-              'problem': problem,
-              'index1': index1.toString(),
-              'index2': index2.toString(),
-              'index3': index3.toString(),
-              'index4': index4.toString(),
+              'area': widget.area,
+              'question': widget.question,
+              'immediateaction': widget.immediateaction,
+              'problem': widget.problem,
+              'index1': widget.index1.toString(),
+              'index2': widget.index2.toString(),
+              'index3': widget.index3.toString(),
+              'index4': widget.index4.toString(),
             },
           )
         ],
       ),
     );
   }
-
-  @override
-  BoosterCompressorScreenVM viewModelBuilder(BuildContext context) =>
-      BoosterCompressorScreenVM();
 }
 
 class ShareButton extends StatelessWidget {

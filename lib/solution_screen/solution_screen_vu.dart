@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:stacked/stacked.dart';
 
 import '../htu_vu.dart';
 import '../reusable_widgets/header_button.dart';
@@ -9,14 +8,14 @@ import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
 import 'solution_screen_vm.dart';
 
-class SolutionScreenVU extends StackedView<SolutionScreenVM> {
+class SolutionScreenVU extends StatefulWidget {
   final int index1;
   final int index2;
   final int index3;
   final String area;
   final String problem;
   final String problemCause;
-  SolutionScreenVU(
+  const SolutionScreenVU(
       {required this.index1,
       required this.index2,
       required this.index3,
@@ -24,11 +23,22 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
       required this.area,
       required this.problem,
       required this.problemCause});
+  @override
+  State<SolutionScreenVU> createState() => _SolutionScreenVUState();
+}
+
+class _SolutionScreenVUState extends State<SolutionScreenVU> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+  late final SolutionScreenVM _viewModel;
 
   @override
-  Widget builder(
-      BuildContext context, SolutionScreenVM viewModel, Widget? child) {
+  void initState() {
+    super.initState();
+    _viewModel = SolutionScreenVM();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     // final themeProvider = Provider.of<ThemeProvider>(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
@@ -64,29 +74,30 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                           child: Column(
                             children: [
                               _GenericSolutionContainer(
-                                  title: "Area", data: area),
+                                  title: "Area", data: widget.area),
                               _GenericSolutionContainer(
-                                  title: "Problem", data: problem),
+                                  title: "Problem", data: widget.problem),
                               _GenericSolutionContainer(
-                                  title: "Problem Cause", data: problemCause),
+                                  title: "Problem Cause",
+                                  data: widget.problemCause),
                               // _GenericSolutionContainer(
                               //     title: "Solution", data: solution),
                               _GenericLVBContainer(
-                                  viewModel: viewModel,
+                                  viewModel: _viewModel,
                                   title: "Solution",
-                                  index1: index1,
-                                  index2: index2,
-                                  index3: index3),
+                                  index1: widget.index1,
+                                  index2: widget.index2,
+                                  index3: widget.index3),
 
                               screenSize.width < 600
                                   ? ShareButton(
                                       // themeProvider: themeProvider,
-                                      index1: index1,
-                                      index2: index2,
-                                      index3: index3,
-                                      area: area,
-                                      problem: problem,
-                                      problemCause: problemCause)
+                                      index1: widget.index1,
+                                      index2: widget.index2,
+                                      index3: widget.index3,
+                                      area: widget.area,
+                                      problem: widget.problem,
+                                      problemCause: widget.problemCause)
                                   : const SizedBox()
 
                               // Container(
@@ -320,12 +331,12 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
                             ? Expanded(
                                 child: ShareButton(
                                 // themeProvider: themeProvider,
-                                index1: index1,
-                                index2: index2,
-                                index3: index3,
-                                area: area,
-                                problem: problem,
-                                problemCause: problemCause,
+                                index1: widget.index1,
+                                index2: widget.index2,
+                                index3: widget.index3,
+                                area: widget.area,
+                                problem: widget.problem,
+                                problemCause: widget.problemCause,
                               ))
                             : const SizedBox()
 
@@ -461,19 +472,16 @@ class SolutionScreenVU extends StackedView<SolutionScreenVM> {
             widgetScaffoldkey: _scaffoldKey,
             routeName: MyAppRouteConstants.problemRouteName,
             params: {
-              'area': area,
-              'index1': index1.toString(),
-              'index2': index2.toString(),
-              'problem': problem
+              'area': widget.area,
+              'index1': widget.index1.toString(),
+              'index2': widget.index2.toString(),
+              'problem': widget.problem
             },
           )
         ],
       ),
     );
   }
-
-  @override
-  SolutionScreenVM viewModelBuilder(BuildContext context) => SolutionScreenVM();
 }
 
 class ShareButton extends StatelessWidget {
