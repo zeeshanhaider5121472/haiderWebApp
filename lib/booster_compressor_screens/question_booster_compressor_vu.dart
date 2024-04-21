@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:stacked/stacked.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
@@ -8,8 +7,7 @@ import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
 import '../routing/app_route_consts.dart';
 import 'booster_compressor_screen_vm.dart';
 
-class QuestionBoosterCompressorScreenVU
-    extends StatefulWidget {
+class QuestionBoosterCompressorScreenVU extends StatefulWidget {
   final String area;
   final int index1;
   const QuestionBoosterCompressorScreenVU(
@@ -76,7 +74,6 @@ class _QuestionBoosterCompressorScreenVUState
           ),
         ));
   }
-
 }
 
 class GenericAnswers extends StatelessWidget {

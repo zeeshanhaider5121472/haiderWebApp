@@ -182,13 +182,22 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
             onTap: () async {
               const String recipient = 'saq101@gmail.com';
               const String subject = "Feedback - troubleshooter";
+              String? encodeQueryParameters(Map<String, String> params) {
+                return params.entries
+                    .map((MapEntry<String, String> e) =>
+                        '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                    .join('&');
+              }
 
               final Uri mailUri = Uri(
-                scheme: 'mailto',
-                path: recipient,
-                query: 'subject=$subject',
-                // queryParameters: {'subject': subject},
-              );
+                  scheme: 'mailto',
+                  path: recipient,
+                  query: encodeQueryParameters(<String, String>{
+                    'subject': subject,
+                  })
+                  // query: 'subject=$subject',
+                  // queryParameters: {'subject': subject},
+                  );
 
               if (await canLaunchUrl(mailUri)) {
                 await launchUrl(mailUri);
