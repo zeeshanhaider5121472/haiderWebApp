@@ -45,6 +45,12 @@ class Themes {
     dialogBackgroundColor: const Color(0xff1f2021),
     brightness: Brightness.dark,
     secondaryHeaderColor: const Color(0xff1f2021),
+    textTheme: const TextTheme(
+      bodyMedium: TextStyle(
+        fontFamily: 'Roboto',
+        color: Colors.white,
+      ),
+    ),
     // hintColor: Colors.red,
     // primaryColor: Colors.amber,
     // buttonTheme: const ButtonThemeData(
@@ -54,17 +60,22 @@ class Themes {
   );
 
   final lightTheme = ThemeData.light().copyWith(
-      // ThemeData lightTheme = ThemeData.light().copyWith(
-      scaffoldBackgroundColor: const Color(0xfff1f3f5),
-      dialogBackgroundColor: const Color(0xffffffff),
-      brightness: Brightness.light,
-      secondaryHeaderColor: const Color(0xffe5e8eb)
-
-      // hintColor: Colors.pink,
-      // primaryColor: Colors.blue,
-      // buttonTheme: const ButtonThemeData(
-      //   buttonColor: Colors.blue,
-      //   disabledColor: Colors.grey,
-      // ),
-      );
+    // ThemeData lightTheme = ThemeData.light().copyWith(
+    scaffoldBackgroundColor: const Color(0xfff1f3f5),
+    dialogBackgroundColor: const Color(0xffffffff),
+    brightness: Brightness.light,
+    secondaryHeaderColor: const Color(0xffe5e8eb),
+    textTheme: const TextTheme(
+      bodyMedium: TextStyle(
+        fontFamily: 'Roboto',
+        color: Colors.black,
+      ),
+    ),
+    // hintColor: Colors.pink,
+    // primaryColor: Colors.blue,
+    // buttonTheme: const ButtonThemeData(
+    //   buttonColor: Colors.blue,
+    //   disabledColor: Colors.grey,
+    // ),
+  );
 }

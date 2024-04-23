@@ -1,11 +1,13 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 
 import '../reusable_widgets/header_button.dart';
 import '../reusable_widgets/header_vu.dart';
 import '../reusable_widgets/sidemenu/sidemenu_vu.dart';
+import '../reusable_widgets/theme/theme_controller.dart';
 import '../routing/app_route_consts.dart';
 
 class HomeScreenVU extends StatefulWidget {
@@ -100,6 +102,7 @@ class MainImgClickablewidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.put(ThemeController());
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: screenSize.width > 600
@@ -107,7 +110,11 @@ class MainImgClickablewidget extends StatelessWidget {
               height: 800,
               child: Stack(
                 children: [
-                  const Image(image: AssetImage('lib/assets/mainscreens.png')),
+                  themeController.isLightTheme
+                      ? const Image(
+                          image: AssetImage('lib/assets/mainscreensDm.png'))
+                      : const Image(
+                          image: AssetImage('lib/assets/mainscreensLm.png')),
                   SizedBox(
                     width: 320,
                     child: Column(
@@ -165,7 +172,7 @@ class MainImgClickablewidget extends StatelessWidget {
                               // ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(left: 85, top: 14),
+                              margin: const EdgeInsets.only(left: 90, top: 14),
                               color: const Color.fromARGB(0, 244, 67, 54),
                               width: 80,
                               height: 100,
@@ -295,7 +302,7 @@ class MainImgClickablewidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              margin: const EdgeInsets.only(left: 150, top: 0),
+                              margin: const EdgeInsets.only(left: 160, top: 27),
                               color: const Color.fromARGB(0, 255, 188, 184),
                               width: 160,
                               height: 100,
@@ -335,7 +342,11 @@ class MainImgClickablewidget extends StatelessWidget {
               height: 600,
               child: Stack(
                 children: [
-                  const Image(image: AssetImage('lib/assets/mainscreens.png')),
+                  themeController.isLightTheme
+                      ? const Image(
+                          image: AssetImage('lib/assets/mainscreensDm.png'))
+                      : const Image(
+                          image: AssetImage('lib/assets/mainscreensLm.png')),
                   SizedBox(
                     width: 320,
                     child: Column(
@@ -344,10 +355,10 @@ class MainImgClickablewidget extends StatelessWidget {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(
-                            top: 10,
-                            // left: 8,
-                            // bottom: 25,
-                          ),
+                              // top: 10,
+                              // left: 8,
+                              // bottom: 25,
+                              ),
                           color: const Color.fromARGB(0, 255, 193, 7),
                           width: 145,
                           height: 100,
@@ -386,7 +397,7 @@ class MainImgClickablewidget extends StatelessWidget {
                               // ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(left: 40, top: 0),
+                              margin: const EdgeInsets.only(left: 45, top: 0),
                               color: Colors.transparent,
                               width: 70,
                               height: 80,

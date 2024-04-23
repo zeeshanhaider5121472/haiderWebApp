@@ -323,9 +323,9 @@ class _SolutionScreenVUState extends State<SolutionScreenVU> {
                             ],
                           ),
                         ),
-                        // const SizedBox(
-                        //   width: 20,
-                        // ),
+                        const SizedBox(
+                          width: 20,
+                        ),
 
                         screenSize.width > 600
                             ? Expanded(

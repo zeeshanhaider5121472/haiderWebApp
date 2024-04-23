@@ -61,8 +61,10 @@ flutter:
   uses-material-design: true
   assets:
     - lib/assets/headericon.png
-    - lib/assets/mainscreen.png
-    - lib/assets/mainscreens.png
+    # - lib/assets/mainscreen.png
+    # - lib/assets/mainscreens.png
+    - lib/assets/mainscreensDm.png
+    - lib/assets/mainscreensLm.png
     - lib/assets/images/index0.png
     - lib/assets/images/index1.png
     - lib/assets/images/index4.png

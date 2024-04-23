@@ -1,6 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'theme/theme_controller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Dropdown Example',
+      title: 'Dropdown',
       home: DropdownLanguage(),
     );
   }
@@ -31,6 +34,7 @@ class _DropdownLanguageState extends State<DropdownLanguage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.put(ThemeController());
     return Container(
       decoration: BoxDecoration(
           color: Theme.of(context).dialogBackgroundColor,
@@ -60,7 +64,13 @@ class _DropdownLanguageState extends State<DropdownLanguage> {
               items: languages.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: Text(
+                    value,
+                    style: TextStyle(
+                        color: themeController.isLightTheme
+                            ? Colors.white
+                            : Colors.black),
+                  ),
                 );
               }).toList(),
             ),
