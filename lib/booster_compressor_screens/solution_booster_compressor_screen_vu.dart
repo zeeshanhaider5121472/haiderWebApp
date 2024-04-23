@@ -349,9 +349,13 @@ class _BoosterCompressorSolutionScreenVUState
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          width: 20,
-                        ),
+                        screenSize.width > 600
+                            ? const SizedBox(
+                                width: 20,
+                              )
+                            : const SizedBox(
+                                width: 0,
+                              ),
 
                         screenSize.width > 600
                             ? Expanded(
