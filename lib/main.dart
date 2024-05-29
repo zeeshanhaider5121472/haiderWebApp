@@ -1,11 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:troubleshooter/reusable_widgets/theme/theme.dart';
 
+import 'firebase_options.dart';
 import 'reusable_widgets/theme/theme_controller.dart';
 import 'routing/app_route_config.dart';
 
-void main() {
+Future<void> main() async {
+  /// Initialize firebase analytics *
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

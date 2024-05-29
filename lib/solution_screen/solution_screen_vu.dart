@@ -1,4 +1,6 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../htu_vu.dart';
@@ -97,7 +99,8 @@ class _SolutionScreenVUState extends State<SolutionScreenVU> {
                                       index3: widget.index3,
                                       area: widget.area,
                                       problem: widget.problem,
-                                      problemCause: widget.problemCause)
+                                      problemCause: widget.problemCause,
+                                    )
                                   : const SizedBox()
 
                               // Container(
@@ -515,6 +518,11 @@ class ShareButton extends StatelessWidget {
                 '/$area/solutions/$problem/$problemCause/$index1/$index2/$index3')
         .toString();
     String url = '$baseUrl$dynamicUrl';
+
+    final qrimg = QrPainter(
+      data: url, // Include the protocol
+      version: QrVersions.auto,
+    ).toImage(200);
     return Container(
       width: 594,
       margin: const EdgeInsets.only(bottom: 10),
@@ -547,8 +555,8 @@ class ShareButton extends StatelessWidget {
               height: 45,
               child: PrimaryButton(
                 onPressed: () {
+                  FirebaseAnalytics.instance.logEvent(name: 'Solution: \n$url');
                   // print(url);
-                  // '/:area/solutions/:problem/:problemCause/:index1/:index2/:index3'
                   Share.share('Check out my Solution \n$url');
                   // Navigator.push(
                   //     context,
@@ -556,6 +564,16 @@ class ShareButton extends StatelessWidget {
                   //         builder: (context) => const HomeScreenVU()
                   //         ));
                 },
+                // () {
+                //   // print(url);
+                //   // '/:area/solutions/:problem/:problemCause/:index1/:index2/:index3'
+                //   Share.share('Check out my Solution \n$url');
+                //   // Navigator.push(
+                //   //     context,
+                //   //     MaterialPageRoute(
+                //   //         builder: (context) => const HomeScreenVU()
+                //   //         ));
+                // },
                 text: "Share",
               ),
             ),
