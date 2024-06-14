@@ -278,14 +278,14 @@ class FullScreenPopup extends StatelessWidget {
               const SizedBox(
                 width: 600,
                 child: Text(
-                  'Description\n'
+                  'About\n'
                   "\n"
-                  'The Troubleshooter is based on the popular and informative Filters Notes. The Troubleshooter gives you instant access to Danfoss’ years of accumulated knowledge of refrigeration applications and their function, aiding you in your day-to-day work servicing your customers’ systems.\n\n'
+                  'The Troubleshooter is based on the troubleshooting manuals of PSA components. Troubleshooter gives you instant access to years of accumulated knowledge of PSA systems and its function, aiding you in your day to day work of technicians and biomedical engineers.\n\n'
                   'How to use\n'
                   "\n"
-                  'At startup, a diagram over a refrigeration system is shown. The diagram is divided into five main areas; compressor, solenoid valve, low pressure, high pressure, and liquid line components. Choose an area you believe is faulty in your system by clicking on it by clicking on its diagram. The “Symptom” page is now shown, and on this page you will be able to find a list of most probable causes for problems you are experiencing. Once the correct symptom has been identified; you can select possible causes (of this symptom) and following this; you can select what it believed to be relevant causes. You will then be taken to the “Remedy” page where relevant procedures required for that exact symptom/cause are shown…\n\n'
-                  'It’s easy to move back and forth between symptoms/causes/remedy pages should you need or want to try out other solutions.\n\n'
-                  'The Troubleshooter application has been designed so that the entire database is available at all times. This means that should you find yourself in an area without signal for your mobile device, the full functionality of the Troubleshooter app will still be available.',
+                  'At start-up, a diagram over a refrigeration system is shown. The diagram is divided into four main areas; air compressor, refrigerated dryer, oxygen generator and high pressure booster for cylinder filling. Choose the area you believe is faulty in the system you are working on by clicking on the diagram. The “Symptoms” page is now shown, and on this page, you will be able to find a list of the most probable causes for the problem(s) you are experiencing. Once the correct symptom has been identified, you can read the possible causes of the symptom(s) and following this; you can select what is believed to be the relevant cause. You will then be taken to the “Remedy” page, where the corrective procedures required for that exact symptom/cause are shown.\n\n'
+                  'It is easy to move back and forth between the symptom/cause and remedy pages should you need or want to try out other solutions.\n\n',
+                  // 'The Troubleshooter application has been designed so that the entire database is available at all times. This means that should you find yourself in an area without signal for your mobile device, the full functionality of the Troubleshooter app will still be available.',
                   style: TextStyle(color: Colors.white),
                 ),
               ),

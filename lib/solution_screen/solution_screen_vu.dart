@@ -1,6 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+// import 'package:qr_flutter/qr_flutter.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../htu_vu.dart';
@@ -519,10 +519,10 @@ class ShareButton extends StatelessWidget {
         .toString();
     String url = '$baseUrl$dynamicUrl';
 
-    final qrimg = QrPainter(
-      data: url, // Include the protocol
-      version: QrVersions.auto,
-    ).toImage(200);
+    // final qrimg = QrPainter(
+    //   data: url, // Include the protocol
+    //   version: QrVersions.auto,
+    // ).toImage(200);
     return Container(
       width: 594,
       margin: const EdgeInsets.only(bottom: 10),
