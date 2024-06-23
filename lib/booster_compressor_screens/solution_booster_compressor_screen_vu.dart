@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:troubleshooter/routing/app_route_consts.dart';
@@ -592,6 +593,12 @@ class ShareButton extends StatelessWidget {
               height: 45,
               child: PrimaryButton(
                 onPressed: () {
+                  // FirebaseAnalytics.instance.logEvent(name: 'Solution: \n$url');
+
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'Solution:',
+                    parameters: {'url': url},
+                  );
                   // print(url);
                   Share.share('Check out my Solution \n$url');
                   // Navigator.push(

@@ -555,7 +555,10 @@ class ShareButton extends StatelessWidget {
               height: 45,
               child: PrimaryButton(
                 onPressed: () {
-                  FirebaseAnalytics.instance.logEvent(name: 'Solution: \n$url');
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'Solution:',
+                    parameters: {'url': url},
+                  );
                   // print(url);
                   Share.share('Check out my Solution \n$url');
                   // Navigator.push(

@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -40,8 +41,9 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCNGg2k_Wjaftgv5vyfgqxEVHrg5m_x2fw',
+  static FirebaseOptions web = FirebaseOptions(
+    // apiKey: '*fw',
+    apiKey: dotenv.env['API_KEY1']!,
     appId: '1:491790797855:web:d6d4e79f508d97a51cd92a',
     messagingSenderId: '491790797855',
     projectId: 'haiderwebanalytics',
@@ -50,16 +52,18 @@ class DefaultFirebaseOptions {
     measurementId: 'G-H6Y7R26TT1',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC77-dhRsNtTc-B2PYE_9tuLOAryoRVEro',
+  static FirebaseOptions android = FirebaseOptions(
+    // apiKey: '*ro',
+    apiKey: dotenv.env['API_KEY2']!,
     appId: '1:491790797855:android:4135f37b7d39ed6a1cd92a',
     messagingSenderId: '491790797855',
     projectId: 'haiderwebanalytics',
     storageBucket: 'haiderwebanalytics.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDftkHBHpwnieEJtGqMOaLbgn5i7FO9jlI',
+  static FirebaseOptions ios = FirebaseOptions(
+    // apiKey: '*lI',
+    apiKey: dotenv.env['API_KEY3']!,
     appId: '1:491790797855:ios:b40f4edf7b8c14251cd92a',
     messagingSenderId: '491790797855',
     projectId: 'haiderwebanalytics',
@@ -67,8 +71,9 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.troubleshooter',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDftkHBHpwnieEJtGqMOaLbgn5i7FO9jlI',
+  static FirebaseOptions macos = FirebaseOptions(
+    // apiKey: '*lI',
+    apiKey: dotenv.env['API_KEY3']!,
     appId: '1:491790797855:ios:b40f4edf7b8c14251cd92a',
     messagingSenderId: '491790797855',
     projectId: 'haiderwebanalytics',
@@ -76,8 +81,9 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.troubleshooter',
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCNGg2k_Wjaftgv5vyfgqxEVHrg5m_x2fw',
+  static FirebaseOptions windows = FirebaseOptions(
+    // apiKey: '*fw',
+    apiKey: dotenv.env['API_KEY1']!,
     appId: '1:491790797855:web:7aaa00ff4d604d571cd92a',
     messagingSenderId: '491790797855',
     projectId: 'haiderwebanalytics',

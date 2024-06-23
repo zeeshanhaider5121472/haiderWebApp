@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
@@ -22,8 +23,28 @@ class HomeScreenVU extends StatefulWidget {
 
 class _HomeScreenVUState extends State<HomeScreenVU> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   bool isLightThemeBool = false;
   bool onhover = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _logScreenView();
+  }
+
+  Future<void> _logScreenView() async {
+    FirebaseAnalytics.instance.logLogin();
+    // await _analytics.setCurrentScreen(screenName: 'Home Screen');
+    // await _analytics.logEvent(
+    //   name: 'screen_view',
+    //   parameters: {
+    //     'screen_name': 'Home Screen',
+    //     'screen_class': 'HomeScreenVU',
+    //   },
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -64,7 +85,8 @@ class _HomeScreenVUState extends State<HomeScreenVU> {
                     //   // },
                     // ),
                     const GenericHeader(
-                      title: 'System Areas',
+                      title: 'System Areas ',
+
                       // color: Colors.white,
                     ),
                     MainImgClickablewidget(screenSize: screenSize),
