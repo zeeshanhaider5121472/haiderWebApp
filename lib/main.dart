@@ -9,7 +9,7 @@ import 'reusable_widgets/theme/theme_controller.dart';
 import 'routing/app_route_config.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: ".env"); 
   // await analytics.logLogin();
 
   // FirebaseAnalytics.instance.logLogin();
