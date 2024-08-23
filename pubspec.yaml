@@ -48,6 +48,10 @@ dependencies:
   firebase_core: ^2.31.0
   firebase_analytics: ^10.10.5
   flutter_dotenv: ^5.1.0
+  audioplayers: ^6.0.0
+  flutter_sensors: ^1.0.1
+  flutter_svg: ^2.0.10+1
+  vibration: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +82,11 @@ flutter:
     - lib/assets/images/index4.png
     - lib/assets/images/index7.png
     - lib/assets/select.png
+    - audio/sound_spin.mp3
+    - lib/assets/s1.svg
+    - lib/assets/sound-on.svg
+    - lib/assets/sound-off.svg
+    - lib/assets/vibrate.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

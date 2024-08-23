@@ -1,11 +1,15 @@
 // ignore_for_file: unnecessary_const, use_build_context_synchronously
 
+import 'dart:io';
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stacked/stacked.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../dropdown_language.dart';
+import '../emf detector/emf_detector.dart';
 import '../theme/theme_controller.dart';
 import 'sidemenu_vm.dart';
 
@@ -72,7 +76,6 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
           ),
           const SizedBox(
               width: 70, height: 80, child: const DropdownLanguage()),
-
           ListTile(
             leading: const Icon(Icons.dark_mode),
             trailing: Row(
@@ -112,7 +115,6 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
-
           const ListTile(
             title: Text(
               "Troubleshooter",
@@ -144,28 +146,12 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
             indent: 16,
             endIndent: 16,
           ),
-          // ListTile(
-          //   trailing: Icon(
-          //     Icons.info,
-          //     color: Colors.grey[700],
-          //   ),
-          //   title: Text(
-          //     'End User License Agreement',
-          //     style: TextStyle(
-          //       fontSize: 14,
-          //       fontWeight: FontWeight.w600,
-          //       color: Colors.grey[600],
-          //     ),
-          //   ),
-          //   onTap: () {
-          //     // Navigate to home screen
-          //   },
-          // ),
-          // const Divider(
-          //   thickness: 0.5,
-          //   indent: 16,
-          //   endIndent: 16,
-          // ),
+          !kIsWeb ? _getEMFdetector(context: context) : const SizedBox(),
+          const Divider(
+            thickness: 0.5,
+            indent: 16,
+            endIndent: 16,
+          ),
           ListTile(
             trailing: Icon(
               Icons.assignment_turned_in,
@@ -235,6 +221,33 @@ class GenericDrawerVU extends StackedView<GenericDrawerVM> {
 
   @override
   GenericDrawerVM viewModelBuilder(BuildContext context) => GenericDrawerVM();
+}
+
+Widget _getEMFdetector({required BuildContext context}) {
+  if (Platform.isAndroid || Platform.isIOS) {
+    return ListTile(
+      trailing: Icon(
+        Icons.info,
+        color: Colors.grey[700],
+      ),
+      title: Text(
+        'EMF Detector',
+        style: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: Colors.grey[600],
+        ),
+      ),
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) => const ElectromagneticFieldDetector(),
+        );
+      },
+    );
+  } else {
+    return SizedBox();
+  }
 }
 
 class FullScreenPopup extends StatelessWidget {
