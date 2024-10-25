@@ -552,7 +552,10 @@ class ShareButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String baseUrl = 'https://haider-web-app.vercel.app/#';
+    // String baseUrl = 'https://haider-web-app.vercel.app/#';
+    // String baseUrl = dotenv.env['SHARE_DOMAIN']!;
+    String baseUrl = '${Uri.base.origin}/#';
+
     String dynamicUrl = Uri(
             path:
                 '/$area/bcproblemcause/$question/$problem/$immediateaction/$problemCause/$index1/$index2/$index3/$index4/$index5')

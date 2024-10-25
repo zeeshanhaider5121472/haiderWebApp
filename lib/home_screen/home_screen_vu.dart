@@ -48,6 +48,7 @@ class _HomeScreenVUState extends State<HomeScreenVU> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         key: _scaffoldKey,
